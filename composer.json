@@ -1,0 +1,17 @@
+{
+    "name": "villanovo/cimalpes",
+    "description": "SDK cimalpes api",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Villanovo\\Cimalpes\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "yassine elfarhi",
+            "email": "yassinewebdev1@gmail.com"
+        }
+    ],
+    "require": {}
+}

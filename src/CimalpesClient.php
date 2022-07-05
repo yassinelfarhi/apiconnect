@@ -36,10 +36,21 @@ class CimalpesClient {
         $this->flux_xml->load(self::API_BIENS);
         $this->biens = $this->flux_xml->getElementsByTagName("bien");
         $table_biens = [];
-       
-        foreach($this->biens as $bien){
-          array_push( $table_biens, BienDto::fromNodeListing($bien));
+        $i = 0;
+
+        // foreach($this->biens as $bien){
+        //   array_push( $table_biens, BienDto::fromNodeListing($bien));
+        // }
+     
+
+        foreach($this->biens as $bien) {
+           
+          $table_biens[$i]['id'] = $bien->getElementsByTagName("id_bien")->item(0)->nodeValue;
+          $table_biens[$i]['nom'] = $bien->getElementsByTagName("nom_bien")->item(0)->nodeValue;
+          $i++;
         }
+
+
         return  $table_biens;
      }
 
@@ -49,12 +60,17 @@ class CimalpesClient {
           $this->flux_xml = new \DOMDocument();
           $this->flux_xml->load(self::API_DETAIL . $id_bien);
 
-          array_push($table_biens, BienDto::fromNodeDetail($bien));
+          // array_push($table_biens, BienDto::fromNodeDetail($bien));
 
-          $this->details["descriptif"] = $this->flux_xml->getElementsByTagName("descriptif_court")->item(0)->nodeValue;
+          $this->details["id_bien"] = $id_bien;
           $this->details["descriptif_court"] = $this->flux_xml->getElementsByTagName("descriptif_court")->item(0)->nodeValue;
-          
+          $this->details["descriptif_bref"] = $this->flux_xml->getElementsByTagName("descriptif_bref")->item(0)->nodeValue;
+          $this->details["descriptif_bref_en"] = $this->flux_xml->getElementsByTagName("descriptif_bref_en")->item(0)->nodeValue;
+          $this->details["descriptif_court_en"] = $this->flux_xml->getElementsByTagName("descriptif_court_en")->item(0)->nodeValue;
 
+     
+          
+       
           return $this->details;
         
      }
@@ -67,9 +83,9 @@ class CimalpesClient {
           $sejours = $this->flux_xml->getElementsByTagName("sejour");
           
 
-          foreach($sejours as $sejour){
-            array_push( $table_biens, BienDto::fromNodeDisponibilites($sejour));
-          }
+          // foreach($sejours as $sejour){
+          //   array_push( $table_biens, BienDto::fromNodeDisponibilites($sejour));
+          // }
 
         //  for( $i = 0 ; $sejours->length ; $i++) {
         //    $this->disponibilites["date_debut"] = $this->flux_xml->getElementsByTagName("sejour")->item($i)->childNodes->item(0)->nodeValue;
