@@ -88,7 +88,5 @@ class CimalpesClient
 
 
 
-	public function persistData()
-	{
-	}
+	
 }

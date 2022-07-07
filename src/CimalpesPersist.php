@@ -49,7 +49,7 @@ class CimalpesPersist
 
         return  $sqlStatement->fetchAll();
     }
-    // function permettant d'inserer les villas dans la table villas
+  
     /**
      * @param BienDto[] $biens
      * @param int $apiSource
@@ -67,8 +67,8 @@ class CimalpesPersist
 
 
             if ($local_bien !== false) {
-
                 $this->updateBien($bien, $local_bien["villa_id"]);
+
             } else {
                 $this->insererBien($bien, $apiSource);
             }
@@ -82,21 +82,22 @@ class CimalpesPersist
      */
     public function updateBien($bien, $localId)
     {
-        $descriptionQuery = "REPLACE INTO `description` (id_villa, description_bref, description_court, id_langue) values (:id_villa,:description_bref,:description_court,:id_langue)";
+
+        //update table villa
+
+        $villaQuery = "UPDATE villas SET nom = :nom_villa WHERE id = :local_id";
+        $sqlStatement = $this->db->prepare($villaQuery);
+        $sqlStatement->bindParam(":nom_villa",$bien->nom);
+        $sqlStatement->bindParam(":local_id",$localId);
+        $sqlStatement->execute();
+
         
-        foreach( $this->languges as $language):
-            if(!array_key_exists($language['lng_code'],$bien->descriptionBerf) && !array_key_exists($language['lng_code'],$bien->descriptifCourt))
-                continue;
-            print_r( $language);
-            $sqlStatement = $this->db->prepare($descriptionQuery);
-            $descriptif_bref = array_key_exists($language['lng_code'],$bien->descriptionBerf)?$bien->descriptionBerf[$language['lng_code']]:'';
-            $descriptif_court = array_key_exists($language['lng_code'],$bien->descriptifCourt)?$bien->descriptifCourt[$language['lng_code']]:'';
-            $sqlStatement->bindParam(":id_villa", $localId, PDO::PARAM_INT);
-            $sqlStatement->bindParam(":description_bref",$descriptif_bref, PDO::PARAM_STR);
-            $sqlStatement->bindParam(":description_court",  $descriptif_court, PDO::PARAM_STR);
-            $sqlStatement->bindParam(":id_langue", $language["lng_id"], PDO::PARAM_INT);
-            $sqlStatement->execute();
-        endforeach;
+       //inserer description : appeler function insertDescription
+       
+      $this->insererDetail($bien);
+       
+
+
     }
 
     /**
@@ -121,58 +122,79 @@ class CimalpesPersist
      */
     public function insertMatching($bien, $localId, $apiSource)
     {
-        $apiQuery = "INSERT INTO api_villas (villa_id,api_villa_id,api_source_id) values (:villa_id,:api_villa,:api_source_id)";
+        $apiQuery = "INSERT INTO api_villas (villa_id,api_villa_id,api_source_id) values (:api_villa,:villa_id,:api_source_id)";
         $query = $this->db->prepare($apiQuery);
-        $query->bindParam(":villa_id", $localId, PDO::PARAM_INT);
         $query->bindParam(":api_villa", $bien->id, PDO::PARAM_STR);
+        $query->bindParam(":villa_id", $localId, PDO::PARAM_INT);
         $query->bindParam(":api_source_id", $apiSource, PDO::PARAM_INT);
         $query->execute();
     }
 
-    public function insererBien($bien, $apiSource = 1)
+    public function insererBien($bien, $apiSource = 2)
     {
         try {
             $this->db->beginTransaction();
             $localId = $this->insertVilla($bien);
             $this->insertMatching($bien, $localId, $apiSource);
-            $this->updateBien($bien, $localId);
+            // $this->updateBien($bien, $localId);
             $this->db->commit();
         } catch (PDOException $ex) {
             echo "Stoped with exception ".$ex->getMessage()."\n";
             echo $ex->getTraceAsString()."\n";
             $this->db->rollBack();
         }
+
+        // inserer description
+
+         $this->insererDetail($bien,$localId);
+
+
     }
 
 
-/*
-    public function insererDetail($detail)
+
+    public function insererDetail($bien,$localId)
     {
 
-        $sql_query = "REPLACE INTO description (id_villa, description_bref,description_court, id_langue) values (:id_bien,:descriptif_court,:descriptif_bref,:id_langue)";
-        $query = $this->db->prepare($sql_query);
+        $descriptionQuery = "INSERT INTO description (id_villa, description_bref,description_court, id_langue) values (:id_villa,:description_bref,:descriptif_court,:id_langue)";
+        // $query = $this->db->prepare($sql_query);
 
 
+        // verifier si la descirption existe ou non ; si existe update sinon inserer
 
+        
+        foreach( $this->languges as $language):
+            if(!array_key_exists($language['lng_code'],$bien->descriptionBerf) && !array_key_exists($language['lng_code'],$bien->descriptifCourt))
+                continue;
+            print_r( $language);
+            $sqlStatement = $this->db->prepare($descriptionQuery);
+            $descriptif_bref = array_key_exists($language['lng_code'],$bien->descriptionBerf)?$bien->descriptionBerf[$language['lng_code']]:'';
+            $descriptif_court = array_key_exists($language['lng_code'],$bien->descriptifCourt)?$bien->descriptifCourt[$language['lng_code']]:'';
+            $sqlStatement->bindParam(":id_villa", $localId, PDO::PARAM_STR);
+            $sqlStatement->bindParam(":description_bref",$descriptif_bref, PDO::PARAM_STR);
+            $sqlStatement->bindParam(":description_court",$descriptif_court, PDO::PARAM_STR);
+            $sqlStatement->bindParam(":id_langue", $language["lng_id"], PDO::PARAM_INT);
+            $sqlStatement->execute();
+        endforeach;
 
         //insertion de la description en langue francaise
 
-        $query->bindParam(":id_bien", $detail['id_bien'], PDO::PARAM_INT);
-        $query->bindParam(":descriptif_court", $detail['descriptif_court'], PDO::PARAM_STR);
-        $query->bindParam(":descriptif_bref", $detail['descriptif_bref'], PDO::PARAM_STR);
-        $query->bindValue(":id_langue", self::REF_LANGUE_FR, PDO::PARAM_INT);
-        $query->execute();
+        // $query->bindParam(":id_bien", $detail['id_bien'], PDO::PARAM_INT);
+        // $query->bindParam(":descriptif_court", $detail['descriptif_court'], PDO::PARAM_STR);
+        // $query->bindParam(":descriptif_bref", $detail['descriptif_bref'], PDO::PARAM_STR);
+        // $query->bindValue(":id_langue", self::REF_LANGUE_FR, PDO::PARAM_INT);
+        // $query->execute();
 
-        //insertion de la description en langue anglaise
+        // //insertion de la description en langue anglaise
 
-        $query->bindParam(":id_bien", $detail['id_bien'], PDO::PARAM_INT);
-        $query->bindParam(":descriptif_court", $detail['descriptif_court_en'], PDO::PARAM_STR);
-        $query->bindParam(":descriptif_bref", $detail['descriptif_bref_en'], PDO::PARAM_STR);
-        $query->bindValue(":id_langue", self::REF_LANGUE_EN, PDO::PARAM_INT);
+        // $query->bindParam(":id_bien", $detail['id_bien'], PDO::PARAM_INT);
+        // $query->bindParam(":descriptif_court", $detail['descriptif_court_en'], PDO::PARAM_STR);
+        // $query->bindParam(":descriptif_bref", $detail['descriptif_bref_en'], PDO::PARAM_STR);
+        // $query->bindValue(":id_langue", self::REF_LANGUE_EN, PDO::PARAM_INT);
 
-        $query->execute();
+        // $query->execute();
     }
-*/
+
     public function checkApiVillas($idApi, $idSource)
     {
 

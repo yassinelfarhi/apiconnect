@@ -7,10 +7,12 @@ require_once __DIR__.'/../vendor/autoload.php';
 
 $flux = new CimalpesClient();
  //$details = $flux->getDetails(2130);
-$biens = array_slice($flux->getBiens(),0,1);
+$biens = array_slice($flux->getBiens(),0,10);
+
 $biens = array_map(function($bien) use($flux){
   return  $flux->getDetails($bien->id);
 },$biens);
+
 print_r($biens);
 
 
