@@ -9,6 +9,9 @@ class BienDto{
 
     public $id;
     public $nom;
+    public $villaSlug;
+    public $villaType;
+
     /**
      * @var array
      */
@@ -23,6 +26,9 @@ class BienDto{
         $that = new self();
         $that->id = $node->getElementsByTagName('id_bien')->item(0)->nodeValue; 
         $that->nom = $node->getElementsByTagName('nom_bien')->item(0)->nodeValue; 
+        $that->type = $node->getElementsByTagName('type_bien')->item(0)->nodeValue;
+        $that->address = $node->getElementsByTagName('nom_quartier')->item(0)->nodeValue; //
+        $that->slug = BienDto::intoSlug($that->nom); 
         return $that;
     }
 
@@ -45,11 +51,10 @@ class BienDto{
      
     }
 
-    // static function fromNodeDisponibilities($node){
-    //     $that = new self();
-        
-    //     $that->descriptif_bref = $node->getElementsByTagName('descriptif_bref')->item(0)->nodeValue; 
-    //     $that->descriptif_court = $node->getElementsByTagName('descriptif_court')->item(0)->nodeValue; 
-    //     return $that;
-    // }
+    public function intoSlug($text) {
+       return str_replace(" ","-" ,trim(strtolower($text)));
+    }
+     
+
+ 
 }

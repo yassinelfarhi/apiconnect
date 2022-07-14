@@ -24,6 +24,8 @@ class CimalpesPersist
     const REF_LANGUE_FR = 1;
     const REF_LANGUE_EN = 2;
 
+    public $api_source_id = 2;
+
     public function __construct()
     {
         try {
@@ -32,6 +34,8 @@ class CimalpesPersist
             $this->db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 
             $this->languges = $this->getLangugesCode();
+            $this->localTypes = $this->getVillasTypes();
+
         } catch (Exception $e) {
 
             $e->getMessage();
@@ -57,24 +61,42 @@ class CimalpesPersist
      */
     public function insertOrUpdate($biens, $apiSource = 2)
     {
-
-
-
-
+        // $checkType = $this->checkApiTypeVillas($biens->villaType);
+        
         foreach ($biens as $bien) {
+           
+             // vérifier si le type villa existe 
+             if ( array_search($bien->villaType,$this->localTypes) !== false ) {
+                // RECUPERER ID TYPE VILLA
+               // vérifier si un enregistrement api éxiste dans la table api_villas
+                $local_bien = $this->checkApiVillas($bien->id, $apiSource);
 
-            $local_bien = $this->checkApiVillas($bien->id, $apiSource);
-
-
-            if ($local_bien !== false) {
-                $this->updateBien($bien, $local_bien["villa_id"]);
+                if ($local_bien !== false) {
+                    $this->updateBien($bien, $local_bien["villa_id"],);
+                } else {
+                    $this->insertBien($bien, $apiSource);
+                }
+    
+                  $this->insertDetail($bien,$local_bien);
             } else {
-                $this->insertBien($bien, $apiSource);
+
+                $this->insertVillaType($apiSource = 2, $bien->villaType);
             }
-
-              $this->insertDetail();
-
         }
+    }
+
+    /**
+     * @param int $apiSource
+     * @param string $villaTypeApi
+     * @return void
+     */
+
+    public function insertVillaType($apiSource = 2,$villaTypeApi) {
+         $sqlQuery = "INSERT INTO `vn_api_villas_types` (api_source_id,villa_type_id, api_villas_type,disabled_at) values (:apiSource,:villaTypeApi) ";
+         $sqlStatement = $this->db->prepare($sqlQuery);
+         $sqlStatement->bindParam(":apiSource",$apiSource);
+         $sqlStatement->bindParam(":villaTypeApi",$villaTypeApi);
+         $sqlStatement->execute();
     }
 
     /**
@@ -87,7 +109,7 @@ class CimalpesPersist
 
         //update table villa
     
-        $villaQuery = "UPDATE villas SET nom = :nom_villa WHERE id = :local_id";
+        $villaQuery = "UPDATE `vn_villas` SET nom = :nom_villa WHERE id = :local_id";
         $sqlStatement = $this->db->prepare($villaQuery);
         $sqlStatement->bindParam(":nom_villa",$bien->nom);
         $sqlStatement->bindParam(":local_id",$localId);
@@ -104,13 +126,58 @@ class CimalpesPersist
 
     /**
      * @param BienDto $bien
+     * @param int $villaTypeId
      * @return int
      */
-    public function insertVilla($bien)
+
+     
+    public function insertVilla($bien,$villaTypeId)
     {
-        $villaQuery = "INSERT INTO villas (nom) values (:nom_villa)";
+        $villaQuery = "INSERT INTO `vn_villas` (nom) values (:nom_villa)";
+
+        $paramters = [  "villa_time" => time(),
+                        "manager_id" => "2 : test value", // table source
+                        "villa_private_name" => $bien->nom,
+                        "villa_public_name" => $bien->nom,
+                        "villa_slug" => $bien->villaSlug,
+                        "villa_type_id" => $villaTypeId,
+                        "villa_state_id" => "test state id", // 3 par default
+                        "currency_id" => "test currency id", // table source
+                        "villa_occupancy" => $bien->occupancy,
+                        "villa_occupancy_max" => $bien->occupancy,
+                        "villa_bedrooms" => $bien->bedrooms,
+                        "villa_baths" => $bien->baths,
+                        "zone_id" => "test value",  // vérifier station dans table  vn_api_zones
+                        "country_id" => "65",  
+                        "city_id" => "test value", // vérifier si nom de statio éxiste dans table vn_cities (matching automatique)
+                        "villa_zip" => $villa_zip, // VALEUr vide
+                        "villa_address" => $bien->address,  // nom_quartier
+                        "villa_latitude" => $bien->latitude, // bien->latitude
+                        "villa_longitude" => $bien->longitude, // bien
+                        "villa_calendar_code" => "test value", // generer un code alphanumerique unique de facon aleatoire 
+                        "villa_contract" => "test value",  // a récuperer de la table source
+                        "villa_tva" => "test value", // a récuperer de la table source
+                        "villa_commission" => "test", // a récuperer de la table source
+                        "villa_commission_tva" => "test", // a récuperer de la table source
+                        "villa_acompte1_rate" => "test", // a récuperer de la table source
+                        "villa_acompte2_days" => "", // a récuperer de la table source
+                        "villa_acompte3_rate" => "", // a récuperer de la table source
+                        "villa_acompte3_days" => "" // a récuperer de la table source
+                     ];
+
+        $VillaQuery = 'insert into vn_villas(villa_time,manager_id,villa_private_name,villa_public_name,villa_slug,villa_type_id,villa_state_id,currency_id,villa_occupancy,
+                       villa_occupancy_max,villa_bedrooms,villa_baths,zone_id,country_id,city_id,villa_zip,villa_address,villa_latitude,villa_longitude,villa_calendar_code,
+                       villa_contract,villa_tva,villa_commission,villa_commission_tva,villa_acompte1_rate,villa_acompte2_rate,villa_acompte2_days,villa_acompte3_rate,villa_acompte3_days)
+                       values(:villa_time,:manager_id,:villa_private_name,:villa_public_name,:villa_slug,:villa_type,:villa_state,:currency_id,:villa_occupancy_max,
+                       :villa_occupancy_max,:villa_bedrooms,:villa_baths,:zone_id,:country_id,:city_id,:villa_zip,:villa_address,:villa_latitude,:villa_longitude,:villa_calendar_code,:villa_contract,:villa_tva,:villa_commission,:villa_commission_tva,:villa_acompte1_rate,:villa_acompte2_rate,:villa_acompte2_days,:villa_acompte3_rate,:villa_acompte3_days)';
+
+
         $query = $this->db->prepare($villaQuery);
-        $query->bindParam(":nom_villa", $bien->nom, PDO::PARAM_STR);
+
+        foreach($paramters as $key => $param) {
+            $query->bindParam($key, $param);
+        }
+        
         $query->execute();
         return $this->db->lastInsertId();
     } 
@@ -230,8 +297,28 @@ class CimalpesPersist
         $sqlStatement->bindParam(":idApi", $idApi);
         $sqlStatement->bindParam(":idSource", $idSource);
         $sqlStatement->execute();
-
-
         return  $sqlStatement->fetch();
     }
+
+    public function checkApiTypeVillas($apiVillaType) {
+
+        $sqlQuery = "SELECT * FROM `vn_api_villas_type` WHERE api_villas_type = :api_villa_type"; 
+        $sqlStatement = $this->db->prepare($sqlQuery);
+        $sqlStatement->bindParam(":api_villa_type",$apiVillaType);
+        $sqlStatement->execute();
+        return $sqlStatement->fetch();
+    }
+
+
+    public function getVillasTypes(){
+        $sqlQuery = "SELECT villa_type_id, api_villas_type FROM vn_api_villas_types where api_source_id = :source_id";
+        $sqlStatement = $this->db->prepare($sqlQuery);
+        $sqlStatement->bindParam(":source_id",$this->api_source_id);
+        $sqlStatement->execute();
+        $villasTypes = $sqlStatement->fetchAll();
+        
+        return $villasTypes;
+    }
+
+
 }
