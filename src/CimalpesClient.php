@@ -46,6 +46,11 @@ class CimalpesClient
 	}
 
 
+
+
+
+
+
 	public function getDetails($id_bien)
 	{
 
