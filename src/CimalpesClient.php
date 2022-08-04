@@ -12,8 +12,9 @@
 namespace Villanovo\Cimalpes;
 
 use Villanovo\Cimalpes\Dtos\BienDto;
+use Villanovo\Cimalpes\Dtos\DetailDto;
 
-use Villanovo\Cimalpes\CimalpesPersist;
+
 
 class CimalpesClient
 {
@@ -21,6 +22,9 @@ class CimalpesClient
 
 	public $flux_xml;
 	public $biens;
+
+
+	public $table_biens;
 	public $details;
 	public $disponibilites;
 
@@ -33,40 +37,30 @@ class CimalpesClient
 
 	public function getBiens()
 	{
-
-
 		$this->flux_xml = new \DOMDocument();
 		$this->flux_xml->load(self::API_BIENS);
 		$this->biens = $this->flux_xml->getElementsByTagName("bien");
 		$table_biens = [];
 		foreach ($this->biens as $bien) {
-			array_push($table_biens, BienDto::fromNodeListing($bien));
+		// for($i=0; $i<20;$i++){
+			// $bien = $this->biens[$i];
+			$dtobien = BienDto::fromNodeListing($bien);
+			$dtobien = $this->getDetail($dtobien);
+			array_push($table_biens,$dtobien);
+		// }
 		}
-		return  $table_biens;
+		return $table_biens;
 	}
 
 
-
-
-
-
-
-	public function getDetails($id_bien)
+	public function getDetail($bien)
 	{
-
+        
 		$this->flux_xml = new \DOMDocument();
-		$this->flux_xml->load(self::API_DETAIL . $id_bien);
+		$this->flux_xml->load(self::API_DETAIL .$bien->id);
 
-		return BienDto::fromNodeDetail($this->flux_xml->getElementsByTagName('detail')->item(0));
-
-		// $this->details["id_bien"] = $id_bien;
-		// $this->details["descriptif_court"] = $this->flux_xml->getElementsByTagName("descriptif_court")->item(0)->nodeValue;
-		// $this->details["descriptif_bref"] = $this->flux_xml->getElementsByTagName("descriptif_bref")->item(0)->nodeValue;
-		// $this->details["descriptif_bref_en"] = $this->flux_xml->getElementsByTagName("descriptif_bref_en")->item(0)->nodeValue;
-		// $this->details["descriptif_court_en"] = $this->flux_xml->getElementsByTagName("descriptif_court_en")->item(0)->nodeValue;
-
-
-
+		return BienDto::fromNodeDetail($this->flux_xml->getElementsByTagName('detail')->item(0), $bien);
+       
 
 		//return $this->details;
 	}

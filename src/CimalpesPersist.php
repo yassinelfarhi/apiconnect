@@ -7,6 +7,7 @@ use PDO;
 use Exception;
 use PDOException;
 use Villanovo\Cimalpes\Dtos\BienDto;
+use Villanovo\Cimalpes\Dtos\DetailDto;
 
 class CimalpesPersist
 {
@@ -70,10 +71,14 @@ class CimalpesPersist
     {
         foreach ($biens as $bien) {
 
-
+            $typeBien = $bien->type;
+            $zone = $bien->station;
      // vérifier si le type et la zone existent 
-            $villaTypeId = $this->checkType($this->localTypes,$bien->type) ;
-            $zoneId = $this->checkZone($this->zones,$bien->station);
+            $villaTypeId = $this->checkType($this->localTypes,$typeBien) ;
+            $zoneId = $this->checkZone($this->zones,$zone);
+            
+            print_r($villaTypeId);
+            print_r($zoneId);
 
              if ( $villaTypeId > 0 && $zoneId > 0 ) {
 
@@ -104,9 +109,11 @@ class CimalpesPersist
 
                 
             } elseif ($villaTypeId < 0 ) {
-                $this->insertVillaType($bien->type);
-            } elseif ($zoneId < 0) {
-                $this->insertZone($bien->station);
+                $lastType = $this->insertVillaType($bien->type);
+                array_push($this->localTypes,$lastType);
+            } elseif ($zoneId < 0 ) {
+                $lastZone = $this->insertZone($bien->station);
+                array_push($this->zones,$lastZone);
             }
         }
     }
@@ -114,10 +121,11 @@ class CimalpesPersist
    
 
     public function insertVillaType($bienType) {
-
-         $sqlQuery = "INSERT INTO `vn_api_villas_types` (api_source_id,villa_type_id, api_villas_type,disabled_at) values (:apiSource,:villaTypeApi) ";
+         $initId = 0;
+         $sqlQuery = "INSERT INTO `vn_api_villas_types` (api_source_id,villa_type_id, api_villas_type) values (:apiSource,:villa_type_id,:villaTypeApi) ";
          $sqlStatement = $this->db->prepare($sqlQuery);
          $sqlStatement->bindParam(":apiSource",$this->api_source_id);
+         $sqlStatement->bindParam(":villa_type_id",$initId);
          $sqlStatement->bindParam(":villaTypeApi",$bienType);
          $sqlStatement->execute();
     }
@@ -282,30 +290,20 @@ class CimalpesPersist
     }
 
     
-    public function checkZone($localTypes,$bienType) {
-        $villaTypeId = -1 ;
-        array_walk($localTypes , function($localType,$index,$bienType){
-            if (in_array($bienType, $localType)) {
-              $villaTypeId = $localType["villa_type_id"];
-            }           
-        },$bienType);
 
-        return $villaTypeId ;
-     
+    
+    public function checkType($localTypes,$bienType) {
+        $typeIndex = array_search($bienType,array_column($localTypes,"api_villas_type"));
+         return ($typeIndex !== false) ?  $localTypes[$typeIndex]["villa_type_id"] : -1;
     }
 
 
 
-    public function checkType($localZones, $bienZone) {
-        $zoneId = -1 ;
-        array_walk($localZones , function($zone,$index,$bienZone){
-            if (in_array($bienZone, $zone)) {
-              $zoneId = $zone["zone_id"];
-            }         
-           },$bienZone);
+    public function checkZone($localZones, $bienZone) {
+         $zoneIndex = array_search($bienZone,array_column($localZones,"zone_name"));
+         return ($zoneIndex !== false) ? $localZones[$zoneIndex]["zone_id"] : -1;
+    }
 
-           return $zoneId;
-          }
 
     public function checkDescription($localId, $idLangue) {
          
@@ -403,6 +401,9 @@ class CimalpesPersist
 
         return $bien_params;
     }
-
+   
+    public function intoSlug($text) {
+        return str_replace(" ","-" ,trim(strtolower($text)));
+     }
 
 }
