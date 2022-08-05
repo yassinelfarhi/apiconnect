@@ -6,15 +6,21 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit2c359adf16d8aa8e565d76cf95829702
 {
+    public static $files = array (
+        '4762037ae18fdb2c39c3fc22c105828b' => __DIR__ . '/../..' . '/app/db.php',
+        '389cfa5d9967e088ce46d82dc388b795' => __DIR__ . '/../..' . '/app/photos.php',
+        'ffdfbce9dd3affb3761df175a5988908' => __DIR__ . '/../..' . '/app/includes/tools.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
         'V' => 
         array (
-            'Villanovo\\Cimalpes\\' => 19,
+            'Villanovo\\ThirdParties\\' => 23,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Villanovo\\Cimalpes\\' => 
+        'Villanovo\\ThirdParties\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),

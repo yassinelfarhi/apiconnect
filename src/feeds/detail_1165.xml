@@ -1,0 +1,2468 @@
+<message>
+<datetime>2022-07-26 10:45:05</datetime>
+<detail>
+<id_gastronomie>
+<![CDATA[ 3 ]]>
+</id_gastronomie>
+<gastronomie lang="fr">
+<![CDATA[ Demi-pension ]]>
+</gastronomie>
+<gastronomie lang="en">
+<![CDATA[ Half-board ]]>
+</gastronomie>
+<secteur lang="fr">
+<![CDATA[ 1850 ]]>
+</secteur>
+<secteur lang="en">
+<![CDATA[ 1850 ]]>
+</secteur>
+<node_horaires>
+<horaire>
+<type_personnel>
+<![CDATA[ Gastronomie ]]>
+</type_personnel>
+<type_personnel_en>
+<![CDATA[ Gastronomy ]]>
+</type_personnel_en>
+<personnel>
+<![CDATA[ Chef ]]>
+</personnel>
+<personnel_en>
+<![CDATA[ Chef ]]>
+</personnel_en>
+<service>
+<![CDATA[ Préparation des repas : Petit-déjeuner, déjeuner ou diner et goûter ]]>
+</service>
+<service_en>
+<![CDATA[ Meal service : Breakfast, lunch or dinner and tea-time ]]>
+</service_en>
+<heures_jour>14</heures_jour>
+</horaire>
+<horaire>
+<type_personnel>
+<![CDATA[ Gastronomie ]]>
+</type_personnel>
+<type_personnel_en>
+<![CDATA[ Gastronomy ]]>
+</type_personnel_en>
+<personnel>
+<![CDATA[ Butler ]]>
+</personnel>
+<personnel_en>
+<![CDATA[ Butler ]]>
+</personnel_en>
+<service>
+<![CDATA[ Service des repas ]]>
+</service>
+<service_en>
+<![CDATA[ Meal service ]]>
+</service_en>
+<heures_jour>14</heures_jour>
+</horaire>
+<horaire>
+<type_personnel>
+<![CDATA[ Transport ]]>
+</type_personnel>
+<type_personnel_en>
+<![CDATA[ Transportation ]]>
+</type_personnel_en>
+<personnel>
+<![CDATA[ Chauffeur ]]>
+</personnel>
+<personnel_en>
+<![CDATA[ Chauffeur ]]>
+</personnel_en>
+<service>
+<![CDATA[ Service de voiturier ]]>
+</service>
+<service_en>
+<![CDATA[ Chauffeur services ]]>
+</service_en>
+<heures_jour>12</heures_jour>
+</horaire>
+<horaire>
+<type_personnel>
+<![CDATA[ Gestion et entretien ]]>
+</type_personnel>
+<type_personnel_en>
+<![CDATA[ Management and maintenance ]]>
+</type_personnel_en>
+<personnel>
+<![CDATA[ Gouvernante ]]>
+</personnel>
+<personnel_en>
+<![CDATA[ Housekeeper ]]>
+</personnel_en>
+<service>
+<![CDATA[ Entretien et nettoyage quotidien (gouvernante) ]]>
+</service>
+<service_en>
+<![CDATA[ Daily maintenance and cleaning ]]>
+</service_en>
+<heures_jour>12</heures_jour>
+</horaire>
+</node_horaires>
+<acompte_montant>
+<![CDATA[ 25.00 ]]>
+</acompte_montant>
+<actif>
+<![CDATA[ oui ]]>
+</actif>
+<activer_location_saison>
+<![CDATA[ non ]]>
+</activer_location_saison>
+<activer_services_supplementaires>
+<![CDATA[ non ]]>
+</activer_services_supplementaires>
+<apporteur>
+<![CDATA[ ]]>
+</apporteur>
+<attente_arkiane>
+<![CDATA[ non ]]>
+</attente_arkiane>
+<avis_2>
+<![CDATA[ ]]>
+</avis_2>
+<avis_2_en>
+<![CDATA[ ]]>
+</avis_2_en>
+<cache_crm_seg_gamme>
+<![CDATA[ 12 ]]>
+</cache_crm_seg_gamme>
+<cache_duree_min>
+<![CDATA[ 7 ]]>
+</cache_duree_min>
+<cache_nb_point_gamme>
+<![CDATA[ 36 ]]>
+</cache_nb_point_gamme>
+<cache_prix_min>
+<![CDATA[ 77143 ]]>
+</cache_prix_min>
+<cache_taux_promo>
+<![CDATA[ 0.0000 ]]>
+</cache_taux_promo>
+<catalogue_saison>
+<![CDATA[ courant ]]>
+</catalogue_saison>
+<caution_encaissement>
+<![CDATA[ Encaissée ]]>
+</caution_encaissement>
+<caution_euro>
+<![CDATA[ 30000 ]]>
+</caution_euro>
+<centre_distance_m>
+<![CDATA[ 800 ]]>
+</centre_distance_m>
+<commission>
+<![CDATA[ ]]>
+</commission>
+<commission_to>
+<![CDATA[ ]]>
+</commission_to>
+<contrat_management>
+<![CDATA[ ]]>
+</contrat_management>
+<cotisation_contrat>
+<![CDATA[ 0.00 ]]>
+</cotisation_contrat>
+<count_generator_b2b>
+<![CDATA[ 272 ]]>
+</count_generator_b2b>
+<count_generator_b2c>
+<![CDATA[ 106 ]]>
+</count_generator_b2c>
+<criteres>
+<![CDATA[ ,8:16,9:19,10:22,11:24,12:27,13:28,14:31,15:36,16:40,18:47,19:50,20:54,21:56,23:59,24:61,26:66,27:68,28:,29:,31:,32:,34:,35:,36:,37:,38:,39:,40:,41:,42:,43:, ]]>
+</criteres>
+<date_actif>
+<![CDATA[ 0000-00-00 ]]>
+</date_actif>
+<date_creation>
+<![CDATA[ 2019-08-19 ]]>
+</date_creation>
+<date_inactif>
+<![CDATA[ 0000-00-00 ]]>
+</date_inactif>
+<descriptif_bref>
+<![CDATA[ Le Blanchot se situe dans la résidence privée de Bellecôte, qui est un secteur très recherché de Courchevel 1850. Ce chalet haut de gamme vous permettra de profiter du ski dans le domaine privilégié des Trois Vallées, le tout dans une ambiance de luxe exceptionnelle. Le centre et les pistes de Courchevel 1850 sont à proximité du chalet. ]]>
+</descriptif_bref>
+<descriptif_bref_en>
+<![CDATA[ Located in the exclusive Bellecôte residence, one of the best area of Courchevel, this amazing chalet lets you enjoy the slopes of the Trois Vallées in luxury. The chalet is close to the slopes and the center of Courchevel. ]]>
+</descriptif_bref_en>
+<descriptif_court>
+<![CDATA[ Offrez-vous un séjour unique et hors du temps en réservant ce bien et son service Excellence. Vous découvrirez les plaisirs dun séjour dexception avec des services hôteliers et gastronomiques dans lintimité de votre chalet. Léquipe dédiée tout au long de votre séjour prendra soin de vous et rendra vos vacances uniques et mémorables. Le chef à domicile saura ravir vos papilles et vous offrir des moments conviviaux et festifs ! ]]>
+</descriptif_court>
+<descriptif_court_en>
+<![CDATA[ Treat yourself to a unique and unforgettable stay by choosing a property with our Excellence service, offering luxury hotel-style services and catering in the privacy of your chalet. Our dedicated team will take care of you throughout your stay, whilst your private chef will create mouthwatering dishes to be enjoyed with family and friends. ]]>
+</descriptif_court_en>
+<ecole_ski_distance_m>
+<![CDATA[ 810 ]]>
+</ecole_ski_distance_m>
+<etages>
+<![CDATA[ ]]>
+</etages>
+<exclu>
+<![CDATA[ non ]]>
+</exclu>
+<fileorder>
+<![CDATA[ chalet-blanchot-courchevel-1850_08.jpg,chalet-blanchot-courchevel-1850_09.jpg,chalet-blanchot-courchevel-1850_16.jpg,chalet-blanchot-courchevel-1850_12.jpg,chalet-blanchot-courchevel-1850_11.jpg,chalet-blanchot-courchevel-1850_13.jpg,chalet-blanchot-courchevel-1850_14.jpg,chalet-blanchot-courchevel-1850_15.jpg,chalet-blanchot-courchevel-1850_19.jpg,chalet-blanchot-courchevel-1850_10.jpg,chalet-blanchot-courchevel-1850_17.jpg,chalet-blanchot-courchevel-1850_18.jpg,chalet-blanchot-courchevel-1850.jpg,chalet-blanchot-courchevel-1850_02.jpg,chalet-blanchot-courchevel-1850_03.jpg,chalet-blanchot-courchevel-1850_04.jpg,chalet-blanchot-courchevel-1850_06.jpg,chalet-blanchot-courchevel-1850_07.jpg,chalet-blanchot-courchevel-1850_05.jpg ]]>
+</fileorder>
+<google_minisite>
+<![CDATA[ ]]>
+</google_minisite>
+<id_bien>
+<![CDATA[ 1165 ]]>
+</id_bien>
+<bien lang="fr">
+<![CDATA[ Le Blanchot ]]>
+</bien>
+<bien lang="en">
+<![CDATA[ Le Blanchot ]]>
+</bien>
+<id_bien_service_niveau>
+<![CDATA[ 4 ]]>
+</id_bien_service_niveau>
+<bien_service_niveau lang="fr">
+<![CDATA[ Excellence (Demi-pension) ]]>
+</bien_service_niveau>
+<bien_service_niveau lang="en">
+<![CDATA[ Excellence (Half-board) ]]>
+</bien_service_niveau>
+<id_condition_annulation>
+<![CDATA[ 2 ]]>
+</id_condition_annulation>
+<condition_annulation lang="fr">
+<![CDATA[ ]]>
+</condition_annulation>
+<condition_annulation lang="en">
+<![CDATA[ ]]>
+</condition_annulation>
+<id_crm_proprietaire>
+<![CDATA[ 631 ]]>
+</id_crm_proprietaire>
+<crm_proprietaire lang="fr">
+<![CDATA[ ]]>
+</crm_proprietaire>
+<crm_proprietaire lang="en">
+<![CDATA[ ]]>
+</crm_proprietaire>
+<id_crm_seg_gamme>
+<![CDATA[ ]]>
+</id_crm_seg_gamme>
+<crm_seg_gamme lang="fr">
+<![CDATA[ ]]>
+</crm_seg_gamme>
+<crm_seg_gamme lang="en">
+<![CDATA[ ]]>
+</crm_seg_gamme>
+<id_quartier>
+<![CDATA[ 25 ]]>
+</id_quartier>
+<quartier lang="fr">
+<![CDATA[ Bellecôte ]]>
+</quartier>
+<quartier lang="en">
+<![CDATA[ Bellecôte ]]>
+</quartier>
+<id_residence>
+<![CDATA[ ]]>
+</id_residence>
+<residence lang="fr">
+<![CDATA[ ]]>
+</residence>
+<residence lang="en">
+<![CDATA[ ]]>
+</residence>
+<id_station>
+<![CDATA[ 1 ]]>
+</id_station>
+<station lang="fr">
+<![CDATA[ Courchevel ]]>
+</station>
+<station lang="en">
+<![CDATA[ Courchevel ]]>
+</station>
+<file_logo_web>
+<![CDATA[ https://admin.cimalpes.com/cache/55/photos_station_1_file_logo_web.png ]]>
+</file_logo_web>
+<introduction>
+<![CDATA[ Situé dans la résidence de Bellecôte, le chalet Blanchot possède un accès aux pistes par la résidence. ]]>
+</introduction>
+<introduction_en>
+<![CDATA[ Located in Bellecôte residence, chalet Blanchot have an access to the slopes by the residence. ]]>
+</introduction_en>
+<introduction_equipements>
+<![CDATA[ ]]>
+</introduction_equipements>
+<introduction_prestations>
+<![CDATA[ ]]>
+</introduction_prestations>
+<introduction_prestations_en>
+<![CDATA[ ]]>
+</introduction_prestations_en>
+<jour_sem>
+<![CDATA[ dim ]]>
+</jour_sem>
+<last_mod_user>
+<![CDATA[ elsa.falcony@cimalpes.com ]]>
+</last_mod_user>
+<latitude>
+<![CDATA[ 45.410726 ]]>
+</latitude>
+<node_bien_service_inclus>
+<bien_service_inclus id="12">
+<libelle lang="fr">
+<![CDATA[ ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ ]]>
+</libelle>
+</bien_service_inclus>
+<bien_service_inclus id="22">
+<libelle lang="fr">
+<![CDATA[ ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ ]]>
+</libelle>
+</bien_service_inclus>
+<bien_service_inclus id="24">
+<libelle lang="fr">
+<![CDATA[ ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ ]]>
+</libelle>
+</bien_service_inclus>
+<bien_service_inclus id="3">
+<libelle lang="fr">
+<![CDATA[ ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ ]]>
+</libelle>
+</bien_service_inclus>
+<bien_service_inclus id="40">
+<libelle lang="fr">
+<![CDATA[ ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ ]]>
+</libelle>
+</bien_service_inclus>
+</node_bien_service_inclus>
+<node_bien_service_personnel>
+<bien_service_personnel id="10">
+<libelle lang="fr">
+<![CDATA[ Entretien et nettoyage quotidien (gouvernante) ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Daily maintenance and cleaning ]]>
+</libelle>
+</bien_service_personnel>
+<bien_service_personnel id="13">
+<libelle lang="fr">
+<![CDATA[ Coiffure ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Hairdressing ]]>
+</libelle>
+</bien_service_personnel>
+<bien_service_personnel id="14">
+<libelle lang="fr">
+<![CDATA[ Service des repas ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Meal service ]]>
+</libelle>
+</bien_service_personnel>
+<bien_service_personnel id="16">
+<libelle lang="fr">
+<![CDATA[ Préparation et service des repas : Petit-déjeuner, déjeuner ou diner et goûter ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Meal service and preparation : Breakfast, lunch or dinner and tea-time ]]>
+</libelle>
+</bien_service_personnel>
+<bien_service_personnel id="17">
+<libelle lang="fr">
+<![CDATA[ Entretien et nettoyage quotidien (gouvernantes) ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Daily maintenance and cleaning ]]>
+</libelle>
+</bien_service_personnel>
+<bien_service_personnel id="18">
+<libelle lang="fr">
+<![CDATA[ Gestion du chalet, Organisation du séjour et conciergerie ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Chalet management, stay organisation and conciergerie ]]>
+</libelle>
+</bien_service_personnel>
+<bien_service_personnel id="2">
+<libelle lang="fr">
+<![CDATA[ Préparation des repas : Petit-déjeuner, déjeuner ou diner et goûter ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Meal service : Breakfast, lunch or dinner and tea-time ]]>
+</libelle>
+</bien_service_personnel>
+<bien_service_personnel id="4">
+<libelle lang="fr">
+<![CDATA[ Massage ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Massage ]]>
+</libelle>
+</bien_service_personnel>
+<bien_service_personnel id="5">
+<libelle lang="fr">
+<![CDATA[ Épilation ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Waxing ]]>
+</libelle>
+</bien_service_personnel>
+<bien_service_personnel id="6">
+<libelle lang="fr">
+<![CDATA[ Onglerie ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Nails ]]>
+</libelle>
+</bien_service_personnel>
+<bien_service_personnel id="7">
+<libelle lang="fr">
+<![CDATA[ Service de navette (départ et retour des pistes) ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Shuttle service (to and from the slopes) ]]>
+</libelle>
+</bien_service_personnel>
+<bien_service_personnel id="9">
+<libelle lang="fr">
+<![CDATA[ Service de voiturier ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Chauffeur services ]]>
+</libelle>
+</bien_service_personnel>
+</node_bien_service_personnel>
+<node_equipement_demande> </node_equipement_demande>
+<node_equipement_electromenager>
+<equipement_electromenager id="10">
+<libelle lang="fr">
+<![CDATA[ Micro-onde ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Microwave ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="11">
+<libelle lang="fr">
+<![CDATA[ Combinaison four & micro-onde ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Microwave & oven combination ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="12">
+<libelle lang="fr">
+<![CDATA[ Réfrigérateur ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Fridge ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="13">
+<libelle lang="fr">
+<![CDATA[ Congélateur ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Freezer ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="15">
+<libelle lang="fr">
+<![CDATA[ Appareil à raclette ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Raclette machine ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="16">
+<libelle lang="fr">
+<![CDATA[ Appareil à fondue ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Fondue appliance ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="17">
+<libelle lang="fr">
+<![CDATA[ Aspirateur ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Vaccum ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="18">
+<libelle lang="fr">
+<![CDATA[ Table à repasser ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Ironing board ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="2">
+<libelle lang="fr">
+<![CDATA[ Cafetière Nespresso ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Nespresso coffee machine ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="20">
+<libelle lang="fr">
+<![CDATA[ Fer à repasser ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Iron ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="26">
+<libelle lang="fr">
+<![CDATA[ Appareil à pierrade ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Device with grill-stone ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="28">
+<libelle lang="fr">
+<![CDATA[ Hotte de cuisine ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Kitchen exhaust hood ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="3">
+<libelle lang="fr">
+<![CDATA[ Grille pain ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Toaster ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="33">
+<libelle lang="fr">
+<![CDATA[ Cave à vin réfrigérée ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Refrigerate wine cellar ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="5">
+<libelle lang="fr">
+<![CDATA[ Plaques de cuisson à induction ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Induction hobs ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="6">
+<libelle lang="fr">
+<![CDATA[ Lave-vaisselle ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Dishwasher ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="7">
+<libelle lang="fr">
+<![CDATA[ Lave-linge ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Washing machine ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="8">
+<libelle lang="fr">
+<![CDATA[ Sèche-linge ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Dryer ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="9">
+<libelle lang="fr">
+<![CDATA[ Four ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Oven ]]>
+</libelle>
+</equipement_electromenager>
+</node_equipement_electromenager>
+<node_equipement_general>
+<equipement_general id="1">
+<libelle lang="fr">
+<![CDATA[ Ascenseur ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Elevator ]]>
+</libelle>
+</equipement_general>
+<equipement_general id="10">
+<libelle lang="fr">
+<![CDATA[ Garage ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Garage ]]>
+</libelle>
+</equipement_general>
+<equipement_general id="11">
+<libelle lang="fr">
+<![CDATA[ Cheminée à bois ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Wood fireplace ]]>
+</libelle>
+</equipement_general>
+<equipement_general id="17">
+<libelle lang="fr">
+<![CDATA[ Place de parking ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Parking space ]]>
+</libelle>
+</equipement_general>
+<equipement_general id="18">
+<libelle lang="fr">
+<![CDATA[ Jeux de société ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Board games ]]>
+</libelle>
+</equipement_general>
+<equipement_general id="2">
+<libelle lang="fr">
+<![CDATA[ Chauffe-chaussures ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Boots heater ]]>
+</libelle>
+</equipement_general>
+<equipement_general id="3">
+<libelle lang="fr">
+<![CDATA[ Coffre-fort ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Safe ]]>
+</libelle>
+</equipement_general>
+<equipement_general id="40">
+<libelle lang="fr">
+<![CDATA[ Mobilier d'extérieur ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Outdoor furniture ]]>
+</libelle>
+</equipement_general>
+<equipement_general id="5">
+<libelle lang="fr">
+<![CDATA[ Lit bébé ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Baby cot ]]>
+</libelle>
+</equipement_general>
+<equipement_general id="6">
+<libelle lang="fr">
+<![CDATA[ Chaise-haute ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ High chair ]]>
+</libelle>
+</equipement_general>
+<equipement_general id="7">
+<libelle lang="fr">
+<![CDATA[ Baignoire bébé ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Baby bath ]]>
+</libelle>
+</equipement_general>
+</node_equipement_general>
+<node_equipement_multimedia> </node_equipement_multimedia>
+<node_exposition>
+<exposition id="2">
+<libelle lang="fr">
+<![CDATA[ Sud ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ South ]]>
+</libelle>
+</exposition>
+<exposition id="3">
+<libelle lang="fr">
+<![CDATA[ Est ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ East ]]>
+</libelle>
+</exposition>
+<exposition id="4">
+<libelle lang="fr">
+<![CDATA[ Ouest ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ West ]]>
+</libelle>
+</exposition>
+</node_exposition>
+<node_frais_supplementaires> </node_frais_supplementaires>
+<node_services_inclus>
+<services_inclus id="10">
+<service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Accueil ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Welcome ]]>
+</libelle>
+</service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Fleurs ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Flowers ]]>
+</libelle>
+</services_inclus>
+<services_inclus id="100">
+<service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Accueil ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Welcome ]]>
+</libelle>
+</service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Champagne ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Champagne ]]>
+</libelle>
+</services_inclus>
+<services_inclus id="22">
+<service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Ménage & Linge ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Housekeeping & Linens ]]>
+</libelle>
+</service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Linge (draps et serviettes) ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Linens (towels and sheets) ]]>
+</libelle>
+</services_inclus>
+<services_inclus id="24">
+<service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Ménage & Linge ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Housekeeping & Linens ]]>
+</libelle>
+</service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Lits faits à l'arrivée ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Beds made before arrival ]]>
+</libelle>
+</services_inclus>
+<services_inclus id="26">
+<service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Accueil ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Welcome ]]>
+</libelle>
+</service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Panier de bienvenue ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Welcome basket ]]>
+</libelle>
+</services_inclus>
+<services_inclus id="3">
+<service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Accueil ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Welcome ]]>
+</libelle>
+</service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Accueil à la propriété ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Reception at the property ]]>
+</libelle>
+</services_inclus>
+<services_inclus id="40">
+<service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Ménage & Linge ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Housekeeping & Linens ]]>
+</libelle>
+</service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Changement(s) de linge (draps et serviettes) durant le séjour ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Towels and linens change(s) (sheets and towels) during the stay ]]>
+</libelle>
+</services_inclus>
+<services_inclus id="9">
+<service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Ménage & Linge ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Housekeeping & Linens ]]>
+</libelle>
+</service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Chaussons ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Slippers ]]>
+</libelle>
+</services_inclus>
+</node_services_inclus>
+<node_services_inclus_hiver> </node_services_inclus_hiver>
+<node_services_personnel_hiver> </node_services_personnel_hiver>
+<node_situation> </node_situation>
+<node_style>
+<style id="1">
+<libelle lang="fr">
+<![CDATA[ Les Plus Chic ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Alpine Chic ]]>
+</libelle>
+</style>
+<style id="3">
+<libelle lang="fr">
+<![CDATA[ Les Familles ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Family Time ]]>
+</libelle>
+</style>
+<style id="4">
+<libelle lang="fr">
+<![CDATA[ Les Passionnés de Ski ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Ski Passion ]]>
+</libelle>
+</style>
+<style id="5">
+<libelle lang="fr">
+<![CDATA[ Les Bien-Être ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Well-Being ]]>
+</libelle>
+</style>
+</node_style>
+<longitude>
+<![CDATA[ 6.637422 ]]>
+</longitude>
+<lot_ref_arkiane>
+<![CDATA[ BLANCH18 ]]>
+</lot_ref_arkiane>
+<mandat_performance>
+<![CDATA[ non ]]>
+</mandat_performance>
+<nb_adultes>
+<![CDATA[ 12 ]]>
+</nb_adultes>
+<nb_enfants>
+<![CDATA[ 0 ]]>
+</nb_enfants>
+<nb_pieces>
+<![CDATA[ 0 ]]>
+</nb_pieces>
+<nom_bien>
+<![CDATA[ Le Blanchot ]]>
+</nom_bien>
+<nom_bien_en>
+<![CDATA[ Le Blanchot ]]>
+</nom_bien_en>
+<nom_bien_service_interne>
+<![CDATA[ 4. Excellence ]]>
+</nom_bien_service_interne>
+<nom_bien_service_niveau>
+<![CDATA[ Excellence (Demi-pension) ]]>
+</nom_bien_service_niveau>
+<nom_bien_service_niveau_en>
+<![CDATA[ Excellence (Half-board) ]]>
+</nom_bien_service_niveau_en>
+<nom_niveau_extranet>
+<![CDATA[ Excellence (Demi-pension) ]]>
+</nom_niveau_extranet>
+<nom_niveau_extranet_en>
+<![CDATA[ Excellence (Half-board) ]]>
+</nom_niveau_extranet_en>
+<nom_piste>
+<![CDATA[ BELLECÖTE ]]>
+</nom_piste>
+<nom_residence>
+<![CDATA[ ]]>
+</nom_residence>
+<nom_residence_en>
+<![CDATA[ ]]>
+</nom_residence_en>
+<nom_telesiege>
+<![CDATA[ VERDONS, JARDIN ALPIN, LOZE ]]>
+</nom_telesiege>
+<nombre_cabines>
+<![CDATA[ 0 ]]>
+</nombre_cabines>
+<nombre_chambres>
+<![CDATA[ 6 ]]>
+</nombre_chambres>
+<notif_to>
+<![CDATA[ 0 ]]>
+</notif_to>
+<old_ref_arkiane>
+<![CDATA[ ]]>
+</old_ref_arkiane>
+<on_request>
+<![CDATA[ oui ]]>
+</on_request>
+<ordre>
+<![CDATA[ 4 ]]>
+</ordre>
+<ouverture_to>
+<![CDATA[ Les deux ]]>
+</ouverture_to>
+<panorama>
+<![CDATA[ oui ]]>
+</panorama>
+<photos_contractuelles>
+<![CDATA[ ]]>
+</photos_contractuelles>
+<piste_distance_m>
+<![CDATA[ 50 ]]>
+</piste_distance_m>
+<poids_date>
+<![CDATA[ 50 ]]>
+</poids_date>
+<poids_fevrier>
+<![CDATA[ 0 ]]>
+</poids_fevrier>
+<poids_manuel>
+<![CDATA[ 0 ]]>
+</poids_manuel>
+<poids_noel>
+<![CDATA[ 10 ]]>
+</poids_noel>
+<poids_prix>
+<![CDATA[ 0 ]]>
+</poids_prix>
+<poids_total>
+<![CDATA[ 20 ]]>
+</poids_total>
+<publier_tarifs>
+<![CDATA[ oui ]]>
+</publier_tarifs>
+<saison_commission>
+<![CDATA[ 0.00 ]]>
+</saison_commission>
+<saison_debut>
+<![CDATA[ 0000-00-00 ]]>
+</saison_debut>
+<saison_fin>
+<![CDATA[ 0000-00-00 ]]>
+</saison_fin>
+<saison_prix>
+<![CDATA[ 0.00 ]]>
+</saison_prix>
+<solde_delai>
+<![CDATA[ 0 ]]>
+</solde_delai>
+<surface>
+<![CDATA[ 536 ]]>
+</surface>
+<taux_commission>
+<![CDATA[ 10 ]]>
+</taux_commission>
+<taux_commission2>
+<![CDATA[ ]]>
+</taux_commission2>
+<telesiege_distance_m>
+<![CDATA[ 800 ]]>
+</telesiege_distance_m>
+<type_bien>
+<![CDATA[ chalet ]]>
+</type_bien>
+<type_conciergerie>
+<![CDATA[ ]]>
+</type_conciergerie>
+<url_googlesat>
+<![CDATA[ https://www.google.com/maps/@45.4107885,6.6378402,3a,75y,257.78h,90t/data=!3m6!1e1!3m4!1sd5E1Qxn-VGz6py0l9brSBw!2e0!7i13312!8i6656?hl=fr ]]>
+</url_googlesat>
+<url_visite>
+<![CDATA[ ]]>
+</url_visite>
+<v2_datePresse1>
+<![CDATA[ ]]>
+</v2_datePresse1>
+<v2_datePresse2>
+<![CDATA[ ]]>
+</v2_datePresse2>
+<v2_datePresse3>
+<![CDATA[ ]]>
+</v2_datePresse3>
+<v2_datePresse4>
+<![CDATA[ ]]>
+</v2_datePresse4>
+<v2_datePresse5>
+<![CDATA[ ]]>
+</v2_datePresse5>
+<v2_fileorder>
+<![CDATA[ ]]>
+</v2_fileorder>
+<v2_nomPresse1>
+<![CDATA[ ]]>
+</v2_nomPresse1>
+<v2_nomPresse2>
+<![CDATA[ ]]>
+</v2_nomPresse2>
+<v2_nomPresse3>
+<![CDATA[ ]]>
+</v2_nomPresse3>
+<v2_nomPresse4>
+<![CDATA[ ]]>
+</v2_nomPresse4>
+<v2_nomPresse5>
+<![CDATA[ ]]>
+</v2_nomPresse5>
+<v2_photo1>
+<![CDATA[ ]]>
+</v2_photo1>
+<v2_photo10_presse5>
+<![CDATA[ ]]>
+</v2_photo10_presse5>
+<v2_photo4_brochure>
+<![CDATA[ ]]>
+</v2_photo4_brochure>
+<v2_photo5>
+<![CDATA[ ]]>
+</v2_photo5>
+<v2_photo6_presse1>
+<![CDATA[ ]]>
+</v2_photo6_presse1>
+<v2_photo7_presse2>
+<![CDATA[ ]]>
+</v2_photo7_presse2>
+<v2_photo8_presse3>
+<![CDATA[ ]]>
+</v2_photo8_presse3>
+<v2_photo9_presse4>
+<![CDATA[ ]]>
+</v2_photo9_presse4>
+<v2_video_to>
+<![CDATA[ ]]>
+</v2_video_to>
+<wifi>
+<![CDATA[ oui ]]>
+</wifi>
+<node_etage>
+<etage id="2058">
+<v2_photo5_etage>
+<![CDATA[ ]]>
+</v2_photo5_etage>
+<v2_photo3_etage>
+<![CDATA[ ]]>
+</v2_photo3_etage>
+<alt_el1_en>
+<![CDATA[ ]]>
+</alt_el1_en>
+<nb_wc>1</nb_wc>
+<v2_planBrochure_etage>
+<![CDATA[ ]]>
+</v2_planBrochure_etage>
+<alt_el1>
+<![CDATA[ ]]>
+</alt_el1>
+<nom_bien_etage_en>
+<![CDATA[ ]]>
+</nom_bien_etage_en>
+<nom_bien_etage>
+<![CDATA[ SPA ]]>
+</nom_bien_etage>
+<node_piece_vie> </node_piece_vie>
+<intro_autre_espace_en>
+<![CDATA[ ]]>
+</intro_autre_espace_en>
+<intro_piece_vie_en>
+<![CDATA[ ]]>
+</intro_piece_vie_en>
+<alt_el2>
+<![CDATA[ ]]>
+</alt_el2>
+<node_espace_loisir>
+<espace_loisir id="19">
+<libelle lang="fr">
+<![CDATA[ Douche italienne ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Italian style shower ]]>
+</libelle>
+</espace_loisir>
+<espace_loisir id="30">
+<libelle lang="fr">
+<![CDATA[ Espace bien-être ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Wellness area ]]>
+</libelle>
+</espace_loisir>
+<espace_loisir id="4">
+<libelle lang="fr">
+<![CDATA[ Hammam ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Hammam ]]>
+</libelle>
+</espace_loisir>
+<espace_loisir id="3">
+<libelle lang="fr">
+<![CDATA[ Jacuzzi intérieur ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Indoor jacuzzi ]]>
+</libelle>
+</espace_loisir>
+<espace_loisir id="1">
+<libelle lang="fr">
+<![CDATA[ Piscine ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Swimming pool ]]>
+</libelle>
+</espace_loisir>
+<espace_loisir id="8">
+<libelle lang="fr">
+<![CDATA[ Salle de massage ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Massage room ]]>
+</libelle>
+</espace_loisir>
+</node_espace_loisir>
+<intro_chambres_en>
+<![CDATA[ ]]>
+</intro_chambres_en>
+<intro_chambres>
+<![CDATA[ ]]>
+</intro_chambres>
+<intro_piece_vie>
+<![CDATA[ ]]>
+</intro_piece_vie>
+<node_salle_gym> </node_salle_gym>
+<intro_autre_espace>
+<![CDATA[ ]]>
+</intro_autre_espace>
+<intro_piece_loisirs>
+<![CDATA[ ]]>
+</intro_piece_loisirs>
+<alt_el3_en>
+<![CDATA[ ]]>
+</alt_el3_en>
+<v2_photo1_etage>
+<![CDATA[ ]]>
+</v2_photo1_etage>
+<v2_photo2_etage>
+<![CDATA[ ]]>
+</v2_photo2_etage>
+<intro_piece_loisirs_en>
+<![CDATA[ ]]>
+</intro_piece_loisirs_en>
+<alt_el3>
+<![CDATA[ ]]>
+</alt_el3>
+<node_autre_espace>
+<autre_espace id="4">
+<libelle lang="fr">
+<![CDATA[ Buanderie ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Laundry room ]]>
+</libelle>
+</autre_espace>
+</node_autre_espace>
+<ordre>1</ordre>
+<v2_photo4_etage>
+<![CDATA[ ]]>
+</v2_photo4_etage>
+<alt_el2_en>
+<![CDATA[ ]]>
+</alt_el2_en>
+<node_chambre> </node_chambre>
+<node_sdb> </node_sdb>
+</etage>
+<etage id="2057">
+<intro_autre_espace_en>
+<![CDATA[ ]]>
+</intro_autre_espace_en>
+<node_piece_vie> </node_piece_vie>
+<nom_bien_etage>
+<![CDATA[ Entrée avec garage ]]>
+</nom_bien_etage>
+<node_espace_loisir>
+<espace_loisir id="9">
+<libelle lang="fr">
+<![CDATA[ Salle de cinéma ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Cinema room ]]>
+</libelle>
+</espace_loisir>
+<espace_loisir id="6">
+<libelle lang="fr">
+<![CDATA[ Salle de sport ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Fitness room ]]>
+</libelle>
+</espace_loisir>
+</node_espace_loisir>
+<intro_chambres_en>
+<![CDATA[ ]]>
+</intro_chambres_en>
+<intro_chambres>
+<![CDATA[ ]]>
+</intro_chambres>
+<alt_el2>
+<![CDATA[ ]]>
+</alt_el2>
+<intro_piece_vie_en>
+<![CDATA[ ]]>
+</intro_piece_vie_en>
+<v2_planBrochure_etage>
+<![CDATA[ ]]>
+</v2_planBrochure_etage>
+<alt_el1_en>
+<![CDATA[ ]]>
+</alt_el1_en>
+<nb_wc>1</nb_wc>
+<v2_photo3_etage>
+<![CDATA[ ]]>
+</v2_photo3_etage>
+<v2_photo5_etage>
+<![CDATA[ ]]>
+</v2_photo5_etage>
+<nom_bien_etage_en>
+<![CDATA[ ]]>
+</nom_bien_etage_en>
+<alt_el1>
+<![CDATA[ ]]>
+</alt_el1>
+<v2_photo2_etage>
+<![CDATA[ ]]>
+</v2_photo2_etage>
+<alt_el3_en>
+<![CDATA[ ]]>
+</alt_el3_en>
+<v2_photo1_etage>
+<![CDATA[ ]]>
+</v2_photo1_etage>
+<v2_photo4_etage>
+<![CDATA[ ]]>
+</v2_photo4_etage>
+<alt_el2_en>
+<![CDATA[ ]]>
+</alt_el2_en>
+<ordre>2</ordre>
+<node_autre_espace>
+<autre_espace id="6">
+<libelle lang="fr">
+<![CDATA[ Cave à vin ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Wine cellar ]]>
+</libelle>
+</autre_espace>
+<autre_espace id="5">
+<libelle lang="fr">
+<![CDATA[ Entrée ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Lobby ]]>
+</libelle>
+</autre_espace>
+<autre_espace id="2">
+<libelle lang="fr">
+<![CDATA[ Garage ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Garage ]]>
+</libelle>
+</autre_espace>
+<autre_espace id="3">
+<libelle lang="fr">
+<![CDATA[ Ski-room ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Ski room ]]>
+</libelle>
+</autre_espace>
+</node_autre_espace>
+<alt_el3>
+<![CDATA[ ]]>
+</alt_el3>
+<intro_piece_loisirs_en>
+<![CDATA[ ]]>
+</intro_piece_loisirs_en>
+<intro_piece_vie>
+<![CDATA[ ]]>
+</intro_piece_vie>
+<intro_piece_loisirs>
+<![CDATA[ ]]>
+</intro_piece_loisirs>
+<intro_autre_espace>
+<![CDATA[ ]]>
+</intro_autre_espace>
+<node_salle_gym>
+<salle_gym id="2">
+<libelle lang="fr">
+<![CDATA[ Haltères ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Dumbbells ]]>
+</libelle>
+</salle_gym>
+<salle_gym id="4">
+<libelle lang="fr">
+<![CDATA[ Tapis de course ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Running machine ]]>
+</libelle>
+</salle_gym>
+<salle_gym id="3">
+<libelle lang="fr">
+<![CDATA[ Vélo ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Exercise bike ]]>
+</libelle>
+</salle_gym>
+<salle_gym id="5">
+<libelle lang="fr">
+<![CDATA[ Vélo elliptique ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Crosstrainer ]]>
+</libelle>
+</salle_gym>
+</node_salle_gym>
+<node_chambre> </node_chambre>
+<node_sdb> </node_sdb>
+</etage>
+<etage id="2056">
+<alt_el3>
+<![CDATA[ ]]>
+</alt_el3>
+<intro_piece_loisirs_en>
+<![CDATA[ ]]>
+</intro_piece_loisirs_en>
+<ordre>3</ordre>
+<alt_el2_en>
+<![CDATA[ ]]>
+</alt_el2_en>
+<v2_photo4_etage>
+<![CDATA[ ]]>
+</v2_photo4_etage>
+<node_autre_espace> </node_autre_espace>
+<v2_photo1_etage>
+<![CDATA[ ]]>
+</v2_photo1_etage>
+<alt_el3_en>
+<![CDATA[ ]]>
+</alt_el3_en>
+<v2_photo2_etage>
+<![CDATA[ ]]>
+</v2_photo2_etage>
+<intro_autre_espace>
+<![CDATA[ ]]>
+</intro_autre_espace>
+<node_salle_gym> </node_salle_gym>
+<intro_piece_loisirs>
+<![CDATA[ ]]>
+</intro_piece_loisirs>
+<intro_piece_vie>
+<![CDATA[ ]]>
+</intro_piece_vie>
+<intro_piece_vie_en>
+<![CDATA[ ]]>
+</intro_piece_vie_en>
+<alt_el2>
+<![CDATA[ ]]>
+</alt_el2>
+<node_espace_loisir> </node_espace_loisir>
+<intro_chambres>
+<![CDATA[ ]]>
+</intro_chambres>
+<intro_chambres_en>
+<![CDATA[ ]]>
+</intro_chambres_en>
+<nom_bien_etage>
+<![CDATA[ Chambres ]]>
+</nom_bien_etage>
+<intro_autre_espace_en>
+<![CDATA[ ]]>
+</intro_autre_espace_en>
+<node_piece_vie> </node_piece_vie>
+<alt_el1>
+<![CDATA[ ]]>
+</alt_el1>
+<nom_bien_etage_en>
+<![CDATA[ ]]>
+</nom_bien_etage_en>
+<v2_photo3_etage>
+<![CDATA[ ]]>
+</v2_photo3_etage>
+<v2_photo5_etage>
+<![CDATA[ ]]>
+</v2_photo5_etage>
+<v2_planBrochure_etage>
+<![CDATA[ ]]>
+</v2_planBrochure_etage>
+<alt_el1_en>
+<![CDATA[ ]]>
+</alt_el1_en>
+<nb_wc>0</nb_wc>
+<node_chambre>
+<chambre id="3194">
+<localid>1</localid>
+<libelle lang="fr">
+<![CDATA[ Chambre de Maître ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Master bedroom ]]>
+</libelle>
+<intro_chambre lang="fr">
+<![CDATA[ ]]>
+</intro_chambre>
+<intro_chambre lang="en">
+<![CDATA[ ]]>
+</intro_chambre>
+<node_equipement_chambre>
+<equipement_chambre id="16">
+<libelle lang="fr">
+<![CDATA[ Bureau ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Office ]]>
+</libelle>
+</equipement_chambre>
+<equipement_chambre id="13">
+<libelle lang="fr">
+<![CDATA[ Coffre-fort ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Safe ]]>
+</libelle>
+</equipement_chambre>
+<equipement_chambre id="1">
+<libelle lang="fr">
+<![CDATA[ Commode ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Chest of drawers ]]>
+</libelle>
+</equipement_chambre>
+<equipement_chambre id="2">
+<libelle lang="fr">
+<![CDATA[ Placard ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Wardrobe ]]>
+</libelle>
+</equipement_chambre>
+<equipement_chambre id="12">
+<libelle lang="fr">
+<![CDATA[ TV ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ TV ]]>
+</libelle>
+</equipement_chambre>
+</node_equipement_chambre>
+<node_lits>
+<lit id="3343">
+<quantite_lit>1</quantite_lit>
+<longueur>180</longueur>
+<largeur>200</largeur>
+<libelle lang="fr">
+<![CDATA[ Lit double ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Double bed ]]>
+</libelle>
+</lit>
+</node_lits>
+<node_sdb>
+<sdb id="2813">
+<node_equipement_sdb>
+<equipement_sdb id="1">
+<libelle lang="fr">
+<![CDATA[ Baignoire ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Bathtub ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="6">
+<libelle lang="fr">
+<![CDATA[ Double vasques ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Double sink ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="4">
+<libelle lang="fr">
+<![CDATA[ Douche italienne ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Walk-in shower ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="9">
+<libelle lang="fr">
+<![CDATA[ Sèche-cheveux ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Hairdryer ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="8">
+<libelle lang="fr">
+<![CDATA[ Sèche-serviettes ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Towel dryer ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="11">
+<libelle lang="fr">
+<![CDATA[ Toilettes ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Toilet ]]>
+</libelle>
+</equipement_sdb>
+</node_equipement_sdb>
+<lien_chambre/>
+</sdb>
+</node_sdb>
+</chambre>
+<chambre id="3195">
+<localid>2</localid>
+<libelle lang="fr">
+<![CDATA[ Chambre double ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Double bedroom ]]>
+</libelle>
+<intro_chambre lang="fr">
+<![CDATA[ ]]>
+</intro_chambre>
+<intro_chambre lang="en">
+<![CDATA[ ]]>
+</intro_chambre>
+<node_equipement_chambre>
+<equipement_chambre id="13">
+<libelle lang="fr">
+<![CDATA[ Coffre-fort ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Safe ]]>
+</libelle>
+</equipement_chambre>
+<equipement_chambre id="2">
+<libelle lang="fr">
+<![CDATA[ Placard ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Wardrobe ]]>
+</libelle>
+</equipement_chambre>
+<equipement_chambre id="12">
+<libelle lang="fr">
+<![CDATA[ TV ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ TV ]]>
+</libelle>
+</equipement_chambre>
+</node_equipement_chambre>
+<node_lits>
+<lit id="3344">
+<quantite_lit>1</quantite_lit>
+<longueur>160</longueur>
+<largeur>180</largeur>
+<libelle lang="fr">
+<![CDATA[ Lit double ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Double bed ]]>
+</libelle>
+</lit>
+</node_lits>
+<node_sdb>
+<sdb id="2814">
+<node_equipement_sdb>
+<equipement_sdb id="1">
+<libelle lang="fr">
+<![CDATA[ Baignoire ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Bathtub ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="6">
+<libelle lang="fr">
+<![CDATA[ Double vasques ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Double sink ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="4">
+<libelle lang="fr">
+<![CDATA[ Douche italienne ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Walk-in shower ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="9">
+<libelle lang="fr">
+<![CDATA[ Sèche-cheveux ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Hairdryer ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="8">
+<libelle lang="fr">
+<![CDATA[ Sèche-serviettes ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Towel dryer ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="11">
+<libelle lang="fr">
+<![CDATA[ Toilettes ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Toilet ]]>
+</libelle>
+</equipement_sdb>
+</node_equipement_sdb>
+<lien_chambre/>
+</sdb>
+</node_sdb>
+</chambre>
+<chambre id="3196">
+<localid>3</localid>
+<libelle lang="fr">
+<![CDATA[ Chambre double ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Double bedroom ]]>
+</libelle>
+<intro_chambre lang="fr">
+<![CDATA[ ]]>
+</intro_chambre>
+<intro_chambre lang="en">
+<![CDATA[ ]]>
+</intro_chambre>
+<node_equipement_chambre>
+<equipement_chambre id="13">
+<libelle lang="fr">
+<![CDATA[ Coffre-fort ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Safe ]]>
+</libelle>
+</equipement_chambre>
+<equipement_chambre id="1">
+<libelle lang="fr">
+<![CDATA[ Commode ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Chest of drawers ]]>
+</libelle>
+</equipement_chambre>
+<equipement_chambre id="36">
+<libelle lang="fr">
+<![CDATA[ Fauteuil ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Chair ]]>
+</libelle>
+</equipement_chambre>
+<equipement_chambre id="2">
+<libelle lang="fr">
+<![CDATA[ Placard ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Wardrobe ]]>
+</libelle>
+</equipement_chambre>
+<equipement_chambre id="12">
+<libelle lang="fr">
+<![CDATA[ TV ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ TV ]]>
+</libelle>
+</equipement_chambre>
+</node_equipement_chambre>
+<node_lits>
+<lit id="3345">
+<quantite_lit>1</quantite_lit>
+<longueur>160</longueur>
+<largeur>190</largeur>
+<libelle lang="fr">
+<![CDATA[ Lit double ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Double bed ]]>
+</libelle>
+</lit>
+</node_lits>
+<node_sdb>
+<sdb id="2815">
+<node_equipement_sdb>
+<equipement_sdb id="2">
+<libelle lang="fr">
+<![CDATA[ Douche ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Shower ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="9">
+<libelle lang="fr">
+<![CDATA[ Sèche-cheveux ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Hairdryer ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="8">
+<libelle lang="fr">
+<![CDATA[ Sèche-serviettes ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Towel dryer ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="13">
+<libelle lang="fr">
+<![CDATA[ Simple vasque ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Single sink ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="11">
+<libelle lang="fr">
+<![CDATA[ Toilettes ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Toilet ]]>
+</libelle>
+</equipement_sdb>
+</node_equipement_sdb>
+<lien_chambre/>
+</sdb>
+</node_sdb>
+</chambre>
+</node_chambre>
+<node_sdb> </node_sdb>
+</etage>
+<etage id="2055">
+<intro_piece_vie>
+<![CDATA[ ]]>
+</intro_piece_vie>
+<node_salle_gym> </node_salle_gym>
+<intro_autre_espace>
+<![CDATA[ ]]>
+</intro_autre_espace>
+<intro_piece_loisirs>
+<![CDATA[ ]]>
+</intro_piece_loisirs>
+<alt_el3_en>
+<![CDATA[ ]]>
+</alt_el3_en>
+<v2_photo1_etage>
+<![CDATA[ ]]>
+</v2_photo1_etage>
+<v2_photo2_etage>
+<![CDATA[ ]]>
+</v2_photo2_etage>
+<intro_piece_loisirs_en>
+<![CDATA[ ]]>
+</intro_piece_loisirs_en>
+<alt_el3>
+<![CDATA[ ]]>
+</alt_el3>
+<node_autre_espace> </node_autre_espace>
+<ordre>4</ordre>
+<v2_photo4_etage>
+<![CDATA[ ]]>
+</v2_photo4_etage>
+<alt_el2_en>
+<![CDATA[ ]]>
+</alt_el2_en>
+<v2_photo5_etage>
+<![CDATA[ ]]>
+</v2_photo5_etage>
+<v2_photo3_etage>
+<![CDATA[ ]]>
+</v2_photo3_etage>
+<nb_wc>1</nb_wc>
+<alt_el1_en>
+<![CDATA[ ]]>
+</alt_el1_en>
+<v2_planBrochure_etage>
+<![CDATA[ ]]>
+</v2_planBrochure_etage>
+<alt_el1>
+<![CDATA[ ]]>
+</alt_el1>
+<nom_bien_etage_en>
+<![CDATA[ ]]>
+</nom_bien_etage_en>
+<nom_bien_etage>
+<![CDATA[ Chambres ]]>
+</nom_bien_etage>
+<node_piece_vie> </node_piece_vie>
+<intro_autre_espace_en>
+<![CDATA[ ]]>
+</intro_autre_espace_en>
+<alt_el2>
+<![CDATA[ ]]>
+</alt_el2>
+<intro_piece_vie_en>
+<![CDATA[ ]]>
+</intro_piece_vie_en>
+<node_espace_loisir> </node_espace_loisir>
+<intro_chambres_en>
+<![CDATA[ ]]>
+</intro_chambres_en>
+<intro_chambres>
+<![CDATA[ ]]>
+</intro_chambres>
+<node_chambre>
+<chambre id="3190">
+<localid>1</localid>
+<libelle lang="fr">
+<![CDATA[ Chambre de Maître ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Master bedroom ]]>
+</libelle>
+<intro_chambre lang="fr">
+<![CDATA[ ]]>
+</intro_chambre>
+<intro_chambre lang="en">
+<![CDATA[ ]]>
+</intro_chambre>
+<node_equipement_chambre>
+<equipement_chambre id="16">
+<libelle lang="fr">
+<![CDATA[ Bureau ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Office ]]>
+</libelle>
+</equipement_chambre>
+<equipement_chambre id="13">
+<libelle lang="fr">
+<![CDATA[ Coffre-fort ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Safe ]]>
+</libelle>
+</equipement_chambre>
+<equipement_chambre id="1">
+<libelle lang="fr">
+<![CDATA[ Commode ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Chest of drawers ]]>
+</libelle>
+</equipement_chambre>
+<equipement_chambre id="2">
+<libelle lang="fr">
+<![CDATA[ Placard ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Wardrobe ]]>
+</libelle>
+</equipement_chambre>
+<equipement_chambre id="12">
+<libelle lang="fr">
+<![CDATA[ TV ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ TV ]]>
+</libelle>
+</equipement_chambre>
+</node_equipement_chambre>
+<node_lits>
+<lit id="3340">
+<quantite_lit>1</quantite_lit>
+<longueur>180</longueur>
+<largeur>200</largeur>
+<libelle lang="fr">
+<![CDATA[ Lit double ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Double bed ]]>
+</libelle>
+</lit>
+</node_lits>
+<node_sdb>
+<sdb id="2810">
+<node_equipement_sdb>
+<equipement_sdb id="1">
+<libelle lang="fr">
+<![CDATA[ Baignoire ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Bathtub ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="6">
+<libelle lang="fr">
+<![CDATA[ Double vasques ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Double sink ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="4">
+<libelle lang="fr">
+<![CDATA[ Douche italienne ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Walk-in shower ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="9">
+<libelle lang="fr">
+<![CDATA[ Sèche-cheveux ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Hairdryer ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="8">
+<libelle lang="fr">
+<![CDATA[ Sèche-serviettes ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Towel dryer ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="11">
+<libelle lang="fr">
+<![CDATA[ Toilettes ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Toilet ]]>
+</libelle>
+</equipement_sdb>
+</node_equipement_sdb>
+<lien_chambre/>
+</sdb>
+</node_sdb>
+</chambre>
+<chambre id="3191">
+<localid>2</localid>
+<libelle lang="fr">
+<![CDATA[ Chambre double ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Double bedroom ]]>
+</libelle>
+<intro_chambre lang="fr">
+<![CDATA[ ]]>
+</intro_chambre>
+<intro_chambre lang="en">
+<![CDATA[ ]]>
+</intro_chambre>
+<node_equipement_chambre>
+<equipement_chambre id="6">
+<libelle lang="fr">
+<![CDATA[ Balcon ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Balcony ]]>
+</libelle>
+</equipement_chambre>
+<equipement_chambre id="13">
+<libelle lang="fr">
+<![CDATA[ Coffre-fort ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Safe ]]>
+</libelle>
+</equipement_chambre>
+<equipement_chambre id="1">
+<libelle lang="fr">
+<![CDATA[ Commode ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Chest of drawers ]]>
+</libelle>
+</equipement_chambre>
+<equipement_chambre id="2">
+<libelle lang="fr">
+<![CDATA[ Placard ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Wardrobe ]]>
+</libelle>
+</equipement_chambre>
+<equipement_chambre id="12">
+<libelle lang="fr">
+<![CDATA[ TV ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ TV ]]>
+</libelle>
+</equipement_chambre>
+</node_equipement_chambre>
+<node_lits>
+<lit id="3341">
+<quantite_lit>1</quantite_lit>
+<longueur>160</longueur>
+<largeur>190</largeur>
+<libelle lang="fr">
+<![CDATA[ Lit double ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Double bed ]]>
+</libelle>
+</lit>
+</node_lits>
+<node_sdb>
+<sdb id="2811">
+<node_equipement_sdb>
+<equipement_sdb id="1">
+<libelle lang="fr">
+<![CDATA[ Baignoire ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Bathtub ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="6">
+<libelle lang="fr">
+<![CDATA[ Double vasques ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Double sink ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="4">
+<libelle lang="fr">
+<![CDATA[ Douche italienne ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Walk-in shower ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="9">
+<libelle lang="fr">
+<![CDATA[ Sèche-cheveux ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Hairdryer ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="8">
+<libelle lang="fr">
+<![CDATA[ Sèche-serviettes ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Towel dryer ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="11">
+<libelle lang="fr">
+<![CDATA[ Toilettes ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Toilet ]]>
+</libelle>
+</equipement_sdb>
+</node_equipement_sdb>
+<lien_chambre/>
+</sdb>
+</node_sdb>
+</chambre>
+<chambre id="3192">
+<localid>3</localid>
+<libelle lang="fr">
+<![CDATA[ Chambre double ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Double bedroom ]]>
+</libelle>
+<intro_chambre lang="fr">
+<![CDATA[ ]]>
+</intro_chambre>
+<intro_chambre lang="en">
+<![CDATA[ ]]>
+</intro_chambre>
+<node_equipement_chambre>
+<equipement_chambre id="6">
+<libelle lang="fr">
+<![CDATA[ Balcon ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Balcony ]]>
+</libelle>
+</equipement_chambre>
+<equipement_chambre id="13">
+<libelle lang="fr">
+<![CDATA[ Coffre-fort ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Safe ]]>
+</libelle>
+</equipement_chambre>
+<equipement_chambre id="1">
+<libelle lang="fr">
+<![CDATA[ Commode ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Chest of drawers ]]>
+</libelle>
+</equipement_chambre>
+<equipement_chambre id="2">
+<libelle lang="fr">
+<![CDATA[ Placard ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Wardrobe ]]>
+</libelle>
+</equipement_chambre>
+<equipement_chambre id="12">
+<libelle lang="fr">
+<![CDATA[ TV ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ TV ]]>
+</libelle>
+</equipement_chambre>
+</node_equipement_chambre>
+<node_lits>
+<lit id="3342">
+<quantite_lit>1</quantite_lit>
+<longueur>160</longueur>
+<largeur>190</largeur>
+<libelle lang="fr">
+<![CDATA[ Lit double ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Double bed ]]>
+</libelle>
+</lit>
+</node_lits>
+<node_sdb>
+<sdb id="2812">
+<node_equipement_sdb>
+<equipement_sdb id="4">
+<libelle lang="fr">
+<![CDATA[ Douche italienne ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Walk-in shower ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="9">
+<libelle lang="fr">
+<![CDATA[ Sèche-cheveux ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Hairdryer ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="8">
+<libelle lang="fr">
+<![CDATA[ Sèche-serviettes ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Towel dryer ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="13">
+<libelle lang="fr">
+<![CDATA[ Simple vasque ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Single sink ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="11">
+<libelle lang="fr">
+<![CDATA[ Toilettes ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Toilet ]]>
+</libelle>
+</equipement_sdb>
+</node_equipement_sdb>
+<lien_chambre/>
+</sdb>
+</node_sdb>
+</chambre>
+</node_chambre>
+<node_sdb> </node_sdb>
+</etage>
+<etage id="2054">
+<alt_el3_en>
+<![CDATA[ ]]>
+</alt_el3_en>
+<v2_photo1_etage>
+<![CDATA[ ]]>
+</v2_photo1_etage>
+<v2_photo2_etage>
+<![CDATA[ ]]>
+</v2_photo2_etage>
+<intro_piece_loisirs_en>
+<![CDATA[ ]]>
+</intro_piece_loisirs_en>
+<alt_el3>
+<![CDATA[ ]]>
+</alt_el3>
+<node_autre_espace> </node_autre_espace>
+<ordre>5</ordre>
+<v2_photo4_etage>
+<![CDATA[ ]]>
+</v2_photo4_etage>
+<alt_el2_en>
+<![CDATA[ ]]>
+</alt_el2_en>
+<intro_piece_vie>
+<![CDATA[ ]]>
+</intro_piece_vie>
+<node_salle_gym> </node_salle_gym>
+<intro_autre_espace>
+<![CDATA[ ]]>
+</intro_autre_espace>
+<intro_piece_loisirs>
+<![CDATA[ ]]>
+</intro_piece_loisirs>
+<nom_bien_etage>
+<![CDATA[ Salon ]]>
+</nom_bien_etage>
+<node_piece_vie>
+<piece_vie id="12">
+<libelle lang="fr">
+<![CDATA[ Balcon ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Balcony ]]>
+</libelle>
+</piece_vie>
+<piece_vie id="19">
+<libelle lang="fr">
+<![CDATA[ Cheminée ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Fireplace ]]>
+</libelle>
+</piece_vie>
+<piece_vie id="8">
+<libelle lang="fr">
+<![CDATA[ Cuisine fermée ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Closed kitchen ]]>
+</libelle>
+</piece_vie>
+<piece_vie id="14">
+<libelle lang="fr">
+<![CDATA[ Cuisine professionnelle ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Professional kitchen ]]>
+</libelle>
+</piece_vie>
+<piece_vie id="2">
+<libelle lang="fr">
+<![CDATA[ Salle à manger ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Dining room ]]>
+</libelle>
+</piece_vie>
+<piece_vie id="1">
+<libelle lang="fr">
+<![CDATA[ Salon ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Living room ]]>
+</libelle>
+</piece_vie>
+<piece_vie id="18">
+<libelle lang="fr">
+<![CDATA[ Salon TV ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ TV lounge ]]>
+</libelle>
+</piece_vie>
+<piece_vie id="13">
+<libelle lang="fr">
+<![CDATA[ Terrasse ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Terrace ]]>
+</libelle>
+</piece_vie>
+</node_piece_vie>
+<intro_autre_espace_en>
+<![CDATA[ ]]>
+</intro_autre_espace_en>
+<alt_el2>
+<![CDATA[ ]]>
+</alt_el2>
+<intro_piece_vie_en>
+<![CDATA[ ]]>
+</intro_piece_vie_en>
+<intro_chambres>
+<![CDATA[ ]]>
+</intro_chambres>
+<node_espace_loisir> </node_espace_loisir>
+<intro_chambres_en>
+<![CDATA[ ]]>
+</intro_chambres_en>
+<v2_photo5_etage>
+<![CDATA[ ]]>
+</v2_photo5_etage>
+<v2_photo3_etage>
+<![CDATA[ ]]>
+</v2_photo3_etage>
+<alt_el1_en>
+<![CDATA[ ]]>
+</alt_el1_en>
+<nb_wc>0</nb_wc>
+<v2_planBrochure_etage>
+<![CDATA[ ]]>
+</v2_planBrochure_etage>
+<alt_el1>
+<![CDATA[ ]]>
+</alt_el1>
+<nom_bien_etage_en>
+<![CDATA[ Living room ]]>
+</nom_bien_etage_en>
+<node_chambre> </node_chambre>
+<node_sdb> </node_sdb>
+</etage>
+</node_etage>
+<upsale>
+<![CDATA[ ]]>
+</upsale>
+<node_photo>
+<photo ordre="1">
+<url size="original">https://admin.cimalpes.com/photos/bien/1165/chalet-blanchot-courchevel-1850_08.jpg</url>
+</photo>
+<photo ordre="2">
+<url size="original">https://admin.cimalpes.com/photos/bien/1165/chalet-blanchot-courchevel-1850_09.jpg</url>
+</photo>
+<photo ordre="3">
+<url size="original">https://admin.cimalpes.com/photos/bien/1165/chalet-blanchot-courchevel-1850_16.jpg</url>
+</photo>
+<photo ordre="4">
+<url size="original">https://admin.cimalpes.com/photos/bien/1165/chalet-blanchot-courchevel-1850_12.jpg</url>
+</photo>
+<photo ordre="5">
+<url size="original">https://admin.cimalpes.com/photos/bien/1165/chalet-blanchot-courchevel-1850_11.jpg</url>
+</photo>
+<photo ordre="6">
+<url size="original">https://admin.cimalpes.com/photos/bien/1165/chalet-blanchot-courchevel-1850_13.jpg</url>
+</photo>
+<photo ordre="7">
+<url size="original">https://admin.cimalpes.com/photos/bien/1165/chalet-blanchot-courchevel-1850_14.jpg</url>
+</photo>
+<photo ordre="8">
+<url size="original">https://admin.cimalpes.com/photos/bien/1165/chalet-blanchot-courchevel-1850_15.jpg</url>
+</photo>
+<photo ordre="9">
+<url size="original">https://admin.cimalpes.com/photos/bien/1165/chalet-blanchot-courchevel-1850_19.jpg</url>
+</photo>
+<photo ordre="10">
+<url size="original">https://admin.cimalpes.com/photos/bien/1165/chalet-blanchot-courchevel-1850_10.jpg</url>
+</photo>
+<photo ordre="11">
+<url size="original">https://admin.cimalpes.com/photos/bien/1165/chalet-blanchot-courchevel-1850_17.jpg</url>
+</photo>
+<photo ordre="12">
+<url size="original">https://admin.cimalpes.com/photos/bien/1165/chalet-blanchot-courchevel-1850_18.jpg</url>
+</photo>
+<photo ordre="13">
+<url size="original">https://admin.cimalpes.com/photos/bien/1165/chalet-blanchot-courchevel-1850.jpg</url>
+</photo>
+<photo ordre="14">
+<url size="original">https://admin.cimalpes.com/photos/bien/1165/chalet-blanchot-courchevel-1850_02.jpg</url>
+</photo>
+<photo ordre="15">
+<url size="original">https://admin.cimalpes.com/photos/bien/1165/chalet-blanchot-courchevel-1850_03.jpg</url>
+</photo>
+<photo ordre="16">
+<url size="original">https://admin.cimalpes.com/photos/bien/1165/chalet-blanchot-courchevel-1850_04.jpg</url>
+</photo>
+<photo ordre="17">
+<url size="original">https://admin.cimalpes.com/photos/bien/1165/chalet-blanchot-courchevel-1850_06.jpg</url>
+</photo>
+<photo ordre="18">
+<url size="original">https://admin.cimalpes.com/photos/bien/1165/chalet-blanchot-courchevel-1850_07.jpg</url>
+</photo>
+<photo ordre="19">
+<url size="original">https://admin.cimalpes.com/photos/bien/1165/chalet-blanchot-courchevel-1850_05.jpg</url>
+</photo>
+</node_photo>
+<node_video> </node_video>
+</detail>
+</message>

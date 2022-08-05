@@ -1,0 +1,1850 @@
+<message>
+<datetime>2022-07-26 10:39:42</datetime>
+<detail>
+<id_gastronomie>
+<![CDATA[ 1 ]]>
+</id_gastronomie>
+<gastronomie lang="fr">
+<![CDATA[ A la carte ]]>
+</gastronomie>
+<gastronomie lang="en">
+<![CDATA[ Self catered ]]>
+</gastronomie>
+<secteur lang="fr">
+<![CDATA[ St-Martin de Belleville ]]>
+</secteur>
+<secteur lang="en">
+<![CDATA[ Saint Martin de Belleville ]]>
+</secteur>
+<node_horaires/>
+<acompte_montant>
+<![CDATA[ 25.00 ]]>
+</acompte_montant>
+<actif>
+<![CDATA[ oui ]]>
+</actif>
+<activer_location_saison>
+<![CDATA[ non ]]>
+</activer_location_saison>
+<activer_services_supplementaires>
+<![CDATA[ non ]]>
+</activer_services_supplementaires>
+<apporteur>
+<![CDATA[ ]]>
+</apporteur>
+<attente_arkiane>
+<![CDATA[ non ]]>
+</attente_arkiane>
+<avis_2>
+<![CDATA[ ]]>
+</avis_2>
+<avis_2_en>
+<![CDATA[ ]]>
+</avis_2_en>
+<cache_crm_seg_gamme>
+<![CDATA[ 10 ]]>
+</cache_crm_seg_gamme>
+<cache_duree_min>
+<![CDATA[ 7 ]]>
+</cache_duree_min>
+<cache_nb_point_gamme>
+<![CDATA[ 22 ]]>
+</cache_nb_point_gamme>
+<cache_prix_min>
+<![CDATA[ 2000 ]]>
+</cache_prix_min>
+<cache_taux_promo>
+<![CDATA[ 0.0000 ]]>
+</cache_taux_promo>
+<catalogue_saison>
+<![CDATA[ courant ]]>
+</catalogue_saison>
+<caution_encaissement>
+<![CDATA[ Non encaissée ]]>
+</caution_encaissement>
+<caution_euro>
+<![CDATA[ 5000 ]]>
+</caution_euro>
+<centre_distance_m>
+<![CDATA[ 1400 ]]>
+</centre_distance_m>
+<commission>
+<![CDATA[ ]]>
+</commission>
+<commission_to>
+<![CDATA[ ]]>
+</commission_to>
+<contrat_management>
+<![CDATA[ oui ]]>
+</contrat_management>
+<cotisation_contrat>
+<![CDATA[ 3150.00 ]]>
+</cotisation_contrat>
+<count_generator_b2b>
+<![CDATA[ 119 ]]>
+</count_generator_b2b>
+<count_generator_b2c>
+<![CDATA[ 204 ]]>
+</count_generator_b2c>
+<criteres>
+<![CDATA[ ,8:18,9:20,10:22,11:25,12:27,13:29,14:35,15:36,16:40,18:47,19:50,20:53,21:56,23:60,24:61,26:66,27:69,28:,29:,31:,32:,34:,35:,36:,37:,38:,39:,40:,41:,42:,43:, ]]>
+</criteres>
+<date_actif>
+<![CDATA[ 0000-00-00 ]]>
+</date_actif>
+<date_creation>
+<![CDATA[ 2019-09-03 ]]>
+</date_creation>
+<date_inactif>
+<![CDATA[ 0000-00-00 ]]>
+</date_inactif>
+<descriptif_bref>
+<![CDATA[ Typiquement savoyard à la signature Bellevilloise, le Chalet La Grange est le nouveau-né du village de Villarabout. Dans cette ancienne grange rénovée, rien nest laissé au hasard. Fer forgé, grosse laine, mobilier, visserie, tous les détails sont épurés et remplis de cet héritage savoyard. ]]>
+</descriptif_bref>
+<descriptif_bref_en>
+<![CDATA[ Typically Savoyard with a Bellevilloise signature, Chalet La Grange is the newest addition to the village of Villarabout. In this renovated barn, nothing is left to chance. Wrought iron, heavy wool, furniture, screws, all the details are refined and filled with this Savoyard heritage. ]]>
+</descriptif_bref_en>
+<descriptif_court>
+<![CDATA[ Organisez votre séjour sans vous préoccuper ni du linge de maison ni de vos lits à votre arrivée. Nous accordons une attention particulière aux détails qui font toute la différence. Découvrez notre service Essential et ses petites attentions qui vous attendent pour vous donner le sourire dès votre arrivée et faciliter votre séjour ! ]]>
+</descriptif_court>
+<descriptif_court_en>
+<![CDATA[ Organise your stay without having to worry about linen or beds on arrival. We pay special attention to the details that make all the difference. Discover our Essential service and the little extra touches that will put a smile on your face on arrival and make your stay easier. ]]>
+</descriptif_court_en>
+<ecole_ski_distance_m>
+<![CDATA[ 1400 ]]>
+</ecole_ski_distance_m>
+<etages>
+<![CDATA[ 3 ]]>
+</etages>
+<exclu>
+<![CDATA[ oui ]]>
+</exclu>
+<fileorder>
+<![CDATA[ chalet_la_grange_08.jpg,chalet_la_grange_11.jpg,chalet_la_grange_06.jpg,chalet_la_grange_05.jpg,chalet_la_grange_21.jpg,chalet_la_grange_16.jpg,chalet_la_grange_04.jpg,chalet_la_grange_07.jpg,chalet_la_grange_26.jpg,chalet_la_grange_10.jpg,chalet_la_grange_09.jpg,chalet_la_grange_02.jpg,chalet_la_grange_03.jpg,chalet_la_grange_12.jpg,chalet_la_grange_13.jpg,chalet_la_grange_14.jpg,chalet_la_grange_15.jpg,chalet_la_grange_17.jpg,chalet_la_grange_18.jpg,chalet_la_grange_19.jpg,chalet_la_grange_20.jpg,chalet_la_grange_23.jpg,chalet_la_grange_24.jpg,chalet_la_grange_25.jpg,chalet_la_grange_31.jpg,chalet_la_grange_32.jpg,chalet_la_grange_35.jpg,chalet_la_grange_37.jpg,chalet_la_grange_38.jpg,chalet_la_grange_43.jpg ]]>
+</fileorder>
+<google_minisite>
+<![CDATA[ ]]>
+</google_minisite>
+<id_bien>
+<![CDATA[ 1184 ]]>
+</id_bien>
+<bien lang="fr">
+<![CDATA[ La Grange 1855 ]]>
+</bien>
+<bien lang="en">
+<![CDATA[ La Grange 1855 ]]>
+</bien>
+<id_bien_service_niveau>
+<![CDATA[ 1 ]]>
+</id_bien_service_niveau>
+<bien_service_niveau lang="fr">
+<![CDATA[ Essential (A la carte) ]]>
+</bien_service_niveau>
+<bien_service_niveau lang="en">
+<![CDATA[ Essential (Self catered) ]]>
+</bien_service_niveau>
+<id_condition_annulation>
+<![CDATA[ 3 ]]>
+</id_condition_annulation>
+<condition_annulation lang="fr">
+<![CDATA[ ]]>
+</condition_annulation>
+<condition_annulation lang="en">
+<![CDATA[ ]]>
+</condition_annulation>
+<id_crm_proprietaire>
+<![CDATA[ 1152 ]]>
+</id_crm_proprietaire>
+<crm_proprietaire lang="fr">
+<![CDATA[ ]]>
+</crm_proprietaire>
+<crm_proprietaire lang="en">
+<![CDATA[ ]]>
+</crm_proprietaire>
+<id_crm_seg_gamme>
+<![CDATA[ ]]>
+</id_crm_seg_gamme>
+<crm_seg_gamme lang="fr">
+<![CDATA[ ]]>
+</crm_seg_gamme>
+<crm_seg_gamme lang="en">
+<![CDATA[ ]]>
+</crm_seg_gamme>
+<id_quartier>
+<![CDATA[ 85 ]]>
+</id_quartier>
+<quartier lang="fr">
+<![CDATA[ Villarabout ]]>
+</quartier>
+<quartier lang="en">
+<![CDATA[ Villarabout ]]>
+</quartier>
+<id_residence>
+<![CDATA[ ]]>
+</id_residence>
+<residence lang="fr">
+<![CDATA[ ]]>
+</residence>
+<residence lang="en">
+<![CDATA[ ]]>
+</residence>
+<id_station>
+<![CDATA[ 17 ]]>
+</id_station>
+<station lang="fr">
+<![CDATA[ St-Martin de Belleville ]]>
+</station>
+<station lang="en">
+<![CDATA[ St-Martin de Belleville ]]>
+</station>
+<file_logo_web>
+<![CDATA[ https://admin.cimalpes.com/cache/55/photos_station_17_file_logo_web.png ]]>
+</file_logo_web>
+<introduction>
+<![CDATA[ Ce chalet se trouve en plein coeur de l'ancien village de Villarabout. Une navette gratuite relie le village de Villarabout à St Martin de Belleville ]]>
+</introduction>
+<introduction_en>
+<![CDATA[ This chalet is located in the heart of the old village of Villarabout. ]]>
+</introduction_en>
+<introduction_equipements>
+<![CDATA[ ]]>
+</introduction_equipements>
+<introduction_prestations>
+<![CDATA[ ]]>
+</introduction_prestations>
+<introduction_prestations_en>
+<![CDATA[ ]]>
+</introduction_prestations_en>
+<jour_sem>
+<![CDATA[ sam ]]>
+</jour_sem>
+<last_mod_user>
+<![CDATA[ brice.girard@cimalpes.com ]]>
+</last_mod_user>
+<latitude>
+<![CDATA[ 45.387645 ]]>
+</latitude>
+<node_bien_service_inclus>
+<bien_service_inclus id="2">
+<libelle lang="fr">
+<![CDATA[ ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ ]]>
+</libelle>
+</bien_service_inclus>
+<bien_service_inclus id="22">
+<libelle lang="fr">
+<![CDATA[ ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ ]]>
+</libelle>
+</bien_service_inclus>
+<bien_service_inclus id="24">
+<libelle lang="fr">
+<![CDATA[ ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ ]]>
+</libelle>
+</bien_service_inclus>
+</node_bien_service_inclus>
+<node_bien_service_personnel>
+<bien_service_personnel id="10">
+<libelle lang="fr">
+<![CDATA[ Entretien et nettoyage quotidien (gouvernante) ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Daily maintenance and cleaning ]]>
+</libelle>
+</bien_service_personnel>
+<bien_service_personnel id="18">
+<libelle lang="fr">
+<![CDATA[ Gestion du chalet, Organisation du séjour et conciergerie ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Chalet management, stay organisation and conciergerie ]]>
+</libelle>
+</bien_service_personnel>
+<bien_service_personnel id="7">
+<libelle lang="fr">
+<![CDATA[ Service de navette (départ et retour des pistes) ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Shuttle service (to and from the slopes) ]]>
+</libelle>
+</bien_service_personnel>
+<bien_service_personnel id="8">
+<libelle lang="fr">
+<![CDATA[ Service de navette ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Shuttle service ]]>
+</libelle>
+</bien_service_personnel>
+</node_bien_service_personnel>
+<node_equipement_demande> </node_equipement_demande>
+<node_equipement_electromenager>
+<equipement_electromenager id="1">
+<libelle lang="fr">
+<![CDATA[ Cafetière électrique ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Coffee machine ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="10">
+<libelle lang="fr">
+<![CDATA[ Micro-onde ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Microwave ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="12">
+<libelle lang="fr">
+<![CDATA[ Réfrigérateur ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Fridge ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="13">
+<libelle lang="fr">
+<![CDATA[ Congélateur ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Freezer ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="15">
+<libelle lang="fr">
+<![CDATA[ Appareil à raclette ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Raclette machine ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="17">
+<libelle lang="fr">
+<![CDATA[ Aspirateur ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Vaccum ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="18">
+<libelle lang="fr">
+<![CDATA[ Table à repasser ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Ironing board ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="2">
+<libelle lang="fr">
+<![CDATA[ Cafetière Nespresso ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Nespresso coffee machine ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="20">
+<libelle lang="fr">
+<![CDATA[ Fer à repasser ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Iron ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="23">
+<libelle lang="fr">
+<![CDATA[ Mixeur ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Blender ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="24">
+<libelle lang="fr">
+<![CDATA[ Batteur ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Mixer ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="28">
+<libelle lang="fr">
+<![CDATA[ Hotte de cuisine ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Kitchen exhaust hood ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="29">
+<libelle lang="fr">
+<![CDATA[ Bouilloire ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Kettle ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="3">
+<libelle lang="fr">
+<![CDATA[ Grille pain ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Toaster ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="33">
+<libelle lang="fr">
+<![CDATA[ Cave à vin réfrigérée ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Refrigerate wine cellar ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="38">
+<libelle lang="fr">
+<![CDATA[ Barbecue ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Barbecue ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="39">
+<libelle lang="fr">
+<![CDATA[ Lave-linge séchant ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Washing-drying machine ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="5">
+<libelle lang="fr">
+<![CDATA[ Plaques de cuisson à induction ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Induction hobs ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="6">
+<libelle lang="fr">
+<![CDATA[ Lave-vaisselle ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Dishwasher ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="9">
+<libelle lang="fr">
+<![CDATA[ Four ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Oven ]]>
+</libelle>
+</equipement_electromenager>
+</node_equipement_electromenager>
+<node_equipement_general>
+<equipement_general id="10">
+<libelle lang="fr">
+<![CDATA[ Garage ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Garage ]]>
+</libelle>
+</equipement_general>
+<equipement_general id="11">
+<libelle lang="fr">
+<![CDATA[ Cheminée à bois ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Wood fireplace ]]>
+</libelle>
+</equipement_general>
+<equipement_general id="13">
+<libelle lang="fr">
+<![CDATA[ Casier à ski ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Ski locker ]]>
+</libelle>
+</equipement_general>
+<equipement_general id="17">
+<libelle lang="fr">
+<![CDATA[ Place de parking ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Parking space ]]>
+</libelle>
+</equipement_general>
+<equipement_general id="18">
+<libelle lang="fr">
+<![CDATA[ Jeux de société ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Board games ]]>
+</libelle>
+</equipement_general>
+<equipement_general id="2">
+<libelle lang="fr">
+<![CDATA[ Chauffe-chaussures ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Boots heater ]]>
+</libelle>
+</equipement_general>
+<equipement_general id="35">
+<libelle lang="fr">
+<![CDATA[ Sans ascenseur ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Without elevator ]]>
+</libelle>
+</equipement_general>
+<equipement_general id="40">
+<libelle lang="fr">
+<![CDATA[ Mobilier d'extérieur ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Outdoor furniture ]]>
+</libelle>
+</equipement_general>
+<equipement_general id="5">
+<libelle lang="fr">
+<![CDATA[ Lit bébé ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Baby cot ]]>
+</libelle>
+</equipement_general>
+<equipement_general id="6">
+<libelle lang="fr">
+<![CDATA[ Chaise-haute ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ High chair ]]>
+</libelle>
+</equipement_general>
+</node_equipement_general>
+<node_equipement_multimedia>
+<equipement_multimedia id="11">
+<libelle lang="fr">
+<![CDATA[ Wifi ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Wifi ]]>
+</libelle>
+</equipement_multimedia>
+<equipement_multimedia id="12">
+<libelle lang="fr">
+<![CDATA[ TV ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ TV ]]>
+</libelle>
+</equipement_multimedia>
+</node_equipement_multimedia>
+<node_exposition>
+<exposition id="3">
+<libelle lang="fr">
+<![CDATA[ Est ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ East ]]>
+</libelle>
+</exposition>
+<exposition id="4">
+<libelle lang="fr">
+<![CDATA[ Ouest ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ West ]]>
+</libelle>
+</exposition>
+</node_exposition>
+<node_frais_supplementaires> </node_frais_supplementaires>
+<node_services_inclus>
+<services_inclus id="10">
+<service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Accueil ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Welcome ]]>
+</libelle>
+</service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Fleurs ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Flowers ]]>
+</libelle>
+</services_inclus>
+<services_inclus id="100">
+<service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Accueil ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Welcome ]]>
+</libelle>
+</service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Champagne ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Champagne ]]>
+</libelle>
+</services_inclus>
+<services_inclus id="11">
+<service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Ménage & Linge ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Housekeeping & Linens ]]>
+</libelle>
+</service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Ménage de fin de séjour ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ End of stay cleaning ]]>
+</libelle>
+</services_inclus>
+<services_inclus id="22">
+<service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Ménage & Linge ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Housekeeping & Linens ]]>
+</libelle>
+</service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Linge (draps et serviettes) ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Linens (towels and sheets) ]]>
+</libelle>
+</services_inclus>
+<services_inclus id="24">
+<service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Ménage & Linge ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Housekeeping & Linens ]]>
+</libelle>
+</service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Lits faits à l'arrivée ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Beds made before arrival ]]>
+</libelle>
+</services_inclus>
+<services_inclus id="26">
+<service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Accueil ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Welcome ]]>
+</libelle>
+</service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Panier de bienvenue ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Welcome basket ]]>
+</libelle>
+</services_inclus>
+<services_inclus id="3">
+<service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Accueil ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Welcome ]]>
+</libelle>
+</service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Accueil à la propriété ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Reception at the property ]]>
+</libelle>
+</services_inclus>
+<services_inclus id="46">
+<service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Accueil ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Welcome ]]>
+</libelle>
+</service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Produits de salle de bains ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Bathroom products ]]>
+</libelle>
+</services_inclus>
+<services_inclus id="9">
+<service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Ménage & Linge ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Housekeeping & Linens ]]>
+</libelle>
+</service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Chaussons ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Slippers ]]>
+</libelle>
+</services_inclus>
+</node_services_inclus>
+<node_services_inclus_hiver>
+<services_inclus_hiver id="10">
+<service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Accueil ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Welcome ]]>
+</libelle>
+</service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Fleurs ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Flowers ]]>
+</libelle>
+</services_inclus_hiver>
+<services_inclus_hiver id="100">
+<service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Accueil ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Welcome ]]>
+</libelle>
+</service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Champagne ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Champagne ]]>
+</libelle>
+</services_inclus_hiver>
+<services_inclus_hiver id="11">
+<service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Ménage & Linge ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Housekeeping & Linens ]]>
+</libelle>
+</service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Ménage de fin de séjour ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ End of stay cleaning ]]>
+</libelle>
+</services_inclus_hiver>
+<services_inclus_hiver id="22">
+<service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Ménage & Linge ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Housekeeping & Linens ]]>
+</libelle>
+</service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Linge (draps et serviettes) ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Linens (towels and sheets) ]]>
+</libelle>
+</services_inclus_hiver>
+<services_inclus_hiver id="24">
+<service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Ménage & Linge ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Housekeeping & Linens ]]>
+</libelle>
+</service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Lits faits à l'arrivée ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Beds made before arrival ]]>
+</libelle>
+</services_inclus_hiver>
+<services_inclus_hiver id="26">
+<service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Accueil ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Welcome ]]>
+</libelle>
+</service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Panier de bienvenue ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Welcome basket ]]>
+</libelle>
+</services_inclus_hiver>
+<services_inclus_hiver id="3">
+<service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Accueil ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Welcome ]]>
+</libelle>
+</service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Accueil à la propriété ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Reception at the property ]]>
+</libelle>
+</services_inclus_hiver>
+<services_inclus_hiver id="46">
+<service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Accueil ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Welcome ]]>
+</libelle>
+</service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Produits de salle de bains ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Bathroom products ]]>
+</libelle>
+</services_inclus_hiver>
+<services_inclus_hiver id="9">
+<service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Ménage & Linge ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Housekeeping & Linens ]]>
+</libelle>
+</service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Chaussons ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Slippers ]]>
+</libelle>
+</services_inclus_hiver>
+</node_services_inclus_hiver>
+<node_services_personnel_hiver> </node_services_personnel_hiver>
+<node_situation> </node_situation>
+<node_style>
+<style id="2">
+<libelle lang="fr">
+<![CDATA[ Les Classiques ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Alpine Tradition ]]>
+</libelle>
+</style>
+<style id="3">
+<libelle lang="fr">
+<![CDATA[ Les Familles ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Family Time ]]>
+</libelle>
+</style>
+<style id="5">
+<libelle lang="fr">
+<![CDATA[ Les Bien-Être ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Well-Being ]]>
+</libelle>
+</style>
+</node_style>
+<longitude>
+<![CDATA[ 6.506741 ]]>
+</longitude>
+<lot_ref_arkiane>
+<![CDATA[ GRANGE1855 ]]>
+</lot_ref_arkiane>
+<mandat_performance>
+<![CDATA[ oui ]]>
+</mandat_performance>
+<nb_adultes>
+<![CDATA[ 10 ]]>
+</nb_adultes>
+<nb_enfants>
+<![CDATA[ 0 ]]>
+</nb_enfants>
+<nb_pieces>
+<![CDATA[ 0 ]]>
+</nb_pieces>
+<nom_bien>
+<![CDATA[ La Grange 1855 ]]>
+</nom_bien>
+<nom_bien_en>
+<![CDATA[ La Grange 1855 ]]>
+</nom_bien_en>
+<nom_bien_service_interne>
+<![CDATA[ 1. Essential ]]>
+</nom_bien_service_interne>
+<nom_bien_service_niveau>
+<![CDATA[ Essential (A la carte) ]]>
+</nom_bien_service_niveau>
+<nom_bien_service_niveau_en>
+<![CDATA[ Essential (Self catered) ]]>
+</nom_bien_service_niveau_en>
+<nom_niveau_extranet>
+<![CDATA[ Essential (A la carte) ]]>
+</nom_niveau_extranet>
+<nom_niveau_extranet_en>
+<![CDATA[ Essential (Self catered) ]]>
+</nom_niveau_extranet_en>
+<nom_piste>
+<![CDATA[ Biolley ]]>
+</nom_piste>
+<nom_residence>
+<![CDATA[ ]]>
+</nom_residence>
+<nom_residence_en>
+<![CDATA[ ]]>
+</nom_residence_en>
+<nom_telesiege>
+<![CDATA[ Télécabine Saint Martin 1 ]]>
+</nom_telesiege>
+<nombre_cabines>
+<![CDATA[ 0 ]]>
+</nombre_cabines>
+<nombre_chambres>
+<![CDATA[ 5 ]]>
+</nombre_chambres>
+<notif_to>
+<![CDATA[ 0 ]]>
+</notif_to>
+<old_ref_arkiane>
+<![CDATA[ ]]>
+</old_ref_arkiane>
+<on_request>
+<![CDATA[ non ]]>
+</on_request>
+<ordre>
+<![CDATA[ 1 ]]>
+</ordre>
+<ouverture_to>
+<![CDATA[ Les deux ]]>
+</ouverture_to>
+<panorama>
+<![CDATA[ oui ]]>
+</panorama>
+<photos_contractuelles>
+<![CDATA[ ]]>
+</photos_contractuelles>
+<piste_distance_m>
+<![CDATA[ 1400 ]]>
+</piste_distance_m>
+<poids_date>
+<![CDATA[ 35 ]]>
+</poids_date>
+<poids_fevrier>
+<![CDATA[ 0 ]]>
+</poids_fevrier>
+<poids_manuel>
+<![CDATA[ 0 ]]>
+</poids_manuel>
+<poids_noel>
+<![CDATA[ 10 ]]>
+</poids_noel>
+<poids_prix>
+<![CDATA[ 15 ]]>
+</poids_prix>
+<poids_total>
+<![CDATA[ 45 ]]>
+</poids_total>
+<publier_tarifs>
+<![CDATA[ oui ]]>
+</publier_tarifs>
+<saison_commission>
+<![CDATA[ 0.00 ]]>
+</saison_commission>
+<saison_debut>
+<![CDATA[ 0000-00-00 ]]>
+</saison_debut>
+<saison_fin>
+<![CDATA[ 0000-00-00 ]]>
+</saison_fin>
+<saison_prix>
+<![CDATA[ 0.00 ]]>
+</saison_prix>
+<solde_delai>
+<![CDATA[ 0 ]]>
+</solde_delai>
+<surface>
+<![CDATA[ 190 ]]>
+</surface>
+<taux_commission>
+<![CDATA[ 20 ]]>
+</taux_commission>
+<taux_commission2>
+<![CDATA[ 30 ]]>
+</taux_commission2>
+<telesiege_distance_m>
+<![CDATA[ 1400 ]]>
+</telesiege_distance_m>
+<type_bien>
+<![CDATA[ chalet ]]>
+</type_bien>
+<type_conciergerie>
+<![CDATA[ ]]>
+</type_conciergerie>
+<url_googlesat>
+<![CDATA[ https://www.google.fr/maps/place/Villarabout,+73440+Saint-Martin-de-Belleville/@45.3875536,6.5065463,117m/data=!3m1!1e3!4m5!3m4!1s0x478a2aefd2c2e2dd:0xa08ab2d832b9e70!8m2!3d45.3881749!4d6.506058 ]]>
+</url_googlesat>
+<url_visite>
+<![CDATA[ https://my.matterport.com/show/?m=w3CXvdFMScJ ]]>
+</url_visite>
+<v2_datePresse1>
+<![CDATA[ ]]>
+</v2_datePresse1>
+<v2_datePresse2>
+<![CDATA[ ]]>
+</v2_datePresse2>
+<v2_datePresse3>
+<![CDATA[ ]]>
+</v2_datePresse3>
+<v2_datePresse4>
+<![CDATA[ ]]>
+</v2_datePresse4>
+<v2_datePresse5>
+<![CDATA[ ]]>
+</v2_datePresse5>
+<v2_fileorder>
+<![CDATA[ ]]>
+</v2_fileorder>
+<v2_nomPresse1>
+<![CDATA[ ]]>
+</v2_nomPresse1>
+<v2_nomPresse2>
+<![CDATA[ ]]>
+</v2_nomPresse2>
+<v2_nomPresse3>
+<![CDATA[ ]]>
+</v2_nomPresse3>
+<v2_nomPresse4>
+<![CDATA[ ]]>
+</v2_nomPresse4>
+<v2_nomPresse5>
+<![CDATA[ ]]>
+</v2_nomPresse5>
+<v2_photo1>
+<![CDATA[ ]]>
+</v2_photo1>
+<v2_photo10_presse5>
+<![CDATA[ ]]>
+</v2_photo10_presse5>
+<v2_photo4_brochure>
+<![CDATA[ ]]>
+</v2_photo4_brochure>
+<v2_photo5>
+<![CDATA[ ]]>
+</v2_photo5>
+<v2_photo6_presse1>
+<![CDATA[ ]]>
+</v2_photo6_presse1>
+<v2_photo7_presse2>
+<![CDATA[ ]]>
+</v2_photo7_presse2>
+<v2_photo8_presse3>
+<![CDATA[ ]]>
+</v2_photo8_presse3>
+<v2_photo9_presse4>
+<![CDATA[ ]]>
+</v2_photo9_presse4>
+<v2_video_to>
+<![CDATA[ ]]>
+</v2_video_to>
+<wifi>
+<![CDATA[ oui ]]>
+</wifi>
+<node_etage>
+<etage id="2104">
+<intro_piece_vie_en>
+<![CDATA[ ]]>
+</intro_piece_vie_en>
+<alt_el2>
+<![CDATA[ ]]>
+</alt_el2>
+<intro_chambres_en>
+<![CDATA[ - Laundry room with boot heaters - Two Double Bedrooms en suite with shower room and toilets - A Toilet - Sauna ]]>
+</intro_chambres_en>
+<node_espace_loisir>
+<espace_loisir id="2">
+<libelle lang="fr">
+<![CDATA[ Sauna ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Sauna ]]>
+</libelle>
+</espace_loisir>
+</node_espace_loisir>
+<intro_chambres>
+<![CDATA[ - Buanderie avec sèche chaussure - 1 chambre double avec salle de douche et toilettes - 1 toilette séparé - Sauna - 1 Chambre double ou twin avec salle de douche et WC ]]>
+</intro_chambres>
+<nom_bien_etage>
+<![CDATA[ Niveau 0 ]]>
+</nom_bien_etage>
+<node_piece_vie> </node_piece_vie>
+<intro_autre_espace_en>
+<![CDATA[ ]]>
+</intro_autre_espace_en>
+<alt_el1>
+<![CDATA[ Sauna - Chalet La Grange 1855 - Saint Martin de Belleville ]]>
+</alt_el1>
+<nom_bien_etage_en>
+<![CDATA[ Floor 0 ]]>
+</nom_bien_etage_en>
+<v2_photo5_etage>
+<![CDATA[ ]]>
+</v2_photo5_etage>
+<v2_photo3_etage>
+<![CDATA[ ]]>
+</v2_photo3_etage>
+<nb_wc>1</nb_wc>
+<alt_el1_en>
+<![CDATA[ Sauna - Chalet La Grange 1855 - Saint Martin de Belleville ]]>
+</alt_el1_en>
+<v2_planBrochure_etage>
+<![CDATA[ ]]>
+</v2_planBrochure_etage>
+<intro_piece_loisirs_en>
+<![CDATA[ ]]>
+</intro_piece_loisirs_en>
+<alt_el3>
+<![CDATA[ ]]>
+</alt_el3>
+<node_autre_espace>
+<autre_espace id="4">
+<libelle lang="fr">
+<![CDATA[ Buanderie ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Laundry room ]]>
+</libelle>
+</autre_espace>
+</node_autre_espace>
+<v2_photo4_etage>
+<![CDATA[ ]]>
+</v2_photo4_etage>
+<alt_el2_en>
+<![CDATA[ ]]>
+</alt_el2_en>
+<ordre>0</ordre>
+<v2_photo2_etage>
+<![CDATA[ ]]>
+</v2_photo2_etage>
+<alt_el3_en>
+<![CDATA[ ]]>
+</alt_el3_en>
+<v2_photo1_etage>
+<![CDATA[ ]]>
+</v2_photo1_etage>
+<node_salle_gym> </node_salle_gym>
+<intro_autre_espace>
+<![CDATA[ ]]>
+</intro_autre_espace>
+<intro_piece_loisirs>
+<![CDATA[ ]]>
+</intro_piece_loisirs>
+<intro_piece_vie>
+<![CDATA[ ]]>
+</intro_piece_vie>
+<node_chambre>
+<chambre id="3257">
+<localid>1</localid>
+<libelle lang="fr">
+<![CDATA[ Chambre double (ou twin) ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Double or Twin bedroom ]]>
+</libelle>
+<intro_chambre lang="fr">
+<![CDATA[ ]]>
+</intro_chambre>
+<intro_chambre lang="en">
+<![CDATA[ ]]>
+</intro_chambre>
+<node_equipement_chambre> </node_equipement_chambre>
+<node_lits>
+<lit id="4867">
+<quantite_lit>2</quantite_lit>
+<longueur>90</longueur>
+<largeur>200</largeur>
+<libelle lang="fr">
+<![CDATA[ Lit simple ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Single bed ]]>
+</libelle>
+</lit>
+</node_lits>
+<node_sdb>
+<sdb id="2863">
+<node_equipement_sdb>
+<equipement_sdb id="2">
+<libelle lang="fr">
+<![CDATA[ Douche ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Shower ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="9">
+<libelle lang="fr">
+<![CDATA[ Sèche-cheveux ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Hairdryer ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="8">
+<libelle lang="fr">
+<![CDATA[ Sèche-serviettes ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Towel dryer ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="11">
+<libelle lang="fr">
+<![CDATA[ Toilettes ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Toilet ]]>
+</libelle>
+</equipement_sdb>
+</node_equipement_sdb>
+<lien_chambre/>
+</sdb>
+</node_sdb>
+</chambre>
+<chambre id="3258">
+<localid>2</localid>
+<libelle lang="fr">
+<![CDATA[ Chambre double (ou twin) ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Double or Twin bedroom ]]>
+</libelle>
+<intro_chambre lang="fr">
+<![CDATA[ ]]>
+</intro_chambre>
+<intro_chambre lang="en">
+<![CDATA[ ]]>
+</intro_chambre>
+<node_equipement_chambre> </node_equipement_chambre>
+<node_lits>
+<lit id="4868">
+<quantite_lit>2</quantite_lit>
+<longueur>90</longueur>
+<largeur>200</largeur>
+<libelle lang="fr">
+<![CDATA[ Lit simple ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Single bed ]]>
+</libelle>
+</lit>
+</node_lits>
+<node_sdb>
+<sdb id="2864">
+<node_equipement_sdb>
+<equipement_sdb id="2">
+<libelle lang="fr">
+<![CDATA[ Douche ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Shower ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="9">
+<libelle lang="fr">
+<![CDATA[ Sèche-cheveux ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Hairdryer ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="8">
+<libelle lang="fr">
+<![CDATA[ Sèche-serviettes ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Towel dryer ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="11">
+<libelle lang="fr">
+<![CDATA[ Toilettes ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Toilet ]]>
+</libelle>
+</equipement_sdb>
+</node_equipement_sdb>
+<lien_chambre/>
+</sdb>
+</node_sdb>
+</chambre>
+</node_chambre>
+<node_sdb> </node_sdb>
+<photo_loisir1>https://admin.cimalpes.com/cache/940/photos_bien_etage_2104_el1.jpg</photo_loisir1>
+<photo_planweb>https://admin.cimalpes.com/cache/940/photos_bien_etage_2104_planweb.jpg</photo_planweb>
+<photo_planweb_zoom>https://admin.cimalpes.com/cache/2000/photos_bien_etage_2104_planweb.jpg</photo_planweb_zoom>
+</etage>
+<etage id="2105">
+<v2_photo3_etage>
+<![CDATA[ ]]>
+</v2_photo3_etage>
+<v2_photo5_etage>
+<![CDATA[ ]]>
+</v2_photo5_etage>
+<v2_planBrochure_etage>
+<![CDATA[ ]]>
+</v2_planBrochure_etage>
+<nb_wc>0</nb_wc>
+<alt_el1_en>
+<![CDATA[ Bedroom - La Grange 1855 - Saint Martin de Belleville ]]>
+</alt_el1_en>
+<alt_el1>
+<![CDATA[ Chambre - La Grange 1855 - Saint Martin de Belleville ]]>
+</alt_el1>
+<nom_bien_etage_en>
+<![CDATA[ First floor ]]>
+</nom_bien_etage_en>
+<nom_bien_etage>
+<![CDATA[ 1er étage ]]>
+</nom_bien_etage>
+<intro_autre_espace_en>
+<![CDATA[ ]]>
+</intro_autre_espace_en>
+<node_piece_vie> </node_piece_vie>
+<intro_piece_vie_en>
+<![CDATA[ ]]>
+</intro_piece_vie_en>
+<alt_el2>
+<![CDATA[ Chambre - La Grange 1855 - Saint Martin de Belleville ]]>
+</alt_el2>
+<intro_chambres_en>
+<![CDATA[ - 2 doubles or twin bedroom with bathroom and toilet - 1 double or twin bedroom with shower room and toilet ]]>
+</intro_chambres_en>
+<node_espace_loisir> </node_espace_loisir>
+<intro_chambres>
+<![CDATA[ - 1 Chambre double ou twin avec salle de douche et toilettes - 2 Chambres doubles ou twin avec salle de bain et toilettes ]]>
+</intro_chambres>
+<intro_piece_vie>
+<![CDATA[ ]]>
+</intro_piece_vie>
+<intro_autre_espace>
+<![CDATA[ ]]>
+</intro_autre_espace>
+<node_salle_gym> </node_salle_gym>
+<intro_piece_loisirs>
+<![CDATA[ ]]>
+</intro_piece_loisirs>
+<alt_el3_en>
+<![CDATA[ Bedroom - La Grange 1855 - Saint Martin de Belleville ]]>
+</alt_el3_en>
+<v2_photo1_etage>
+<![CDATA[ ]]>
+</v2_photo1_etage>
+<v2_photo2_etage>
+<![CDATA[ ]]>
+</v2_photo2_etage>
+<alt_el3>
+<![CDATA[ Chambre - La Grange 1855 - Saint Martin de Belleville ]]>
+</alt_el3>
+<intro_piece_loisirs_en>
+<![CDATA[ ]]>
+</intro_piece_loisirs_en>
+<ordre>1</ordre>
+<alt_el2_en>
+<![CDATA[ Bedroom - La Grange 1855 - Saint Martin de Belleville ]]>
+</alt_el2_en>
+<v2_photo4_etage>
+<![CDATA[ ]]>
+</v2_photo4_etage>
+<node_autre_espace> </node_autre_espace>
+<node_chambre>
+<chambre id="3259">
+<localid>1</localid>
+<libelle lang="fr">
+<![CDATA[ Chambre double (ou twin) ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Double or Twin bedroom ]]>
+</libelle>
+<intro_chambre lang="fr">
+<![CDATA[ ]]>
+</intro_chambre>
+<intro_chambre lang="en">
+<![CDATA[ ]]>
+</intro_chambre>
+<node_equipement_chambre> </node_equipement_chambre>
+<node_lits>
+<lit id="4869">
+<quantite_lit>2</quantite_lit>
+<longueur>90</longueur>
+<largeur>200</largeur>
+<libelle lang="fr">
+<![CDATA[ Lit simple (possibilité lit double) ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Single bed (possibility of double bed) ]]>
+</libelle>
+</lit>
+</node_lits>
+<node_sdb>
+<sdb id="2865">
+<node_equipement_sdb>
+<equipement_sdb id="2">
+<libelle lang="fr">
+<![CDATA[ Douche ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Shower ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="9">
+<libelle lang="fr">
+<![CDATA[ Sèche-cheveux ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Hairdryer ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="8">
+<libelle lang="fr">
+<![CDATA[ Sèche-serviettes ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Towel dryer ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="11">
+<libelle lang="fr">
+<![CDATA[ Toilettes ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Toilet ]]>
+</libelle>
+</equipement_sdb>
+</node_equipement_sdb>
+<lien_chambre/>
+</sdb>
+</node_sdb>
+</chambre>
+<chambre id="3260">
+<localid>2</localid>
+<libelle lang="fr">
+<![CDATA[ Chambre double (ou twin) ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Double or Twin bedroom ]]>
+</libelle>
+<intro_chambre lang="fr">
+<![CDATA[ ]]>
+</intro_chambre>
+<intro_chambre lang="en">
+<![CDATA[ ]]>
+</intro_chambre>
+<node_equipement_chambre> </node_equipement_chambre>
+<node_lits>
+<lit id="4870">
+<quantite_lit>2</quantite_lit>
+<longueur>90</longueur>
+<largeur>200</largeur>
+<libelle lang="fr">
+<![CDATA[ Lit simple (possibilité lit double) ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Single bed (possibility of double bed) ]]>
+</libelle>
+</lit>
+</node_lits>
+<node_sdb>
+<sdb id="2866">
+<node_equipement_sdb>
+<equipement_sdb id="10">
+<libelle lang="fr">
+<![CDATA[ Baignoire balnéo ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Whirlpool bathtub ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="9">
+<libelle lang="fr">
+<![CDATA[ Sèche-cheveux ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Hairdryer ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="8">
+<libelle lang="fr">
+<![CDATA[ Sèche-serviettes ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Towel dryer ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="11">
+<libelle lang="fr">
+<![CDATA[ Toilettes ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Toilet ]]>
+</libelle>
+</equipement_sdb>
+</node_equipement_sdb>
+<lien_chambre/>
+</sdb>
+</node_sdb>
+</chambre>
+<chambre id="3261">
+<localid>3</localid>
+<libelle lang="fr">
+<![CDATA[ Chambre double (ou twin) ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Double or Twin bedroom ]]>
+</libelle>
+<intro_chambre lang="fr">
+<![CDATA[ ]]>
+</intro_chambre>
+<intro_chambre lang="en">
+<![CDATA[ ]]>
+</intro_chambre>
+<node_equipement_chambre> </node_equipement_chambre>
+<node_lits>
+<lit id="4871">
+<quantite_lit>2</quantite_lit>
+<longueur>90</longueur>
+<largeur>200</largeur>
+<libelle lang="fr">
+<![CDATA[ Lit simple (possibilité lit double) ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Single bed (possibility of double bed) ]]>
+</libelle>
+</lit>
+</node_lits>
+<node_sdb>
+<sdb id="2867">
+<node_equipement_sdb>
+<equipement_sdb id="10">
+<libelle lang="fr">
+<![CDATA[ Baignoire balnéo ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Whirlpool bathtub ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="9">
+<libelle lang="fr">
+<![CDATA[ Sèche-cheveux ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Hairdryer ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="8">
+<libelle lang="fr">
+<![CDATA[ Sèche-serviettes ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Towel dryer ]]>
+</libelle>
+</equipement_sdb>
+<equipement_sdb id="11">
+<libelle lang="fr">
+<![CDATA[ Toilettes ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Toilet ]]>
+</libelle>
+</equipement_sdb>
+</node_equipement_sdb>
+<lien_chambre/>
+</sdb>
+</node_sdb>
+</chambre>
+</node_chambre>
+<node_sdb> </node_sdb>
+<photo_loisir1>https://admin.cimalpes.com/cache/940/photos_bien_etage_2105_el1.jpg</photo_loisir1>
+<photo_loisir2>https://admin.cimalpes.com/cache/940/photos_bien_etage_2105_el2.jpg</photo_loisir2>
+<photo_loisir3>https://admin.cimalpes.com/cache/940/photos_bien_etage_2105_el3.jpg</photo_loisir3>
+<photo_planweb>https://admin.cimalpes.com/cache/940/photos_bien_etage_2105_planweb.jpg</photo_planweb>
+<photo_planweb_zoom>https://admin.cimalpes.com/cache/2000/photos_bien_etage_2105_planweb.jpg</photo_planweb_zoom>
+</etage>
+<etage id="2106">
+<v2_photo5_etage>
+<![CDATA[ ]]>
+</v2_photo5_etage>
+<v2_photo3_etage>
+<![CDATA[ ]]>
+</v2_photo3_etage>
+<alt_el1_en>
+<![CDATA[ Dining area - La Grange 1855 - Saint Martin de Belleville ]]>
+</alt_el1_en>
+<nb_wc>0</nb_wc>
+<v2_planBrochure_etage>
+<![CDATA[ ]]>
+</v2_planBrochure_etage>
+<alt_el1>
+<![CDATA[ Espace repas - La Grange 1855 - Saint Martin de Belleville ]]>
+</alt_el1>
+<nom_bien_etage_en>
+<![CDATA[ Second floor ]]>
+</nom_bien_etage_en>
+<nom_bien_etage>
+<![CDATA[ 2ème étage ]]>
+</nom_bien_etage>
+<node_piece_vie>
+<piece_vie id="12">
+<libelle lang="fr">
+<![CDATA[ Balcon ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Balcony ]]>
+</libelle>
+</piece_vie>
+<piece_vie id="29">
+<libelle lang="fr">
+<![CDATA[ Cheminée centrale ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Central fireplace ]]>
+</libelle>
+</piece_vie>
+<piece_vie id="7">
+<libelle lang="fr">
+<![CDATA[ Cuisine ouverte ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Open kitchen ]]>
+</libelle>
+</piece_vie>
+<piece_vie id="6">
+<libelle lang="fr">
+<![CDATA[ Espace repas ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Dining area ]]>
+</libelle>
+</piece_vie>
+<piece_vie id="2">
+<libelle lang="fr">
+<![CDATA[ Salle à manger ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Dining room ]]>
+</libelle>
+</piece_vie>
+<piece_vie id="1">
+<libelle lang="fr">
+<![CDATA[ Salon ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Living room ]]>
+</libelle>
+</piece_vie>
+<piece_vie id="13">
+<libelle lang="fr">
+<![CDATA[ Terrasse ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Terrace ]]>
+</libelle>
+</piece_vie>
+</node_piece_vie>
+<intro_autre_espace_en>
+<![CDATA[ ]]>
+</intro_autre_espace_en>
+<intro_piece_vie_en>
+<![CDATA[ ]]>
+</intro_piece_vie_en>
+<alt_el2>
+<![CDATA[ Salon - La Grange 1855 - Saint Martin de Belleville ]]>
+</alt_el2>
+<intro_chambres_en>
+<![CDATA[ - Living room - Dining room - Opened kitchen - Central fireplace - Terrace ]]>
+</intro_chambres_en>
+<intro_chambres>
+<![CDATA[ - Salon - Salle à manger - Cuisine ouverte - Cheminée centrale - Terrasse ]]>
+</intro_chambres>
+<node_espace_loisir> </node_espace_loisir>
+<intro_piece_vie>
+<![CDATA[ ]]>
+</intro_piece_vie>
+<node_salle_gym> </node_salle_gym>
+<intro_autre_espace>
+<![CDATA[ ]]>
+</intro_autre_espace>
+<intro_piece_loisirs>
+<![CDATA[ ]]>
+</intro_piece_loisirs>
+<alt_el3_en>
+<![CDATA[ Living room - La Grange 1855 - Saint Martin de Belleville ]]>
+</alt_el3_en>
+<v2_photo1_etage>
+<![CDATA[ ]]>
+</v2_photo1_etage>
+<v2_photo2_etage>
+<![CDATA[ ]]>
+</v2_photo2_etage>
+<intro_piece_loisirs_en>
+<![CDATA[ ]]>
+</intro_piece_loisirs_en>
+<alt_el3>
+<![CDATA[ Salon - La Grange 1855 - Saint Martin de Belleville ]]>
+</alt_el3>
+<node_autre_espace> </node_autre_espace>
+<ordre>3</ordre>
+<alt_el2_en>
+<![CDATA[ Living room - La Grange 1855 - Saint Martin de Belleville ]]>
+</alt_el2_en>
+<v2_photo4_etage>
+<![CDATA[ ]]>
+</v2_photo4_etage>
+<node_chambre> </node_chambre>
+<node_sdb> </node_sdb>
+<photo_loisir1>https://admin.cimalpes.com/cache/940/photos_bien_etage_2106_el1.jpg</photo_loisir1>
+<photo_loisir2>https://admin.cimalpes.com/cache/940/photos_bien_etage_2106_el2.jpg</photo_loisir2>
+<photo_loisir3>https://admin.cimalpes.com/cache/940/photos_bien_etage_2106_el3.jpg</photo_loisir3>
+<photo_planweb>https://admin.cimalpes.com/cache/940/photos_bien_etage_2106_planweb.jpg</photo_planweb>
+<photo_planweb_zoom>https://admin.cimalpes.com/cache/2000/photos_bien_etage_2106_planweb.jpg</photo_planweb_zoom>
+</etage>
+</node_etage>
+<upsale>
+<![CDATA[ ]]>
+</upsale>
+<node_photo>
+<photo ordre="1">
+<url size="original">https://admin.cimalpes.com/photos/bien/1184/chalet_la_grange_08.jpg</url>
+</photo>
+<photo ordre="2">
+<url size="original">https://admin.cimalpes.com/photos/bien/1184/chalet_la_grange_11.jpg</url>
+</photo>
+<photo ordre="3">
+<url size="original">https://admin.cimalpes.com/photos/bien/1184/chalet_la_grange_06.jpg</url>
+</photo>
+<photo ordre="4">
+<url size="original">https://admin.cimalpes.com/photos/bien/1184/chalet_la_grange_05.jpg</url>
+</photo>
+<photo ordre="5">
+<url size="original">https://admin.cimalpes.com/photos/bien/1184/chalet_la_grange_21.jpg</url>
+</photo>
+<photo ordre="6">
+<url size="original">https://admin.cimalpes.com/photos/bien/1184/chalet_la_grange_16.jpg</url>
+</photo>
+<photo ordre="7">
+<url size="original">https://admin.cimalpes.com/photos/bien/1184/chalet_la_grange_04.jpg</url>
+</photo>
+<photo ordre="8">
+<url size="original">https://admin.cimalpes.com/photos/bien/1184/chalet_la_grange_07.jpg</url>
+</photo>
+<photo ordre="9">
+<url size="original">https://admin.cimalpes.com/photos/bien/1184/chalet_la_grange_26.jpg</url>
+</photo>
+<photo ordre="10">
+<url size="original">https://admin.cimalpes.com/photos/bien/1184/chalet_la_grange_10.jpg</url>
+</photo>
+<photo ordre="11">
+<url size="original">https://admin.cimalpes.com/photos/bien/1184/chalet_la_grange_09.jpg</url>
+</photo>
+<photo ordre="12">
+<url size="original">https://admin.cimalpes.com/photos/bien/1184/chalet_la_grange_02.jpg</url>
+</photo>
+<photo ordre="13">
+<url size="original">https://admin.cimalpes.com/photos/bien/1184/chalet_la_grange_03.jpg</url>
+</photo>
+<photo ordre="14">
+<url size="original">https://admin.cimalpes.com/photos/bien/1184/chalet_la_grange_12.jpg</url>
+</photo>
+<photo ordre="15">
+<url size="original">https://admin.cimalpes.com/photos/bien/1184/chalet_la_grange_13.jpg</url>
+</photo>
+<photo ordre="16">
+<url size="original">https://admin.cimalpes.com/photos/bien/1184/chalet_la_grange_14.jpg</url>
+</photo>
+<photo ordre="17">
+<url size="original">https://admin.cimalpes.com/photos/bien/1184/chalet_la_grange_15.jpg</url>
+</photo>
+<photo ordre="18">
+<url size="original">https://admin.cimalpes.com/photos/bien/1184/chalet_la_grange_17.jpg</url>
+</photo>
+<photo ordre="19">
+<url size="original">https://admin.cimalpes.com/photos/bien/1184/chalet_la_grange_18.jpg</url>
+</photo>
+<photo ordre="20">
+<url size="original">https://admin.cimalpes.com/photos/bien/1184/chalet_la_grange_19.jpg</url>
+</photo>
+<photo ordre="21">
+<url size="original">https://admin.cimalpes.com/photos/bien/1184/chalet_la_grange_20.jpg</url>
+</photo>
+<photo ordre="22">
+<url size="original">https://admin.cimalpes.com/photos/bien/1184/chalet_la_grange_23.jpg</url>
+</photo>
+<photo ordre="23">
+<url size="original">https://admin.cimalpes.com/photos/bien/1184/chalet_la_grange_24.jpg</url>
+</photo>
+<photo ordre="24">
+<url size="original">https://admin.cimalpes.com/photos/bien/1184/chalet_la_grange_25.jpg</url>
+</photo>
+<photo ordre="25">
+<url size="original">https://admin.cimalpes.com/photos/bien/1184/chalet_la_grange_31.jpg</url>
+</photo>
+<photo ordre="26">
+<url size="original">https://admin.cimalpes.com/photos/bien/1184/chalet_la_grange_32.jpg</url>
+</photo>
+<photo ordre="27">
+<url size="original">https://admin.cimalpes.com/photos/bien/1184/chalet_la_grange_35.jpg</url>
+</photo>
+<photo ordre="28">
+<url size="original">https://admin.cimalpes.com/photos/bien/1184/chalet_la_grange_37.jpg</url>
+</photo>
+<photo ordre="29">
+<url size="original">https://admin.cimalpes.com/photos/bien/1184/chalet_la_grange_38.jpg</url>
+</photo>
+<photo ordre="30">
+<url size="original">https://admin.cimalpes.com/photos/bien/1184/chalet_la_grange_43.jpg</url>
+</photo>
+</node_photo>
+<node_video> </node_video>
+</detail>
+</message>

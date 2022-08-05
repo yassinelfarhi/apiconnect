@@ -1,41 +1,25 @@
 <?php 
 
-use Villanovo\Cimalpes\CimalpesClient;
-use Villanovo\Cimalpes\CimalpesPersist;
+use Villanovo\ThirdParties\CimalpesClient;
+use Villanovo\ThirdParties\BienPersist;
 
 require_once __DIR__.'/../vendor/autoload.php';
 
-$flux = new CimalpesClient();
-//  $details = $flux->getDetails(2130);
- $biens = $flux->getBiens();
-
-// $biens = array_map(function($bien) use($flux){
-//   return  $flux->getDetails($bien->id);
-// },$biens);
-
-// $biens = array_map(function($bien) use($flux){
-  
-//          $bienArray = (array) $bien;
-//          $bienDetail = (array) $flux->getDetails($bien->id);
-
-//          return  (object) array_merge($bienArray,$bienDetail);
-// },$biens);
+// $flux = new CimalpesClient();
+// // // //   $details = $flux->getDetail("1184");
+// $biens = $flux->getBiens();
 
 
+//  print_r($biens);
+
+//  file_put_contents(__DIR__."/biens.json",json_encode($biens));
+ $biensJson = json_decode(file_get_contents(__DIR__."/biens.json"),true);
+
+ $persiste = new BienPersist();
+
+// // //  var_dump($persiste->languges);
+ $persiste->insertOrUpdate($biensJson);
+
+//  var_dump($biensJson[1]);
 
 
-
-
-
-
-// $biens = $flux->getBiensTest();
- print_r($biens);
-  // print_r($flux->getDetails(2130));
-
-
-
-// $persiste = new CimalpesPersist();
-// // $persiste->zones;
-//   // print_r($persiste->localTypes);
-//   // print_r($persiste->zones);
-//  $persiste->insertOrUpdate($biens);

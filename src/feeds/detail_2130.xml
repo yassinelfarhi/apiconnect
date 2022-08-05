@@ -1,0 +1,915 @@
+<message>
+<datetime>2022-07-26 10:42:55</datetime>
+<detail>
+<id_gastronomie>
+<![CDATA[ 1 ]]>
+</id_gastronomie>
+<gastronomie lang="fr">
+<![CDATA[ A la carte ]]>
+</gastronomie>
+<gastronomie lang="en">
+<![CDATA[ Self catered ]]>
+</gastronomie>
+<secteur lang="fr">
+<![CDATA[ Centre & proche centre ]]>
+</secteur>
+<secteur lang="en">
+<![CDATA[ Centre & surroundings ]]>
+</secteur>
+<node_horaires/>
+<acompte_montant>
+<![CDATA[ 25.00 ]]>
+</acompte_montant>
+<actif>
+<![CDATA[ oui ]]>
+</actif>
+<activer_location_saison>
+<![CDATA[ non ]]>
+</activer_location_saison>
+<activer_services_supplementaires>
+<![CDATA[ non ]]>
+</activer_services_supplementaires>
+<apporteur>
+<![CDATA[ ]]>
+</apporteur>
+<attente_arkiane>
+<![CDATA[ non ]]>
+</attente_arkiane>
+<avis_2>
+<![CDATA[ ]]>
+</avis_2>
+<avis_2_en>
+<![CDATA[ ]]>
+</avis_2_en>
+<cache_crm_seg_gamme>
+<![CDATA[ 14 ]]>
+</cache_crm_seg_gamme>
+<cache_duree_min>
+<![CDATA[ 7 ]]>
+</cache_duree_min>
+<cache_nb_point_gamme>
+<![CDATA[ 15 ]]>
+</cache_nb_point_gamme>
+<cache_prix_min>
+<![CDATA[ 750 ]]>
+</cache_prix_min>
+<cache_taux_promo>
+<![CDATA[ 0.0000 ]]>
+</cache_taux_promo>
+<catalogue_saison>
+<![CDATA[ courant ]]>
+</catalogue_saison>
+<caution_encaissement>
+<![CDATA[ Non encaissée ]]>
+</caution_encaissement>
+<caution_euro>
+<![CDATA[ 2000 ]]>
+</caution_euro>
+<centre_distance_m>
+<![CDATA[ 20 ]]>
+</centre_distance_m>
+<commission>
+<![CDATA[ ]]>
+</commission>
+<commission_to>
+<![CDATA[ ]]>
+</commission_to>
+<contrat_management>
+<![CDATA[ oui ]]>
+</contrat_management>
+<cotisation_contrat>
+<![CDATA[ 0.00 ]]>
+</cotisation_contrat>
+<count_generator_b2b>
+<![CDATA[ 5 ]]>
+</count_generator_b2b>
+<count_generator_b2c>
+<![CDATA[ 24 ]]>
+</count_generator_b2c>
+<criteres>
+<![CDATA[ ,8:,9:,10:,11:,12:,13:,14:,15:,16:,18:,19:,20:,21:,23:,24:,26:,27:,28:75,29:77,31:82,32:84,34:86,35:92,36:96,37:99,38:102,39:105,40:109,41:111,42:,43:116, ]]>
+</criteres>
+<date_actif>
+<![CDATA[ 2021-11-20 ]]>
+</date_actif>
+<date_creation>
+<![CDATA[ 2021-11-18 ]]>
+</date_creation>
+<date_inactif>
+<![CDATA[ 0000-00-00 ]]>
+</date_inactif>
+<descriptif_bref>
+<![CDATA[ Appartement de 48 m² très bien situé dans la station de Val Thorens, au deuxième étage de la résidence "Les Hauts de la Vanoise", proche de toutes les commodités. ]]>
+</descriptif_bref>
+<descriptif_bref_en>
+<![CDATA[ 48 m² apartment very well located in the resort of Val thorens, on the second floor of the residence "Les Hauts de la Vanoise", close to all amenities. ]]>
+</descriptif_bref_en>
+<descriptif_court>
+<![CDATA[ Organisez votre séjour sans vous préoccuper ni du linge de maison ni de vos lits à votre arrivée. Nous accordons une attention particulière aux détails qui font toute la différence. Découvrez notre service Essential et ses petites attentions qui vous attendent pour vous donner le sourire dès votre arrivée et faciliter votre séjour ! ]]>
+</descriptif_court>
+<descriptif_court_en>
+<![CDATA[ Organise your stay without having to worry about linen or beds on arrival. We pay special attention to the details that make all the difference. Discover our Essential service and the little extra touches that will put a smile on your face on arrival and make your stay easier. ]]>
+</descriptif_court_en>
+<ecole_ski_distance_m>
+<![CDATA[ 20 ]]>
+</ecole_ski_distance_m>
+<etages>
+<![CDATA[ ]]>
+</etages>
+<exclu>
+<![CDATA[ oui ]]>
+</exclu>
+<fileorder>
+<![CDATA[ d43_9144-modifier.jpg,d43_9154-modifier.jpg,d43_9161-hdr-modifier.jpg,d43_9164-modifier.jpg,d43_9169-modifier.jpg,d43_9176-hdr-modifier.jpg,d43_9180-modifier.jpg,d43_9185.jpg,d43_9191-hdr-modifier.jpg,d43_9196-hdr-modifier.jpg ]]>
+</fileorder>
+<google_minisite>
+<![CDATA[ ]]>
+</google_minisite>
+<id_bien>
+<![CDATA[ 2130 ]]>
+</id_bien>
+<bien lang="fr">
+<![CDATA[ Haut de Vanoise 205 ]]>
+</bien>
+<bien lang="en">
+<![CDATA[ Haut de Vanoise 205 ]]>
+</bien>
+<id_bien_service_niveau>
+<![CDATA[ 1 ]]>
+</id_bien_service_niveau>
+<bien_service_niveau lang="fr">
+<![CDATA[ Essential (A la carte) ]]>
+</bien_service_niveau>
+<bien_service_niveau lang="en">
+<![CDATA[ Essential (Self catered) ]]>
+</bien_service_niveau>
+<id_condition_annulation>
+<![CDATA[ 3 ]]>
+</id_condition_annulation>
+<condition_annulation lang="fr">
+<![CDATA[ ]]>
+</condition_annulation>
+<condition_annulation lang="en">
+<![CDATA[ ]]>
+</condition_annulation>
+<id_crm_proprietaire>
+<![CDATA[ 1705 ]]>
+</id_crm_proprietaire>
+<crm_proprietaire lang="fr">
+<![CDATA[ ]]>
+</crm_proprietaire>
+<crm_proprietaire lang="en">
+<![CDATA[ ]]>
+</crm_proprietaire>
+<id_crm_seg_gamme>
+<![CDATA[ ]]>
+</id_crm_seg_gamme>
+<crm_seg_gamme lang="fr">
+<![CDATA[ ]]>
+</crm_seg_gamme>
+<crm_seg_gamme lang="en">
+<![CDATA[ ]]>
+</crm_seg_gamme>
+<id_quartier>
+<![CDATA[ 164 ]]>
+</id_quartier>
+<quartier lang="fr">
+<![CDATA[ Centre & proche centre ]]>
+</quartier>
+<quartier lang="en">
+<![CDATA[ Centre & surroundings ]]>
+</quartier>
+<id_residence>
+<![CDATA[ 1463 ]]>
+</id_residence>
+<residence lang="fr">
+<![CDATA[ Résidence Les Hauts de la Vanoise ]]>
+</residence>
+<residence lang="en">
+<![CDATA[ Les Hauts de la Vanoise residence ]]>
+</residence>
+<id_station>
+<![CDATA[ 25 ]]>
+</id_station>
+<station lang="fr">
+<![CDATA[ Val Thorens ]]>
+</station>
+<station lang="en">
+<![CDATA[ Val Thorens ]]>
+</station>
+<file_logo_web>
+<![CDATA[ https://admin.cimalpes.com/cache/55/photos_station_25_file_logo_web.png ]]>
+</file_logo_web>
+<introduction>
+<![CDATA[ ]]>
+</introduction>
+<introduction_en>
+<![CDATA[ ]]>
+</introduction_en>
+<introduction_equipements>
+<![CDATA[ ]]>
+</introduction_equipements>
+<introduction_prestations>
+<![CDATA[ ]]>
+</introduction_prestations>
+<introduction_prestations_en>
+<![CDATA[ ]]>
+</introduction_prestations_en>
+<jour_sem>
+<![CDATA[ sam ]]>
+</jour_sem>
+<last_mod_user>
+<![CDATA[ brice.girard@cimalpes.com ]]>
+</last_mod_user>
+<latitude>
+<![CDATA[ 45.297871194847836 ]]>
+</latitude>
+<node_bien_service_inclus>
+<bien_service_inclus id="2">
+<libelle lang="fr">
+<![CDATA[ ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ ]]>
+</libelle>
+</bien_service_inclus>
+<bien_service_inclus id="22">
+<libelle lang="fr">
+<![CDATA[ ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ ]]>
+</libelle>
+</bien_service_inclus>
+<bien_service_inclus id="24">
+<libelle lang="fr">
+<![CDATA[ ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ ]]>
+</libelle>
+</bien_service_inclus>
+</node_bien_service_inclus>
+<node_bien_service_personnel>
+<bien_service_personnel id="10">
+<libelle lang="fr">
+<![CDATA[ Entretien et nettoyage quotidien (gouvernante) ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Daily maintenance and cleaning ]]>
+</libelle>
+</bien_service_personnel>
+<bien_service_personnel id="18">
+<libelle lang="fr">
+<![CDATA[ Gestion du chalet, Organisation du séjour et conciergerie ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Chalet management, stay organisation and conciergerie ]]>
+</libelle>
+</bien_service_personnel>
+<bien_service_personnel id="7">
+<libelle lang="fr">
+<![CDATA[ Service de navette (départ et retour des pistes) ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Shuttle service (to and from the slopes) ]]>
+</libelle>
+</bien_service_personnel>
+<bien_service_personnel id="8">
+<libelle lang="fr">
+<![CDATA[ Service de navette ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Shuttle service ]]>
+</libelle>
+</bien_service_personnel>
+</node_bien_service_personnel>
+<node_equipement_demande> </node_equipement_demande>
+<node_equipement_electromenager>
+<equipement_electromenager id="1">
+<libelle lang="fr">
+<![CDATA[ Cafetière électrique ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Coffee machine ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="12">
+<libelle lang="fr">
+<![CDATA[ Réfrigérateur ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Fridge ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="17">
+<libelle lang="fr">
+<![CDATA[ Aspirateur ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Vaccum ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="28">
+<libelle lang="fr">
+<![CDATA[ Hotte de cuisine ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Kitchen exhaust hood ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="29">
+<libelle lang="fr">
+<![CDATA[ Bouilloire ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Kettle ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="7">
+<libelle lang="fr">
+<![CDATA[ Lave-linge ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Washing machine ]]>
+</libelle>
+</equipement_electromenager>
+<equipement_electromenager id="9">
+<libelle lang="fr">
+<![CDATA[ Four ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Oven ]]>
+</libelle>
+</equipement_electromenager>
+</node_equipement_electromenager>
+<node_equipement_general> </node_equipement_general>
+<node_equipement_multimedia> </node_equipement_multimedia>
+<node_exposition> </node_exposition>
+<node_frais_supplementaires> </node_frais_supplementaires>
+<node_services_inclus>
+<services_inclus id="2">
+<service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Accueil ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Welcome ]]>
+</libelle>
+</service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Accueil en agence ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Reception in agency ]]>
+</libelle>
+</services_inclus>
+<services_inclus id="22">
+<service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Ménage & Linge ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Housekeeping & Linens ]]>
+</libelle>
+</service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Linge (draps et serviettes) ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Linens (towels and sheets) ]]>
+</libelle>
+</services_inclus>
+<services_inclus id="24">
+<service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Ménage & Linge ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Housekeeping & Linens ]]>
+</libelle>
+</service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Lits faits à l'arrivée ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Beds made before arrival ]]>
+</libelle>
+</services_inclus>
+<services_inclus id="46">
+<service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Accueil ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Welcome ]]>
+</libelle>
+</service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Produits de salle de bains ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Bathroom products ]]>
+</libelle>
+</services_inclus>
+<services_inclus id="9">
+<service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Ménage & Linge ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Housekeeping & Linens ]]>
+</libelle>
+</service_inclus_categorie>
+<libelle lang="fr">
+<![CDATA[ Chaussons ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Slippers ]]>
+</libelle>
+</services_inclus>
+</node_services_inclus>
+<node_services_inclus_hiver> </node_services_inclus_hiver>
+<node_services_personnel_hiver> </node_services_personnel_hiver>
+<node_situation>
+<situation id="3">
+<libelle lang="fr">
+<![CDATA[ Centre ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Centre ]]>
+</libelle>
+</situation>
+<situation id="4">
+<libelle lang="fr">
+<![CDATA[ Proche école de ski ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Near Ski school ]]>
+</libelle>
+</situation>
+</node_situation>
+<node_style>
+<style id="2">
+<libelle lang="fr">
+<![CDATA[ Les Classiques ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Alpine Tradition ]]>
+</libelle>
+</style>
+<style id="4">
+<libelle lang="fr">
+<![CDATA[ Les Passionnés de Ski ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Ski Passion ]]>
+</libelle>
+</style>
+</node_style>
+<longitude>
+<![CDATA[ 6.5840321221880265 ]]>
+</longitude>
+<lot_ref_arkiane>
+<![CDATA[ HDV205 ]]>
+</lot_ref_arkiane>
+<mandat_performance>
+<![CDATA[ oui ]]>
+</mandat_performance>
+<nb_adultes>
+<![CDATA[ 5 ]]>
+</nb_adultes>
+<nb_enfants>
+<![CDATA[ 0 ]]>
+</nb_enfants>
+<nb_pieces>
+<![CDATA[ 0 ]]>
+</nb_pieces>
+<nom_bien>
+<![CDATA[ Haut de Vanoise 205 ]]>
+</nom_bien>
+<nom_bien_en>
+<![CDATA[ Haut de Vanoise 205 ]]>
+</nom_bien_en>
+<nom_bien_service_interne>
+<![CDATA[ 1. Essential ]]>
+</nom_bien_service_interne>
+<nom_bien_service_niveau>
+<![CDATA[ Essential (A la carte) ]]>
+</nom_bien_service_niveau>
+<nom_bien_service_niveau_en>
+<![CDATA[ Essential (Self catered) ]]>
+</nom_bien_service_niveau_en>
+<nom_niveau_extranet>
+<![CDATA[ Essential (A la carte) ]]>
+</nom_niveau_extranet>
+<nom_niveau_extranet_en>
+<![CDATA[ Essential (Self catered) ]]>
+</nom_niveau_extranet_en>
+<nom_piste>
+<![CDATA[ ]]>
+</nom_piste>
+<nom_residence>
+<![CDATA[ ]]>
+</nom_residence>
+<nom_residence_en>
+<![CDATA[ ]]>
+</nom_residence_en>
+<nom_telesiege>
+<![CDATA[ ]]>
+</nom_telesiege>
+<nombre_cabines>
+<![CDATA[ 0 ]]>
+</nombre_cabines>
+<nombre_chambres>
+<![CDATA[ 2 ]]>
+</nombre_chambres>
+<notif_to>
+<![CDATA[ 0 ]]>
+</notif_to>
+<old_ref_arkiane>
+<![CDATA[ ]]>
+</old_ref_arkiane>
+<on_request>
+<![CDATA[ non ]]>
+</on_request>
+<ordre>
+<![CDATA[ 1 ]]>
+</ordre>
+<ouverture_to>
+<![CDATA[ Les deux ]]>
+</ouverture_to>
+<panorama>
+<![CDATA[ non ]]>
+</panorama>
+<photos_contractuelles>
+<![CDATA[ oui ]]>
+</photos_contractuelles>
+<piste_distance_m>
+<![CDATA[ 20 ]]>
+</piste_distance_m>
+<poids_date>
+<![CDATA[ 20 ]]>
+</poids_date>
+<poids_fevrier>
+<![CDATA[ 0 ]]>
+</poids_fevrier>
+<poids_manuel>
+<![CDATA[ 0 ]]>
+</poids_manuel>
+<poids_noel>
+<![CDATA[ 0 ]]>
+</poids_noel>
+<poids_prix>
+<![CDATA[ 15 ]]>
+</poids_prix>
+<poids_total>
+<![CDATA[ 40 ]]>
+</poids_total>
+<publier_tarifs>
+<![CDATA[ oui ]]>
+</publier_tarifs>
+<saison_commission>
+<![CDATA[ 0.00 ]]>
+</saison_commission>
+<saison_debut>
+<![CDATA[ 0000-00-00 ]]>
+</saison_debut>
+<saison_fin>
+<![CDATA[ 0000-00-00 ]]>
+</saison_fin>
+<saison_prix>
+<![CDATA[ 0.00 ]]>
+</saison_prix>
+<solde_delai>
+<![CDATA[ 0 ]]>
+</solde_delai>
+<surface>
+<![CDATA[ 48 ]]>
+</surface>
+<taux_commission>
+<![CDATA[ 25 ]]>
+</taux_commission>
+<taux_commission2>
+<![CDATA[ 25 ]]>
+</taux_commission2>
+<telesiege_distance_m>
+<![CDATA[ 0 ]]>
+</telesiege_distance_m>
+<type_bien>
+<![CDATA[ appartement ]]>
+</type_bien>
+<type_conciergerie>
+<![CDATA[ ]]>
+</type_conciergerie>
+<url_googlesat>
+<![CDATA[ https://www.google.com/maps/place/45%C2%B017'52.3%22N+6%C2%B035'02.5%22E/@45.297875,6.5818434,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x8c4c5e5065c67977!8m2!3d45.2978712!4d6.5840321 ]]>
+</url_googlesat>
+<url_visite>
+<![CDATA[ https://my.matterport.com/show/?m=JBbsnV5ZN2R ]]>
+</url_visite>
+<v2_datePresse1>
+<![CDATA[ ]]>
+</v2_datePresse1>
+<v2_datePresse2>
+<![CDATA[ ]]>
+</v2_datePresse2>
+<v2_datePresse3>
+<![CDATA[ ]]>
+</v2_datePresse3>
+<v2_datePresse4>
+<![CDATA[ ]]>
+</v2_datePresse4>
+<v2_datePresse5>
+<![CDATA[ ]]>
+</v2_datePresse5>
+<v2_fileorder>
+<![CDATA[ ]]>
+</v2_fileorder>
+<v2_nomPresse1>
+<![CDATA[ ]]>
+</v2_nomPresse1>
+<v2_nomPresse2>
+<![CDATA[ ]]>
+</v2_nomPresse2>
+<v2_nomPresse3>
+<![CDATA[ ]]>
+</v2_nomPresse3>
+<v2_nomPresse4>
+<![CDATA[ ]]>
+</v2_nomPresse4>
+<v2_nomPresse5>
+<![CDATA[ ]]>
+</v2_nomPresse5>
+<v2_photo1>
+<![CDATA[ ]]>
+</v2_photo1>
+<v2_photo10_presse5>
+<![CDATA[ ]]>
+</v2_photo10_presse5>
+<v2_photo4_brochure>
+<![CDATA[ ]]>
+</v2_photo4_brochure>
+<v2_photo5>
+<![CDATA[ ]]>
+</v2_photo5>
+<v2_photo6_presse1>
+<![CDATA[ ]]>
+</v2_photo6_presse1>
+<v2_photo7_presse2>
+<![CDATA[ ]]>
+</v2_photo7_presse2>
+<v2_photo8_presse3>
+<![CDATA[ ]]>
+</v2_photo8_presse3>
+<v2_photo9_presse4>
+<![CDATA[ ]]>
+</v2_photo9_presse4>
+<v2_video_to>
+<![CDATA[ ]]>
+</v2_video_to>
+<wifi>
+<![CDATA[ ]]>
+</wifi>
+<node_etage>
+<etage id="3133">
+<node_salle_gym> </node_salle_gym>
+<intro_autre_espace>
+<![CDATA[ ]]>
+</intro_autre_espace>
+<intro_piece_loisirs>
+<![CDATA[ ]]>
+</intro_piece_loisirs>
+<intro_piece_vie>
+<![CDATA[ ]]>
+</intro_piece_vie>
+<intro_piece_loisirs_en>
+<![CDATA[ ]]>
+</intro_piece_loisirs_en>
+<alt_el3>
+<![CDATA[ ]]>
+</alt_el3>
+<node_autre_espace> </node_autre_espace>
+<v2_photo4_etage>
+<![CDATA[ ]]>
+</v2_photo4_etage>
+<alt_el2_en>
+<![CDATA[ ]]>
+</alt_el2_en>
+<ordre>0</ordre>
+<v2_photo2_etage>
+<![CDATA[ ]]>
+</v2_photo2_etage>
+<alt_el3_en>
+<![CDATA[ ]]>
+</alt_el3_en>
+<v2_photo1_etage>
+<![CDATA[ ]]>
+</v2_photo1_etage>
+<alt_el1>
+<![CDATA[ ]]>
+</alt_el1>
+<nom_bien_etage_en>
+<![CDATA[ ]]>
+</nom_bien_etage_en>
+<v2_photo5_etage>
+<![CDATA[ ]]>
+</v2_photo5_etage>
+<v2_photo3_etage>
+<![CDATA[ ]]>
+</v2_photo3_etage>
+<alt_el1_en>
+<![CDATA[ ]]>
+</alt_el1_en>
+<nb_wc>1</nb_wc>
+<v2_planBrochure_etage>
+<![CDATA[ ]]>
+</v2_planBrochure_etage>
+<alt_el2>
+<![CDATA[ ]]>
+</alt_el2>
+<intro_piece_vie_en>
+<![CDATA[ ]]>
+</intro_piece_vie_en>
+<intro_chambres>
+<![CDATA[ ]]>
+</intro_chambres>
+<node_espace_loisir> </node_espace_loisir>
+<intro_chambres_en>
+<![CDATA[ ]]>
+</intro_chambres_en>
+<nom_bien_etage>
+<![CDATA[ ]]>
+</nom_bien_etage>
+<node_piece_vie>
+<piece_vie id="12">
+<libelle lang="fr">
+<![CDATA[ Balcon ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Balcony ]]>
+</libelle>
+</piece_vie>
+<piece_vie id="32">
+<libelle lang="fr">
+<![CDATA[ Canapé convertible ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Convertible sofa bed ]]>
+</libelle>
+</piece_vie>
+<piece_vie id="7">
+<libelle lang="fr">
+<![CDATA[ Cuisine ouverte ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Open kitchen ]]>
+</libelle>
+</piece_vie>
+</node_piece_vie>
+<intro_autre_espace_en>
+<![CDATA[ ]]>
+</intro_autre_espace_en>
+<node_chambre>
+<chambre id="5025">
+<localid>1</localid>
+<libelle lang="fr">
+<![CDATA[ Chambre double ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Double bedroom ]]>
+</libelle>
+<intro_chambre lang="fr">
+<![CDATA[ ]]>
+</intro_chambre>
+<intro_chambre lang="en">
+<![CDATA[ ]]>
+</intro_chambre>
+<node_equipement_chambre>
+<equipement_chambre id="12">
+<libelle lang="fr">
+<![CDATA[ TV ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ TV ]]>
+</libelle>
+</equipement_chambre>
+</node_equipement_chambre>
+<node_lits>
+<lit id="5282">
+<quantite_lit>1</quantite_lit>
+<longueur>140</longueur>
+<largeur>200</largeur>
+<libelle lang="fr">
+<![CDATA[ Lit double ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Double bed ]]>
+</libelle>
+</lit>
+</node_lits>
+<node_sdb>
+<sdb id="4440">
+<node_equipement_sdb>
+<equipement_sdb id="2">
+<libelle lang="fr">
+<![CDATA[ Douche ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Shower ]]>
+</libelle>
+</equipement_sdb>
+</node_equipement_sdb>
+<lien_chambre/>
+</sdb>
+</node_sdb>
+</chambre>
+<chambre id="5027">
+<localid>2</localid>
+<libelle lang="fr">
+<![CDATA[ Chambre double ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Double bedroom ]]>
+</libelle>
+<intro_chambre lang="fr">
+<![CDATA[ ]]>
+</intro_chambre>
+<intro_chambre lang="en">
+<![CDATA[ ]]>
+</intro_chambre>
+<node_equipement_chambre> </node_equipement_chambre>
+<node_lits>
+<lit id="5283">
+<quantite_lit>2</quantite_lit>
+<longueur>90</longueur>
+<largeur>190</largeur>
+<libelle lang="fr">
+<![CDATA[ Lit simple ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Single bed ]]>
+</libelle>
+</lit>
+</node_lits>
+<node_sdb> </node_sdb>
+</chambre>
+</node_chambre>
+<node_sdb>
+<sdb id="4448">
+<node_equipement_sdb>
+<equipement_sdb id="2">
+<libelle lang="fr">
+<![CDATA[ Douche ]]>
+</libelle>
+<libelle lang="en">
+<![CDATA[ Shower ]]>
+</libelle>
+</equipement_sdb>
+</node_equipement_sdb>
+<lien_chambre>0</lien_chambre>
+</sdb>
+</node_sdb>
+<photo_loisir1>https://admin.cimalpes.com/cache/940/photos_bien_etage_3133_el1.jpg</photo_loisir1>
+<photo_loisir2>https://admin.cimalpes.com/cache/940/photos_bien_etage_3133_el2.jpg</photo_loisir2>
+<photo_loisir3>https://admin.cimalpes.com/cache/940/photos_bien_etage_3133_el3.jpg</photo_loisir3>
+</etage>
+</node_etage>
+<upsale>
+<![CDATA[ ]]>
+</upsale>
+<node_photo>
+<photo ordre="1">
+<url size="original">https://admin.cimalpes.com/photos/bien/2130/d43_9144-modifier.jpg</url>
+</photo>
+<photo ordre="2">
+<url size="original">https://admin.cimalpes.com/photos/bien/2130/d43_9154-modifier.jpg</url>
+</photo>
+<photo ordre="3">
+<url size="original">https://admin.cimalpes.com/photos/bien/2130/d43_9161-hdr-modifier.jpg</url>
+</photo>
+<photo ordre="4">
+<url size="original">https://admin.cimalpes.com/photos/bien/2130/d43_9164-modifier.jpg</url>
+</photo>
+<photo ordre="5">
+<url size="original">https://admin.cimalpes.com/photos/bien/2130/d43_9169-modifier.jpg</url>
+</photo>
+<photo ordre="6">
+<url size="original">https://admin.cimalpes.com/photos/bien/2130/d43_9176-hdr-modifier.jpg</url>
+</photo>
+<photo ordre="7">
+<url size="original">https://admin.cimalpes.com/photos/bien/2130/d43_9180-modifier.jpg</url>
+</photo>
+<photo ordre="8">
+<url size="original">https://admin.cimalpes.com/photos/bien/2130/d43_9185.jpg</url>
+</photo>
+<photo ordre="9">
+<url size="original">https://admin.cimalpes.com/photos/bien/2130/d43_9191-hdr-modifier.jpg</url>
+</photo>
+<photo ordre="10">
+<url size="original">https://admin.cimalpes.com/photos/bien/2130/d43_9196-hdr-modifier.jpg</url>
+</photo>
+</node_photo>
+<node_video> </node_video>
+</detail>
+</message>

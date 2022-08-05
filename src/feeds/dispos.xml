@@ -1,0 +1,845 @@
+<message>
+<datetime>2022-07-26 10:47:28</datetime>
+<sejours>
+<sejour>
+<date_debut>
+<![CDATA[ 2022-07-30 ]]>
+</date_debut>
+<date_fin>
+<![CDATA[ 2022-08-06 ]]>
+</date_fin>
+<type_option>
+<![CDATA[ OCPT-p ]]>
+</type_option>
+<commission>
+<![CDATA[ 10.00 ]]>
+</commission>
+<commission_promo>
+<![CDATA[ 0.00 ]]>
+</commission_promo>
+<comm_no>
+<![CDATA[ 0 ]]>
+</comm_no>
+<montant>
+<![CDATA[ 0.00 ]]>
+</montant>
+<montant_sr>
+<![CDATA[ 0.00 ]]>
+</montant_sr>
+<montant_archive>
+<![CDATA[ 2900.00 ]]>
+</montant_archive>
+<duree>
+<![CDATA[ 7 ]]>
+</duree>
+<publier_tarifs_extranet>
+<![CDATA[ oui ]]>
+</publier_tarifs_extranet>
+<masque_prix_web>
+<![CDATA[ false ]]>
+</masque_prix_web>
+<etat_reservation>réservée</etat_reservation>
+</sejour>
+<sejour>
+<date_debut>
+<![CDATA[ 2022-08-06 ]]>
+</date_debut>
+<date_fin>
+<![CDATA[ 2022-08-13 ]]>
+</date_fin>
+<type_option>
+<![CDATA[ ]]>
+</type_option>
+<commission>
+<![CDATA[ 10.00 ]]>
+</commission>
+<commission_promo>
+<![CDATA[ 0.00 ]]>
+</commission_promo>
+<comm_no>
+<![CDATA[ 0 ]]>
+</comm_no>
+<montant>
+<![CDATA[ 2900.00 ]]>
+</montant>
+<montant_sr>
+<![CDATA[ 0.00 ]]>
+</montant_sr>
+<duree>
+<![CDATA[ 7 ]]>
+</duree>
+<publier_tarifs_extranet>
+<![CDATA[ oui ]]>
+</publier_tarifs_extranet>
+<masque_prix_web>
+<![CDATA[ false ]]>
+</masque_prix_web>
+<etat_reservation>libre</etat_reservation>
+</sejour>
+<sejour>
+<date_debut>
+<![CDATA[ 2022-08-13 ]]>
+</date_debut>
+<date_fin>
+<![CDATA[ 2022-08-20 ]]>
+</date_fin>
+<type_option>
+<![CDATA[ ]]>
+</type_option>
+<commission>
+<![CDATA[ 10.00 ]]>
+</commission>
+<commission_promo>
+<![CDATA[ 0.00 ]]>
+</commission_promo>
+<comm_no>
+<![CDATA[ 0 ]]>
+</comm_no>
+<montant>
+<![CDATA[ 2900.00 ]]>
+</montant>
+<montant_sr>
+<![CDATA[ 0.00 ]]>
+</montant_sr>
+<duree>
+<![CDATA[ 7 ]]>
+</duree>
+<publier_tarifs_extranet>
+<![CDATA[ oui ]]>
+</publier_tarifs_extranet>
+<masque_prix_web>
+<![CDATA[ false ]]>
+</masque_prix_web>
+<etat_reservation>libre</etat_reservation>
+</sejour>
+<sejour>
+<date_debut>
+<![CDATA[ 2022-08-20 ]]>
+</date_debut>
+<date_fin>
+<![CDATA[ 2022-08-27 ]]>
+</date_fin>
+<type_option>
+<![CDATA[ OCPT-p ]]>
+</type_option>
+<commission>
+<![CDATA[ 10.00 ]]>
+</commission>
+<commission_promo>
+<![CDATA[ 0.00 ]]>
+</commission_promo>
+<comm_no>
+<![CDATA[ 0 ]]>
+</comm_no>
+<montant>
+<![CDATA[ 0.00 ]]>
+</montant>
+<montant_sr>
+<![CDATA[ 0.00 ]]>
+</montant_sr>
+<montant_archive>
+<![CDATA[ 2000.00 ]]>
+</montant_archive>
+<duree>
+<![CDATA[ 7 ]]>
+</duree>
+<publier_tarifs_extranet>
+<![CDATA[ oui ]]>
+</publier_tarifs_extranet>
+<masque_prix_web>
+<![CDATA[ false ]]>
+</masque_prix_web>
+<etat_reservation>réservée</etat_reservation>
+</sejour>
+<sejour>
+<date_debut>
+<![CDATA[ 2022-08-27 ]]>
+</date_debut>
+<date_fin>
+<![CDATA[ 2022-09-03 ]]>
+</date_fin>
+<type_option>
+<![CDATA[ ]]>
+</type_option>
+<commission>
+<![CDATA[ 10.00 ]]>
+</commission>
+<commission_promo>
+<![CDATA[ 0.00 ]]>
+</commission_promo>
+<comm_no>
+<![CDATA[ 0 ]]>
+</comm_no>
+<montant>
+<![CDATA[ 2000.00 ]]>
+</montant>
+<montant_sr>
+<![CDATA[ 0.00 ]]>
+</montant_sr>
+<duree>
+<![CDATA[ 7 ]]>
+</duree>
+<publier_tarifs_extranet>
+<![CDATA[ oui ]]>
+</publier_tarifs_extranet>
+<masque_prix_web>
+<![CDATA[ false ]]>
+</masque_prix_web>
+<etat_reservation>libre</etat_reservation>
+</sejour>
+<sejour>
+<date_debut>
+<![CDATA[ 2022-12-05 ]]>
+</date_debut>
+<date_fin>
+<![CDATA[ 2022-12-12 ]]>
+</date_fin>
+<type_option>
+<![CDATA[ ]]>
+</type_option>
+<commission>
+<![CDATA[ 10.00 ]]>
+</commission>
+<commission_promo>
+<![CDATA[ 0.00 ]]>
+</commission_promo>
+<comm_no>
+<![CDATA[ 0 ]]>
+</comm_no>
+<montant>
+<![CDATA[ 4900.00 ]]>
+</montant>
+<montant_sr>
+<![CDATA[ 0.00 ]]>
+</montant_sr>
+<duree>
+<![CDATA[ 7 ]]>
+</duree>
+<publier_tarifs_extranet>
+<![CDATA[ oui ]]>
+</publier_tarifs_extranet>
+<masque_prix_web>
+<![CDATA[ false ]]>
+</masque_prix_web>
+<etat_reservation>libre</etat_reservation>
+</sejour>
+<sejour>
+<date_debut>
+<![CDATA[ 2022-12-12 ]]>
+</date_debut>
+<date_fin>
+<![CDATA[ 2022-12-19 ]]>
+</date_fin>
+<type_option>
+<![CDATA[ ]]>
+</type_option>
+<commission>
+<![CDATA[ 10.00 ]]>
+</commission>
+<commission_promo>
+<![CDATA[ 0.00 ]]>
+</commission_promo>
+<comm_no>
+<![CDATA[ 0 ]]>
+</comm_no>
+<montant>
+<![CDATA[ 4900.00 ]]>
+</montant>
+<montant_sr>
+<![CDATA[ 0.00 ]]>
+</montant_sr>
+<duree>
+<![CDATA[ 7 ]]>
+</duree>
+<publier_tarifs_extranet>
+<![CDATA[ oui ]]>
+</publier_tarifs_extranet>
+<masque_prix_web>
+<![CDATA[ false ]]>
+</masque_prix_web>
+<etat_reservation>libre</etat_reservation>
+</sejour>
+<sejour>
+<date_debut>
+<![CDATA[ 2022-12-19 ]]>
+</date_debut>
+<date_fin>
+<![CDATA[ 2022-12-26 ]]>
+</date_fin>
+<type_option>
+<![CDATA[ OCPT-p ]]>
+</type_option>
+<commission>
+<![CDATA[ 10.00 ]]>
+</commission>
+<commission_promo>
+<![CDATA[ 0.00 ]]>
+</commission_promo>
+<comm_no>
+<![CDATA[ 0 ]]>
+</comm_no>
+<montant>
+<![CDATA[ 0.00 ]]>
+</montant>
+<montant_sr>
+<![CDATA[ 0.00 ]]>
+</montant_sr>
+<montant_archive>
+<![CDATA[ 8000.00 ]]>
+</montant_archive>
+<duree>
+<![CDATA[ 7 ]]>
+</duree>
+<publier_tarifs_extranet>
+<![CDATA[ oui ]]>
+</publier_tarifs_extranet>
+<masque_prix_web>
+<![CDATA[ false ]]>
+</masque_prix_web>
+<etat_reservation>réservée</etat_reservation>
+</sejour>
+<sejour>
+<date_debut>
+<![CDATA[ 2022-12-26 ]]>
+</date_debut>
+<date_fin>
+<![CDATA[ 2023-01-02 ]]>
+</date_fin>
+<type_option>
+<![CDATA[ ]]>
+</type_option>
+<commission>
+<![CDATA[ 10.00 ]]>
+</commission>
+<commission_promo>
+<![CDATA[ 0.00 ]]>
+</commission_promo>
+<comm_no>
+<![CDATA[ 0 ]]>
+</comm_no>
+<montant>
+<![CDATA[ 12600.00 ]]>
+</montant>
+<montant_sr>
+<![CDATA[ 0.00 ]]>
+</montant_sr>
+<duree>
+<![CDATA[ 7 ]]>
+</duree>
+<publier_tarifs_extranet>
+<![CDATA[ oui ]]>
+</publier_tarifs_extranet>
+<masque_prix_web>
+<![CDATA[ false ]]>
+</masque_prix_web>
+<etat_reservation>libre</etat_reservation>
+</sejour>
+<sejour>
+<date_debut>
+<![CDATA[ 2023-01-02 ]]>
+</date_debut>
+<date_fin>
+<![CDATA[ 2023-01-09 ]]>
+</date_fin>
+<type_option>
+<![CDATA[ ]]>
+</type_option>
+<commission>
+<![CDATA[ 10.00 ]]>
+</commission>
+<commission_promo>
+<![CDATA[ 0.00 ]]>
+</commission_promo>
+<comm_no>
+<![CDATA[ 0 ]]>
+</comm_no>
+<montant>
+<![CDATA[ 6650.00 ]]>
+</montant>
+<montant_sr>
+<![CDATA[ 0.00 ]]>
+</montant_sr>
+<duree>
+<![CDATA[ 7 ]]>
+</duree>
+<publier_tarifs_extranet>
+<![CDATA[ oui ]]>
+</publier_tarifs_extranet>
+<masque_prix_web>
+<![CDATA[ false ]]>
+</masque_prix_web>
+<etat_reservation>libre</etat_reservation>
+</sejour>
+<sejour>
+<date_debut>
+<![CDATA[ 2023-01-09 ]]>
+</date_debut>
+<date_fin>
+<![CDATA[ 2023-01-16 ]]>
+</date_fin>
+<type_option>
+<![CDATA[ ]]>
+</type_option>
+<commission>
+<![CDATA[ 10.00 ]]>
+</commission>
+<commission_promo>
+<![CDATA[ 0.00 ]]>
+</commission_promo>
+<comm_no>
+<![CDATA[ 0 ]]>
+</comm_no>
+<montant>
+<![CDATA[ 4550.00 ]]>
+</montant>
+<montant_sr>
+<![CDATA[ 0.00 ]]>
+</montant_sr>
+<duree>
+<![CDATA[ 7 ]]>
+</duree>
+<publier_tarifs_extranet>
+<![CDATA[ oui ]]>
+</publier_tarifs_extranet>
+<masque_prix_web>
+<![CDATA[ false ]]>
+</masque_prix_web>
+<etat_reservation>libre</etat_reservation>
+</sejour>
+<sejour>
+<date_debut>
+<![CDATA[ 2023-01-28 ]]>
+</date_debut>
+<date_fin>
+<![CDATA[ 2023-02-04 ]]>
+</date_fin>
+<type_option>
+<![CDATA[ ]]>
+</type_option>
+<commission>
+<![CDATA[ 10.00 ]]>
+</commission>
+<commission_promo>
+<![CDATA[ 0.00 ]]>
+</commission_promo>
+<comm_no>
+<![CDATA[ 0 ]]>
+</comm_no>
+<montant>
+<![CDATA[ 4550.00 ]]>
+</montant>
+<montant_sr>
+<![CDATA[ 0.00 ]]>
+</montant_sr>
+<duree>
+<![CDATA[ 7 ]]>
+</duree>
+<publier_tarifs_extranet>
+<![CDATA[ oui ]]>
+</publier_tarifs_extranet>
+<masque_prix_web>
+<![CDATA[ false ]]>
+</masque_prix_web>
+<etat_reservation>libre</etat_reservation>
+</sejour>
+<sejour>
+<date_debut>
+<![CDATA[ 2023-02-04 ]]>
+</date_debut>
+<date_fin>
+<![CDATA[ 2023-02-11 ]]>
+</date_fin>
+<type_option>
+<![CDATA[ ]]>
+</type_option>
+<commission>
+<![CDATA[ 10.00 ]]>
+</commission>
+<commission_promo>
+<![CDATA[ 0.00 ]]>
+</commission_promo>
+<comm_no>
+<![CDATA[ 0 ]]>
+</comm_no>
+<montant>
+<![CDATA[ 6650.00 ]]>
+</montant>
+<montant_sr>
+<![CDATA[ 0.00 ]]>
+</montant_sr>
+<duree>
+<![CDATA[ 7 ]]>
+</duree>
+<publier_tarifs_extranet>
+<![CDATA[ oui ]]>
+</publier_tarifs_extranet>
+<masque_prix_web>
+<![CDATA[ false ]]>
+</masque_prix_web>
+<etat_reservation>libre</etat_reservation>
+</sejour>
+<sejour>
+<date_debut>
+<![CDATA[ 2023-02-11 ]]>
+</date_debut>
+<date_fin>
+<![CDATA[ 2023-02-18 ]]>
+</date_fin>
+<type_option>
+<![CDATA[ ]]>
+</type_option>
+<commission>
+<![CDATA[ 10.00 ]]>
+</commission>
+<commission_promo>
+<![CDATA[ 0.00 ]]>
+</commission_promo>
+<comm_no>
+<![CDATA[ 0 ]]>
+</comm_no>
+<montant>
+<![CDATA[ 11900.00 ]]>
+</montant>
+<montant_sr>
+<![CDATA[ 0.00 ]]>
+</montant_sr>
+<duree>
+<![CDATA[ 7 ]]>
+</duree>
+<publier_tarifs_extranet>
+<![CDATA[ oui ]]>
+</publier_tarifs_extranet>
+<masque_prix_web>
+<![CDATA[ false ]]>
+</masque_prix_web>
+<etat_reservation>libre</etat_reservation>
+</sejour>
+<sejour>
+<date_debut>
+<![CDATA[ 2023-02-18 ]]>
+</date_debut>
+<date_fin>
+<![CDATA[ 2023-02-25 ]]>
+</date_fin>
+<type_option>
+<![CDATA[ OCPT-p ]]>
+</type_option>
+<commission>
+<![CDATA[ 10.00 ]]>
+</commission>
+<commission_promo>
+<![CDATA[ 0.00 ]]>
+</commission_promo>
+<comm_no>
+<![CDATA[ 0 ]]>
+</comm_no>
+<montant>
+<![CDATA[ 0.00 ]]>
+</montant>
+<montant_sr>
+<![CDATA[ 0.00 ]]>
+</montant_sr>
+<montant_archive>
+<![CDATA[ 10500.00 ]]>
+</montant_archive>
+<duree>
+<![CDATA[ 7 ]]>
+</duree>
+<publier_tarifs_extranet>
+<![CDATA[ oui ]]>
+</publier_tarifs_extranet>
+<masque_prix_web>
+<![CDATA[ false ]]>
+</masque_prix_web>
+<etat_reservation>réservée</etat_reservation>
+</sejour>
+<sejour>
+<date_debut>
+<![CDATA[ 2023-02-25 ]]>
+</date_debut>
+<date_fin>
+<![CDATA[ 2023-03-04 ]]>
+</date_fin>
+<type_option>
+<![CDATA[ ]]>
+</type_option>
+<commission>
+<![CDATA[ 10.00 ]]>
+</commission>
+<commission_promo>
+<![CDATA[ 0.00 ]]>
+</commission_promo>
+<comm_no>
+<![CDATA[ 0 ]]>
+</comm_no>
+<montant>
+<![CDATA[ 8000.00 ]]>
+</montant>
+<montant_sr>
+<![CDATA[ 0.00 ]]>
+</montant_sr>
+<duree>
+<![CDATA[ 7 ]]>
+</duree>
+<publier_tarifs_extranet>
+<![CDATA[ oui ]]>
+</publier_tarifs_extranet>
+<masque_prix_web>
+<![CDATA[ false ]]>
+</masque_prix_web>
+<etat_reservation>libre</etat_reservation>
+</sejour>
+<sejour>
+<date_debut>
+<![CDATA[ 2023-03-04 ]]>
+</date_debut>
+<date_fin>
+<![CDATA[ 2023-03-11 ]]>
+</date_fin>
+<type_option>
+<![CDATA[ ]]>
+</type_option>
+<commission>
+<![CDATA[ 10.00 ]]>
+</commission>
+<commission_promo>
+<![CDATA[ 0.00 ]]>
+</commission_promo>
+<comm_no>
+<![CDATA[ 0 ]]>
+</comm_no>
+<montant>
+<![CDATA[ 5950.00 ]]>
+</montant>
+<montant_sr>
+<![CDATA[ 0.00 ]]>
+</montant_sr>
+<duree>
+<![CDATA[ 7 ]]>
+</duree>
+<publier_tarifs_extranet>
+<![CDATA[ oui ]]>
+</publier_tarifs_extranet>
+<masque_prix_web>
+<![CDATA[ false ]]>
+</masque_prix_web>
+<etat_reservation>libre</etat_reservation>
+</sejour>
+<sejour>
+<date_debut>
+<![CDATA[ 2023-03-11 ]]>
+</date_debut>
+<date_fin>
+<![CDATA[ 2023-03-18 ]]>
+</date_fin>
+<type_option>
+<![CDATA[ ]]>
+</type_option>
+<commission>
+<![CDATA[ 10.00 ]]>
+</commission>
+<commission_promo>
+<![CDATA[ 0.00 ]]>
+</commission_promo>
+<comm_no>
+<![CDATA[ 0 ]]>
+</comm_no>
+<montant>
+<![CDATA[ 4550.00 ]]>
+</montant>
+<montant_sr>
+<![CDATA[ 0.00 ]]>
+</montant_sr>
+<duree>
+<![CDATA[ 7 ]]>
+</duree>
+<publier_tarifs_extranet>
+<![CDATA[ oui ]]>
+</publier_tarifs_extranet>
+<masque_prix_web>
+<![CDATA[ false ]]>
+</masque_prix_web>
+<etat_reservation>libre</etat_reservation>
+</sejour>
+<sejour>
+<date_debut>
+<![CDATA[ 2023-03-18 ]]>
+</date_debut>
+<date_fin>
+<![CDATA[ 2023-03-25 ]]>
+</date_fin>
+<type_option>
+<![CDATA[ ]]>
+</type_option>
+<commission>
+<![CDATA[ 10.00 ]]>
+</commission>
+<commission_promo>
+<![CDATA[ 0.00 ]]>
+</commission_promo>
+<comm_no>
+<![CDATA[ 0 ]]>
+</comm_no>
+<montant>
+<![CDATA[ 4550.00 ]]>
+</montant>
+<montant_sr>
+<![CDATA[ 0.00 ]]>
+</montant_sr>
+<duree>
+<![CDATA[ 7 ]]>
+</duree>
+<publier_tarifs_extranet>
+<![CDATA[ oui ]]>
+</publier_tarifs_extranet>
+<masque_prix_web>
+<![CDATA[ false ]]>
+</masque_prix_web>
+<etat_reservation>libre</etat_reservation>
+</sejour>
+<sejour>
+<date_debut>
+<![CDATA[ 2023-03-25 ]]>
+</date_debut>
+<date_fin>
+<![CDATA[ 2023-04-01 ]]>
+</date_fin>
+<type_option>
+<![CDATA[ ]]>
+</type_option>
+<commission>
+<![CDATA[ 10.00 ]]>
+</commission>
+<commission_promo>
+<![CDATA[ 0.00 ]]>
+</commission_promo>
+<comm_no>
+<![CDATA[ 0 ]]>
+</comm_no>
+<montant>
+<![CDATA[ 4900.00 ]]>
+</montant>
+<montant_sr>
+<![CDATA[ 0.00 ]]>
+</montant_sr>
+<duree>
+<![CDATA[ 7 ]]>
+</duree>
+<publier_tarifs_extranet>
+<![CDATA[ oui ]]>
+</publier_tarifs_extranet>
+<masque_prix_web>
+<![CDATA[ false ]]>
+</masque_prix_web>
+<etat_reservation>libre</etat_reservation>
+</sejour>
+<sejour>
+<date_debut>
+<![CDATA[ 2023-04-01 ]]>
+</date_debut>
+<date_fin>
+<![CDATA[ 2023-04-08 ]]>
+</date_fin>
+<type_option>
+<![CDATA[ ]]>
+</type_option>
+<commission>
+<![CDATA[ 10.00 ]]>
+</commission>
+<commission_promo>
+<![CDATA[ 0.00 ]]>
+</commission_promo>
+<comm_no>
+<![CDATA[ 0 ]]>
+</comm_no>
+<montant>
+<![CDATA[ 4900.00 ]]>
+</montant>
+<montant_sr>
+<![CDATA[ 0.00 ]]>
+</montant_sr>
+<duree>
+<![CDATA[ 7 ]]>
+</duree>
+<publier_tarifs_extranet>
+<![CDATA[ oui ]]>
+</publier_tarifs_extranet>
+<masque_prix_web>
+<![CDATA[ false ]]>
+</masque_prix_web>
+<etat_reservation>libre</etat_reservation>
+</sejour>
+<sejour>
+<date_debut>
+<![CDATA[ 2023-04-08 ]]>
+</date_debut>
+<date_fin>
+<![CDATA[ 2023-04-15 ]]>
+</date_fin>
+<type_option>
+<![CDATA[ ]]>
+</type_option>
+<commission>
+<![CDATA[ 10.00 ]]>
+</commission>
+<commission_promo>
+<![CDATA[ 0.00 ]]>
+</commission_promo>
+<comm_no>
+<![CDATA[ 0 ]]>
+</comm_no>
+<montant>
+<![CDATA[ 4900.00 ]]>
+</montant>
+<montant_sr>
+<![CDATA[ 0.00 ]]>
+</montant_sr>
+<duree>
+<![CDATA[ 7 ]]>
+</duree>
+<publier_tarifs_extranet>
+<![CDATA[ oui ]]>
+</publier_tarifs_extranet>
+<masque_prix_web>
+<![CDATA[ false ]]>
+</masque_prix_web>
+<etat_reservation>libre</etat_reservation>
+</sejour>
+<sejour>
+<date_debut>
+<![CDATA[ 2023-04-15 ]]>
+</date_debut>
+<date_fin>
+<![CDATA[ 2023-04-22 ]]>
+</date_fin>
+<type_option>
+<![CDATA[ ]]>
+</type_option>
+<commission>
+<![CDATA[ 10.00 ]]>
+</commission>
+<commission_promo>
+<![CDATA[ 0.00 ]]>
+</commission_promo>
+<comm_no>
+<![CDATA[ 0 ]]>
+</comm_no>
+<montant>
+<![CDATA[ 4900.00 ]]>
+</montant>
+<montant_sr>
+<![CDATA[ 0.00 ]]>
+</montant_sr>
+<duree>
+<![CDATA[ 7 ]]>
+</duree>
+<publier_tarifs_extranet>
+<![CDATA[ oui ]]>
+</publier_tarifs_extranet>
+<masque_prix_web>
+<![CDATA[ false ]]>
+</masque_prix_web>
+<etat_reservation>libre</etat_reservation>
+</sejour>
+</sejours>
+</message>

@@ -1,11 +1,12 @@
 {
-    "name": "villanovo/cimalpes",
+    "name": "villanovo/thirdparties",
     "description": "SDK cimalpes api",
     "type": "project",
     "autoload": {
         "psr-4": {
-            "Villanovo\\Cimalpes\\": "src/"
-        }
+            "Villanovo\\ThirdParties\\": "src/"
+        },
+        "files": ["app/db.php","app/photos.php","app/includes/tools.php"]
     },
     "authors": [
         {
