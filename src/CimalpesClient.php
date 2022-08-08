@@ -37,12 +37,12 @@ class CimalpesClient
         
 		$tableBiens = [];
 		// foreach ($biens as $bien) {
-		for($i=0; $i<2;$i++){
+		for($i=0; $i<3;$i++){
 			$nodeBien = $biens[$i];
 			$dtobien = $this->fromNodeListing($nodeBien);
 			$dtobien = $this->getDetail($dtobien);
 			array_push($tableBiens,$dtobien);
-            // break;
+            
 		}
 		// }
 		return $tableBiens;
@@ -168,6 +168,7 @@ class CimalpesClient
          $bien->options = $this->getOptions();
          $bien->sejours = $this->getSejours($bien->id);
          $bien->photos = $this->getPhotos($bien->id);
+         $bien->distances = $this->getDistances();
 
             return $bien;
     
@@ -240,6 +241,17 @@ class CimalpesClient
         }
           
           return $photos;
+    }
+
+    private function getDistances(){
+        $distances = [];
+        $xpath = new DOMXPath($this->fluxDetail);
+        $distances["centre"] = $xpath->query("//centre_distance_m")->item(0)->nodeValue;
+        $distances["ecole"] = $xpath->query("//ecole_ski_distance_m")->item(0)->nodeValue;
+        $distances["piste"] = $xpath->query("//piste_distance_m")->item(0)->nodeValue;
+        $distances["telesiege"] = $xpath->query("//telesiege_distance_m")->item(0)->nodeValue;
+
+        return $distances;
     }
     
 

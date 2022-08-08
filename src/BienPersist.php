@@ -37,7 +37,7 @@ class BienPersist extends \db
     public $apiDispos;
     public $toMatch;
     public $notifications;
-
+    public $distances;
 
     const DB_DSN = "mysql:host=bqro.myd.infomaniak.com;port=3306;dbname=bqro_test";
     const DB_USERNAME = "bqro_yassine";
@@ -64,6 +64,7 @@ class BienPersist extends \db
             $this->options = $this->getOptions();
             $this->defaultOptions = $this->getDefaultOptions();
             $this->apiDispos = $this->getApiDispos();
+            $this->distances = $this->getDistances();
         } catch (Exception $e) {
             $e->getMessage();
         }
@@ -92,6 +93,7 @@ class BienPersist extends \db
                     $bien["localId"] =$villaInfo["villa_id"];
                     $bien["villaSlug"] = $villaInfo["villa_slug"];                
                     $bien["zoneSlug"] = $villaInfo["zone_slug"];
+                    $bien["zoneId"] = $villaInfo["zone_id"];
                     $bien["updated_at"] = "cimalpes api has no update date";
                     $bien["apiSlug"] = makeSlugs($bien["nom"]);
                     
@@ -134,7 +136,8 @@ class BienPersist extends \db
                     $bien["zoneId"] = $zoneId;
                     $bien["city"] = $this->zones[$zoneIndex]["city"];
 
-                    
+                    $bien["zoneSlug"] = $this->zones[$zoneIndex]["cityslug"];
+
                     $bien["cityId"] = $idCity;
                     $bien["countryId"] = $this->zones[$zoneIndex]["country_id"];
                     $bien["calendarCode"] = generateCalendarCode(12); 
@@ -154,6 +157,7 @@ class BienPersist extends \db
                 $this->insertOptions($bien["options"],$bien["localId"]);
                 $this->insertSejours($bien["sejours"],$bien["localId"]);
                 $this->syncPhotos($bien);
+                $this->syncDistances($bien["distances"],$bien["localId"],$bien["zoneId"]);
            }
 
    
@@ -163,79 +167,119 @@ class BienPersist extends \db
     }
 
 
+    public function syncDistances($distances,$villaId,$zoneId){
+        $toInsert = [];
 
-  public function syncPhotos($bien) {
+        foreach ($distances as $distName => $distance) {
+            
+            $distanceId = $this->checkDistance($distName);
+             var_dump($distanceId);
+            if ($distanceId !== false and $distanceId !== "0" ) {
+               $toInsert["areas_distances"][] = '(' .$distanceId. ',' .$zoneId .')';
+               $toInsert["distances_ids"][] = '('.$villaId. ',' .$distanceId. ',"",' .$distance. '",0,0,0,3")';
+            } else {
+                $this->toMatch["vn_api_areas"][] = '(2,0,"'.$distName. '",0)';
+            }
+
+        }
+       var_dump(  $toInsert["distances_ids"],$this->toMatch["vn_api_areas"]);exit();
+
+        if (!empty($toInsert)) { $this->insertDistances($toInsert);}
+   
+    }
+
+    public function insertDistances($toInsert){
+        $sqlQuery = 'INSERT INTO vn_villas_distances_ids (villa_id,area_distance_id,villa_distance_desc,villa_distance,villa_distance_unite,
+                     villa_distance_time,villa_distance_time_unite,villa_distance_time_per) values ' .implode(',',$toInsert["distances_ids"]);
+        $this->exec($sqlQuery);
+    }
+
+
+
+    public function checkDistance($distanceName) {
+        $index = array_search($distanceName,array_column($this->distances,'area_distance_name'));
+
+        if ($index !== false ) {
+            return $this->distances[$index]["area_distance_id"];
+        } else {
+            return false;
+        }
+
+
+    }
+
+    public function syncPhotos($bien) {
 
         $localPhotos = $this->getPhotos($bien["localId"]);
-      
+
         $hasPhotos = count($localPhotos) > 0;
         $isUploadedPhoto = false;
         $uploadePhotos = [];
-       
+
         foreach($bien["photos"] as $key => $photo) {
-            $index = array_search($photo["id"],array_column($localPhotos,"photo_source_id"));
-            
-            if($index === false) { 
-                $uploadedPhotos[$key]["name"] = $bien["zoneSlug"] . "-" . $bien["apiSlug"] . uniqid(rand(),true);
-                $uploadedPhotos[$key]["ext"] = $photo["ext"];
-                $uploadedPhotos[$key]["width"] = $photo["width"];
-                $uploadedPhotos[$key]["height"] = $photo["height"];
-                $uploadedPhotos[$key]["source_id"] = $photo["id"];
-                $uploadedPhotos[$key]["url"] = $photo["url"];
-                
-            } else {
-                unset($localPhotos[$key]);
-            }
+        $index = array_search($photo["id"],array_column($localPhotos,"photo_source_id"));
+
+        if($index === false) { 
+            $uploadedPhotos[$key]["name"] = $bien["zoneSlug"] . "-" . $bien["apiSlug"] . uniqid(rand(),true);
+            $uploadedPhotos[$key]["ext"] = $photo["ext"];
+            $uploadedPhotos[$key]["width"] = $photo["width"];
+            $uploadedPhotos[$key]["height"] = $photo["height"];
+            $uploadedPhotos[$key]["source_id"] = $photo["id"];
+            $uploadedPhotos[$key]["url"] = $photo["url"];
+
+        } else {
+        unset($localPhotos[$key]);
         }
-         
-        
+    }
 
 
-        if(!empty($uploadedPhotos)) {  
 
-            foreach( $uploadedPhotos as $uploadedPhoto ){
 
-                $photo_obj = new photos();
-                $photo_obj->setVillaId($bien["localId"]);
-                $photo_obj->setName($uploadedPhoto['name']);
-                $photo_obj->setExt($uploadedPhoto['ext']);
-                $photo_obj->setSourceId($uploadedPhoto['source_id']);
-                $photo_obj->setUploadMode('remote');
+    if(!empty($uploadedPhotos)) {  
 
-              
+    foreach( $uploadedPhotos as $uploadedPhoto ){
 
-                if( $photo_obj->upload($uploadedPhoto['url']) ){
-        
-                    if( $photo_obj->add() ){
-                        $photo_obj->resize('resize');
-                        $photo_obj->resize(1920);
-                        $photo_obj->resize(1366);
-                        $photo_obj->resize(960);
-                        $photo_obj->resize(750);
-                        $isUploadedPhoto = true;
-                    }
-        
-                }
-        
-            }
+    $photo_obj = new photos();
+    $photo_obj->setVillaId($bien["localId"]);
+    $photo_obj->setName($uploadedPhoto['name']);
+    $photo_obj->setExt($uploadedPhoto['ext']);
+    $photo_obj->setSourceId($uploadedPhoto['source_id']);
+    $photo_obj->setUploadMode('remote');
 
-         }
 
-         if(!empty($localPhotos)) {
 
-            foreach( $localPhotos as $localPhoto ){
-                $photo_obj = photos::build($localPhoto['villa_photo_id']);
-                $photo_obj->delete();
-            }
+    if( $photo_obj->upload($uploadedPhoto['url']) ){
 
-            }
+        if( $photo_obj->add() ){
+            $photo_obj->resize('resize');
+            $photo_obj->resize(1920);
+            $photo_obj->resize(1366);
+            $photo_obj->resize(960);
+            $photo_obj->resize(750);
+            $isUploadedPhoto = true;
+        }
 
-            if( $hasPhotos && $isUploadedPhoto ){
-                $this->notifications["photos"]["isNewPhotosNotification"] = true;
-            }
-      
+    }
 
-  }
+    }
+
+    }
+
+    if(!empty($localPhotos)) {
+
+    foreach( $localPhotos as $localPhoto ){
+    $photo_obj = photos::build($localPhoto['villa_photo_id']);
+    $photo_obj->delete();
+    }
+
+    }
+
+    if( $hasPhotos && $isUploadedPhoto ){
+    $this->notifications["photos"]["isNewPhotosNotification"] = true;
+    }
+
+
+    }
 
 
    public function insertSejours($sejours,$localId) {
@@ -562,7 +606,7 @@ class BienPersist extends \db
     public function checkApiVillas($idApi)
     {
         $sqlQuery = 'SELECT 
-                    v.villa_id, v.villa_slug, v.api_updated_at, v.api_to_update, z2t.zone_slug
+                    v.villa_id, v.villa_slug, v.api_updated_at, v.api_to_update, v.zone_id,z2t.zone_slug
                     from vn_villas as v 
                     join vn_zones as z1
                     on v.zone_id = z1.zone_id
@@ -612,7 +656,6 @@ class BienPersist extends \db
                     WHERE api_source_id = 2";
 
         $this->exec($sqlQuery);
-      
         return  $this->fetchAll();
     }
 
@@ -650,6 +693,11 @@ class BienPersist extends \db
         return $bien_params;
     }
    
+    public function getDistances(){
+        $sqlQuery = 'SELECT * FROM vn_api_areas WHERE api_source_id = 2';
+        $this->exec($sqlQuery);
+        return $this->fetchAll();
+    }
     public function getDefaultOptions() {
         $sqlQuery = "SELECT * FROM `vn_api_options_ids` WHERE api_source_id = 2";
         $this->exec($sqlQuery);
@@ -707,6 +755,14 @@ class BienPersist extends \db
             $sejoursQuery = 'INSERT INTO `vn_api_dispos` (api_source_id,status_name,is_booked,is_option,is_disabled) values ' . implode(',',$status);
            $this->exec($sejoursQuery);
           }
+
+          //matching des distances
+          if (!empty($this->toMatch["vn_api_areas"])) { 
+            $distances = array_unique($this->toMatch["vn_api_areas"]);
+            $sqlQuery = 'INSERT INTO vn_api_areas (api_source_id,area_distance_id,area_distance_name,disabled_at) values ' .implode(',',$distances);
+            $this->exec($sqlQuery);
+        }
+
     }
 
 
