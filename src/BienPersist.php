@@ -50,6 +50,7 @@ class BienPersist extends \db
   
     public $api_source_id = 2;
     public $zone_default_id = 0;
+    public $toUpdate = false;
 
     public function __construct()
     {
@@ -157,7 +158,8 @@ class BienPersist extends \db
                 $this->insertOptions($bien["options"],$bien["localId"]);
                 $this->insertSejours($bien["sejours"],$bien["localId"]);
                 $this->syncPhotos($bien);
-                $this->syncDistances($bien["distances"],$bien["localId"],$bien["zoneId"]);
+                $this->syncDistances($bien["distances"],$bien["localId"]);
+                $this->apiToUpdate($bien["localId"]);
            }
 
    
@@ -167,22 +169,48 @@ class BienPersist extends \db
     }
 
 
-    public function syncDistances($distances,$villaId,$zoneId){
+    public function syncDistances($distances,$villaId){
         $toInsert = [];
 
+        $this->unlinkDistances($villaId);   
+        
         foreach ($distances as $distName => $distance) {
             
-            $distanceId = $this->checkDistance($distName);
-             var_dump($distanceId);
-            if ($distanceId !== false and $distanceId !== "0" ) {
-               $toInsert["areas_distances"][] = '(' .$distanceId. ',' .$zoneId .')';
-               $toInsert["distances_ids"][] = '('.$villaId. ',' .$distanceId. ',"",' .$distance. '",0,0,0,3")';
+            $index = $this->checkDistance($distName);
+                // var_dump($index);exit();
+            if ($index !== false) {
+
+                $distanceId = $this->distances[$index]["area_distance_id"];
+                $disabled = !empty($this->distances[$index]["disabled_at"]) ;
+
+                if($disabled == false) {
+                    
+                    if ($distanceId > 0 ) {
+
+
+                            if (isset($distanceId) and isset($distance["unit"])) {
+                                
+                            }
+                            
+                            $toInsert["distances_ids"][] = '('.$villaId. ',' .$distanceId. ',"",' .$distance["distance"]. ','
+                                      .$distance["unit"]. ',' .$distance["time"]. ',' .$distance["time_unit"]. ',' .$distance["time_per"]. ')';
+                     } else {
+                       $this->toUpdate = true;
+                     }
+                }
+
             } else {
-                $this->toMatch["vn_api_areas"][] = '(2,0,"'.$distName. '",0)';
+                    $this->toMatch["vn_api_areas"][] = '(2,0,"'.$distName. '",0)';
+                    $this->toUpdate = true;
             }
 
+
+            // var_dump($distanceId,$disabled);exit();
+
+     
+    
+
         }
-       var_dump(  $toInsert["distances_ids"],$this->toMatch["vn_api_areas"]);exit();
 
         if (!empty($toInsert)) { $this->insertDistances($toInsert);}
    
@@ -191,21 +219,18 @@ class BienPersist extends \db
     public function insertDistances($toInsert){
         $sqlQuery = 'INSERT INTO vn_villas_distances_ids (villa_id,area_distance_id,villa_distance_desc,villa_distance,villa_distance_unite,
                      villa_distance_time,villa_distance_time_unite,villa_distance_time_per) values ' .implode(',',$toInsert["distances_ids"]);
+
+                    //  var_dump($sqlQuery); exit();
         $this->exec($sqlQuery);
     }
 
-
+    public function unlinkDistances($villaId) {
+        $sqlQuery = 'DELETE FROM vn_villas_distances_ids WHERE villa_id =' .$villaId;
+        $this->exec($sqlQuery);
+    }
 
     public function checkDistance($distanceName) {
-        $index = array_search($distanceName,array_column($this->distances,'area_distance_name'));
-
-        if ($index !== false ) {
-            return $this->distances[$index]["area_distance_id"];
-        } else {
-            return false;
-        }
-
-
+        return array_search($distanceName,array_column($this->distances,"area_distance_name"));
     }
 
     public function syncPhotos($bien) {
@@ -261,6 +286,8 @@ class BienPersist extends \db
 
     }
 
+    if($isUploadedPhoto == false) { $this->toUpdate = true;}
+    
     }
 
     }
@@ -276,6 +303,8 @@ class BienPersist extends \db
 
     if( $hasPhotos && $isUploadedPhoto ){
     $this->notifications["photos"]["isNewPhotosNotification"] = true;
+    } else {
+
     }
 
 
@@ -376,7 +405,9 @@ class BienPersist extends \db
                 $toInsert[] = '('.$villaId.','.$equipmentId.')';
             } elseif($equipmentId < 0 ) {
                 $this->toMatch['equipments'][] = '(2,0,"' .$equipment. '")';
-                $this->toUpdate = 1;
+                $this->toUpdate = true;
+            } elseif($equipmentId == 0) {
+                $this->toUpdate = true;
             }
         }
        if(!empty($toInsert)) { $this->linkEquipments($toInsert); }        
@@ -396,7 +427,9 @@ class BienPersist extends \db
           } elseif($optionId < 0) {
              $this->toMatch['options'][] = '(2,0,"' .$option. '")';
              $this->toUpdate = 1;
-          } 
+          } elseif($optionId == 0){
+            $this->toUpdate = true;
+          }
  
       }
 
@@ -763,9 +796,20 @@ class BienPersist extends \db
             $this->exec($sqlQuery);
         }
 
+       
+
+      
+
     }
 
+     //mise à jour du champs apitoUpdate
 
+    public function apiToUpdate($villaId) {
+        if ($this->toUpdate == true) {
+            $sqlQuery = 'UPDATE vn_villas set  api_to_update = 1 WHERE villa_id = ' .$villaId;
+            $this->exec($sqlQuery);
+        }
+    }
 
 
 }
