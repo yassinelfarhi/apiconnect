@@ -86,7 +86,7 @@ class BienPersist extends \db
     public function insertOrUpdate($biens)
     {
         foreach ($biens as $bien) {
- 
+                
             if ($villaInfo = $this->checkApiVillas($bien["id"])) {
             
                 if( ( !empty($bien->updatedAt) and ($bien->updatedAt > $villaInfo["api_updated_at"] or $villaInfo["api_to_update"] == 1) ) or empty($bien->updatedAt) ) {
@@ -113,9 +113,6 @@ class BienPersist extends \db
 
             } else {
                 $villaTypeId = $this->checkType($bien["type"]) ;
-
-      
-
                 $zoneIndex = $this->checkZone($bien["station"]);
 
                 if ($zoneIndex >= 0) {
@@ -176,6 +173,7 @@ class BienPersist extends \db
         
         foreach ($distances as $distName => $distance) {
             
+
             $index = $this->checkDistance($distName);
                 // var_dump($index);exit();
             if ($index !== false) {
@@ -187,13 +185,17 @@ class BienPersist extends \db
                     
                     if ($distanceId > 0 ) {
 
+                            $distanceValue = !empty($distance["value"]) ? $distance["value"] : 0;
+                            $unit = in_array($distance["unit"],[1,2]) ? $distance["unit"] : 0;
+                            $time = !empty($distance["time"]) ? $distance["time"]: 0;
+                            $time_unit = in_array($distance["time_unit"],[1,2]) ? $distance["time_unit"]: 0;
+                            $time_per = in_array($distance["time_per"],[1,2,3,4,5]) ? $distance["time_per"]: 0;
 
-                            if (isset($distanceId) and isset($distance["unit"])) {
-                                
+                            if( ($distance > 0 && $unit > 0) || ($time > 0 && $time_unit > 0 && $time_per > 0 ) ) {
+                                $toInsert["distances_ids"][] = '('.$villaId. ',' .$distanceId. ',"",' .$distanceValue. ','.$unit. ',' .$time. ',' .$time_unit. ',' .$time_per. ')';
                             }
-                            
-                            $toInsert["distances_ids"][] = '('.$villaId. ',' .$distanceId. ',"",' .$distance["distance"]. ','
-                                      .$distance["unit"]. ',' .$distance["time"]. ',' .$distance["time_unit"]. ',' .$distance["time_per"]. ')';
+                        
+                        
                      } else {
                        $this->toUpdate = true;
                      }
@@ -205,13 +207,11 @@ class BienPersist extends \db
             }
 
 
-            // var_dump($distanceId,$disabled);exit();
 
      
     
 
         }
-
         if (!empty($toInsert)) { $this->insertDistances($toInsert);}
    
     }
@@ -399,16 +399,41 @@ class BienPersist extends \db
         $toInsert = [] ;
         $this->unlinkEquipments($villaId);
 
+
+
         foreach($equipments as $equipment) {
-            $equipmentId = $this->checkEquipment($equipment);
-            if ($equipmentId > 0 ) {
-                $toInsert[] = '('.$villaId.','.$equipmentId.')';
-            } elseif($equipmentId < 0 ) {
+
+
+            $equipIndex = $this->checkEquipment($equipment);
+
+            if ($equipIndex !== false) {
+
+              
+                $equipmentId = $this->equipments[$equipIndex]["equipment_id"];
+
+                $equipDisabled = !empty($this->equipments[$equipIndex]["disabled_at"]);
+             
+
+                if ($equipDisabled == false) {
+
+                    if ($equipmentId > 0 ) {
+                        $toInsert[] = '('.$villaId.','.$equipmentId.')';
+                    } else {
+                        $this->toUpdate = true;
+                    }
+
+                }
+
+
+
+
+            } else {
                 $this->toMatch['equipments'][] = '(2,0,"' .$equipment. '")';
                 $this->toUpdate = true;
-            } elseif($equipmentId == 0) {
-                $this->toUpdate = true;
             }
+
+            
+    
         }
        if(!empty($toInsert)) { $this->linkEquipments($toInsert); }        
     }
@@ -421,16 +446,26 @@ class BienPersist extends \db
       $this->unlinkOptions($villaId);
 
       foreach($options as $option){
-          $optionId = $this->checkOption($option);
-          if ($optionId > 0) {
-             $toInsert[] = '(' .$villaId.',' .$optionId. ',1,0,0,0,0,0,0,0,0,0,0,0)';
-          } elseif($optionId < 0) {
-             $this->toMatch['options'][] = '(2,0,"' .$option. '")';
-             $this->toUpdate = 1;
-          } elseif($optionId == 0){
-            $this->toUpdate = true;
-          }
- 
+          $optionIndex = $this->checkOption($option);
+            
+            if ($optionIndex !== false) {
+
+                $optionId = $this->options[$optionIndex]["option_id"];
+                $optionDisable = !empty($this->options[$optionIndex]["disabled_at"]);
+                    
+                if($optionDisable == false){
+
+                    if ($optionId > 0) {
+                        $toInsert[] = '(' .$villaId.',' .$optionId. ',1,0,0,0,0,0,0,0,0,0,0,0)';
+                     } else {
+                       $this->toUpdate = true;
+                     }
+                }
+
+            } else {
+                 $this->toMatch['options'][] = '(2,0,"' .$option. '")';
+                 $this->toUpdate = 1;
+            }
       }
 
       foreach($this->defaultOptions as $defaultOption) {
@@ -605,10 +640,10 @@ class BienPersist extends \db
     
      public function checkEquipment($equipmentName) {
         $equipmentIndex = array_search($equipmentName,array_column($this->equipments,"equipment_name"));
-        return ($equipmentIndex !== false ) ? $this->equipments[$equipmentIndex]["equipment_id"] : -1;
+        return ($equipmentIndex !== false ) ? $equipmentIndex : false;
      }
 
-
+     
     public function checkZone($bienZone) {
             $zoneIndex = array_search($bienZone,array_column($this->zones,"quartier"));
             return ($zoneIndex !== false) ? $zoneIndex  : -1;
@@ -632,8 +667,8 @@ class BienPersist extends \db
     
 
     public function checkOption($apiOptionName) {
-        $optionIndex = array_search($apiOptionName,array_column($this->options,"option_name"));
-        return ($optionIndex !== false ) ? $this->options[$optionIndex]["option_id"] : -1;
+        return array_search($apiOptionName,array_column($this->options,"option_name"));
+        // return ($optionIndex !== false ) ? $this->options[$optionIndex]["option_id"] : -1;
     }
 
     public function checkApiVillas($idApi)
@@ -665,7 +700,7 @@ class BienPersist extends \db
     
 
     public function getEquipments() {
-        $sqlQuery = "SELECT equipment_name, equipment_id FROM vn_api_equipments";
+        $sqlQuery = "SELECT equipment_name, equipment_id,disabled_at FROM vn_api_equipments";
         $this->exec($sqlQuery);
         return  $this->fetchAll();
     }

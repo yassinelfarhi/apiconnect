@@ -253,7 +253,7 @@ class CimalpesClient
         foreach ($distancesList as $distance) {
             $type = str_replace("_distance_m","",$distance->nodeName);
             $distances[$type] = [
-                'distance' => $distance->nodeValue / 1000,
+                'value' => $distance->nodeValue / 1000,
                 'unit' => 1,
                 'time' => "",
                 'time_unit' => "",

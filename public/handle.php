@@ -20,6 +20,6 @@ $biensJson = json_decode(file_get_contents(__DIR__."/biens.json"),true);
 // // //  var_dump($persiste->languges);
  $persiste->insertOrUpdate($biensJson);
 
-//  var_dump($biensJson[1]);
+//  var_dump($biensJson);
 
 
