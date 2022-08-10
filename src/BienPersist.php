@@ -50,7 +50,7 @@ class BienPersist extends \db
   
     public $api_source_id = 2;
     public $zone_default_id = 0;
-    public $toUpdate = false;
+    public $toUpdate = 0;
 
     public function __construct()
     {
@@ -197,13 +197,13 @@ class BienPersist extends \db
                         
                         
                      } else {
-                       $this->toUpdate = true;
+                       $this->toUpdate = 1;
                      }
                 }
 
             } else {
                     $this->toMatch["vn_api_areas"][] = '(2,0,"'.$distName. '",0)';
-                    $this->toUpdate = true;
+                    $this->toUpdate = 1;
             }
 
 
@@ -262,33 +262,31 @@ class BienPersist extends \db
 
     if(!empty($uploadedPhotos)) {  
 
-    foreach( $uploadedPhotos as $uploadedPhoto ){
+        foreach( $uploadedPhotos as $uploadedPhoto ){
 
-    $photo_obj = new photos();
-    $photo_obj->setVillaId($bien["localId"]);
-    $photo_obj->setName($uploadedPhoto['name']);
-    $photo_obj->setExt($uploadedPhoto['ext']);
-    $photo_obj->setSourceId($uploadedPhoto['source_id']);
-    $photo_obj->setUploadMode('remote');
+            $photo_obj = new photos();
+            $photo_obj->setVillaId($bien["localId"]);
+            $photo_obj->setName($uploadedPhoto['name']);
+            $photo_obj->setExt($uploadedPhoto['ext']);
+            $photo_obj->setSourceId($uploadedPhoto['source_id']);
+            $photo_obj->setUploadMode('remote');
 
 
 
-    if( $photo_obj->upload($uploadedPhoto['url']) ){
+            if( $photo_obj->upload($uploadedPhoto['url']) ){
 
-        if( $photo_obj->add() ){
-            $photo_obj->resize('resize');
-            $photo_obj->resize(1920);
-            $photo_obj->resize(1366);
-            $photo_obj->resize(960);
-            $photo_obj->resize(750);
-            $isUploadedPhoto = true;
-        }
+                if( $photo_obj->add() ){
+                    $photo_obj->resize('resize');
+                    $photo_obj->resize(1920);
+                    $photo_obj->resize(1366);
+                    $photo_obj->resize(960);
+                    $photo_obj->resize(750);
+                    $isUploadedPhoto = true;
+                }
 
-    }
-
-    if($isUploadedPhoto == false) { $this->toUpdate = true;}
+            }
     
-    }
+        }
 
     }
 
@@ -352,7 +350,7 @@ class BienPersist extends \db
                 }
          
              } elseif($status == false) {
-                $this->toMatch['sejours'][] = '(' .$this->api_source_id. ',"' .$sejour["status"]. '",0,0,1)';
+                $this->toMatch['sejours'][] = '(' .$this->api_source_id. ',"' .$sejour["status"]. '",0,0,0,"")';
                 $this->toUpdate = 1;
              }
          }
@@ -403,10 +401,7 @@ class BienPersist extends \db
 
         foreach($equipments as $equipment) {
 
-
-            $equipIndex = $this->checkEquipment($equipment);
-
-            if ($equipIndex !== false) {
+            if ( $equipIndex = $this->checkEquipment($equipment)) {
 
               
                 $equipmentId = $this->equipments[$equipIndex]["equipment_id"];
@@ -419,17 +414,14 @@ class BienPersist extends \db
                     if ($equipmentId > 0 ) {
                         $toInsert[] = '('.$villaId.','.$equipmentId.')';
                     } else {
-                        $this->toUpdate = true;
+                        $this->toUpdate = 1;
                     }
 
                 }
 
-
-
-
             } else {
                 $this->toMatch['equipments'][] = '(2,0,"' .$equipment. '")';
-                $this->toUpdate = true;
+                $this->toUpdate = 1;
             }
 
             
@@ -458,7 +450,7 @@ class BienPersist extends \db
                     if ($optionId > 0) {
                         $toInsert[] = '(' .$villaId.',' .$optionId. ',1,0,0,0,0,0,0,0,0,0,0,0)';
                      } else {
-                       $this->toUpdate = true;
+                       $this->toUpdate = 1;
                      }
                 }
 
@@ -827,7 +819,7 @@ class BienPersist extends \db
           //matching des distances
           if (!empty($this->toMatch["vn_api_areas"])) { 
             $distances = array_unique($this->toMatch["vn_api_areas"]);
-            $sqlQuery = 'INSERT INTO vn_api_areas (api_source_id,area_distance_id,area_distance_name,disabled_at) values ' .implode(',',$distances);
+            $sqlQuery = 'INSERT INTO vn_api_areas (api_source_id,area_distance_id,area_distance_name,disabled_at,edited_at) values ' .implode(',',$distances);
             $this->exec($sqlQuery);
         }
 
@@ -840,10 +832,10 @@ class BienPersist extends \db
      //mise à jour du champs apitoUpdate
 
     public function apiToUpdate($villaId) {
-        if ($this->toUpdate == true) {
-            $sqlQuery = 'UPDATE vn_villas set  api_to_update = 1 WHERE villa_id = ' .$villaId;
+    
+            $sqlQuery = 'UPDATE vn_villas set  api_to_update =' .$this->toUpdate. ' WHERE villa_id = ' .$villaId;
             $this->exec($sqlQuery);
-        }
+        
     }
 
 
