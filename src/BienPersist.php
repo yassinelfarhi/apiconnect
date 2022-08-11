@@ -154,7 +154,7 @@ class BienPersist extends \db
                 $this->insertEquipments($bien["localId"],$bien["equipments"]);               
                 $this->insertOptions($bien["options"],$bien["localId"]);
                 $this->insertSejours($bien["sejours"],$bien["localId"]);
-                $this->syncPhotos($bien);
+                // $this->syncPhotos($bien);
                 $this->syncDistances($bien["distances"],$bien["localId"]);
                 $this->apiToUpdate($bien["localId"]);
            }
@@ -400,14 +400,12 @@ class BienPersist extends \db
 
 
         foreach($equipments as $equipment) {
+            $equipIndex = $this->checkEquipment($equipment);
 
-            if ( $equipIndex = $this->checkEquipment($equipment)) {
+            if ( $equipIndex !== false ) {
 
-              
                 $equipmentId = $this->equipments[$equipIndex]["equipment_id"];
-
                 $equipDisabled = !empty($this->equipments[$equipIndex]["disabled_at"]);
-             
 
                 if ($equipDisabled == false) {
 
@@ -420,13 +418,16 @@ class BienPersist extends \db
                 }
 
             } else {
-                $this->toMatch['equipments'][] = '(2,0,"' .$equipment. '")';
+                $this->toMatch['equipments'][] = '(2,0,"' .$equipment. '",0)';
                 $this->toUpdate = 1;
+
             }
 
             
     
         }
+
+
        if(!empty($toInsert)) { $this->linkEquipments($toInsert); }        
     }
 
@@ -439,12 +440,12 @@ class BienPersist extends \db
 
       foreach($options as $option){
           $optionIndex = $this->checkOption($option);
-            
             if ($optionIndex !== false) {
 
                 $optionId = $this->options[$optionIndex]["option_id"];
                 $optionDisable = !empty($this->options[$optionIndex]["disabled_at"]);
-                    
+                
+
                 if($optionDisable == false){
 
                     if ($optionId > 0) {
@@ -631,8 +632,8 @@ class BienPersist extends \db
     }
     
      public function checkEquipment($equipmentName) {
-        $equipmentIndex = array_search($equipmentName,array_column($this->equipments,"equipment_name"));
-        return ($equipmentIndex !== false ) ? $equipmentIndex : false;
+        return array_search($equipmentName,array_column($this->equipments,"equipment_name"));
+        
      }
 
      
@@ -800,19 +801,22 @@ class BienPersist extends \db
 
         if (!empty($this->toMatch['equipments'])) {
             $equipments = array_unique($this->toMatch['equipments']);
-            $equipmentsQuery = "INSERT INTO `vn_api_equipments` (api_source_id,equipment_id,equipment_name) values " . implode(',',$equipments);
+            $equipmentsQuery = "INSERT INTO `vn_api_equipments` (api_source_id,equipment_id,equipment_name,disabled_at) values " . implode(',',$equipments);
+            // var_dump($equipments);exit();
+
             $this->exec($equipmentsQuery);
           }
 
         if (!empty($this->toMatch['options'])) {
             $options = array_unique($this->toMatch['options']);
+            
             $optionsQuery = "INSERT INTO `vn_api_options` (api_source_id,option_id,option_name) values " . implode(',',$options);
             $this->exec($optionsQuery);
           }
 
         if (!empty($this->toMatch['sejours'])) {
             $status = array_unique($this->toMatch['sejours']);      
-            $sejoursQuery = 'INSERT INTO `vn_api_dispos` (api_source_id,status_name,is_booked,is_option,is_disabled) values ' . implode(',',$status);
+            $sejoursQuery = 'INSERT INTO `vn_api_dispos` (api_source_id,status_name,is_booked,is_option,is_disabled,is_edited) values ' . implode(',',$status);
            $this->exec($sejoursQuery);
           }
 

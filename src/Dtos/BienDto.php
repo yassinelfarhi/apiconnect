@@ -18,6 +18,7 @@ class BienDto{
     public $sejours;
     public $photos;
     public $updatedAt;
+    public $chambres;
     /**
      * @var array
      * */

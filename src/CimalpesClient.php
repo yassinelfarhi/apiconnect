@@ -11,6 +11,7 @@
 
 namespace Villanovo\ThirdParties;
 
+use DateTime;
 use DOMDocument;
 use DOMXPath;
 use Villanovo\ThirdParties\Dtos\BienDto;
@@ -55,11 +56,11 @@ class CimalpesClient
 	{
         
 		$this->fluxDetail = new \DOMDocument('1.0','UTF-8');
-        $this->fluxDetail->preserveWhiteSpace = false;
-        $this->fluxDetail->formatOutput = true;
-        $file = file_get_contents(self::API_DETAIL .$bien->id);
-        $this->fluxDetail->loadXML($file);
-		// $this->fluxDetail->load(self::API_DETAIL .$bien->id);
+        // $this->fluxDetail->preserveWhiteSpace = false;
+        // $this->fluxDetail->formatOutput = true;
+        // $file = file_get_contents(self::API_DETAIL .$bien->id);
+        // $this->fluxDetail->loadXML($file);
+		 $this->fluxDetail->load(self::API_DETAIL .$bien->id);
 
         $detail = $this->fluxDetail->getElementsByTagName('detail')->item(0);
         
@@ -86,9 +87,9 @@ class CimalpesClient
         //  $electromenagers = $xpath->query('equipement_electromenager//libelle');
         //  $generales = $xpath->query('equipement_general//libelle');
 
-        $multimedias = $node->getElementsByTagName('equipement_multimedia');
-        $electromenagers = $node->getElementsByTagName('equipement_electromenager');
-        $generales = $node->getElementsByTagName('equipement_general');
+        // $multimedias = $node->getElementsByTagName('equipement_multimedia');
+        // $electromenagers = $node->getElementsByTagName('equipement_electromenager');
+        // $generales = $node->getElementsByTagName('equipement_general');
         $bien->baths = 0;
 
         if ($node->getElementsByTagName('descriptif_bref')->item(0) !== null) {
@@ -150,25 +151,26 @@ class CimalpesClient
           }
             
             
-        // parsing des equipements
-       $equipments_arr = [];
-        foreach($multimedias as $multimedia){
-            array_push($equipments_arr, $multimedia->getElementsByTagName('libelle')->item(0)->nodeValue);
-          }
+    //     // parsing des equipements
+    //    $equipments_arr = [];
+    //     foreach($multimedias as $multimedia){
+    //         array_push($equipments_arr, $multimedia->getElementsByTagName('libelle')->item(0)->nodeValue);
+    //       }
   
-          foreach($electromenagers as $electromenager){
-              array_push($equipments_arr ,$electromenager->getElementsByTagName('libelle')->item(0)->nodeValue);
-            }
+    //       foreach($electromenagers as $electromenager){
+    //           array_push($equipments_arr ,$electromenager->getElementsByTagName('libelle')->item(0)->nodeValue);
+    //         }
   
-            foreach($generales as $generale){
-              array_push($equipments_arr ,$generale->getElementsByTagName('libelle')->item(0)->nodeValue);
-            }
+    //         foreach($generales as $generale){
+    //           array_push($equipments_arr ,$generale->getElementsByTagName('libelle')->item(0)->nodeValue);
+    //         }
 
-         $bien->equipments = $equipments_arr; //  cette partie doit etre élaboré sous forme de fonction
+         $bien->equipments = $this->getEquipments($bien->id);
          $bien->options = $this->getOptions();
          $bien->sejours = $this->getSejours($bien->id);
          $bien->photos = $this->getPhotos($bien->id);
          $bien->distances = $this->getDistances();
+         $bien->chambres = $this->getRooms($bien->id);
 
             return $bien;
     
@@ -195,6 +197,35 @@ class CimalpesClient
 
 
 
+    private function getEquipments($bienId){
+        $equipments = [];
+        $xpath = new DOMXPath($this->fluxDetail);
+
+       
+        $espaceLoisirs = iterator_to_array($xpath->query("//espace_loisir//libelle[@lang='fr']"));
+        $salleGym = iterator_to_array($xpath->query("//node_salle_gym//libelle[@lang='fr']"));
+        $piecesVie = iterator_to_array($xpath->query("//node_piece_vie//libelle[@lang='fr']"));
+        $multimedias = iterator_to_array($xpath->query("//equipement_multimedia//libelle[@lang='fr']"));
+        $electromenagers = iterator_to_array($xpath->query("//equipement_electromenager//libelle[@lang='fr']"));
+        $generales = iterator_to_array($xpath->query("//equipement_general//libelle[@lang='fr']"));
+
+        $equipmentsArr = array_merge($espaceLoisirs,$salleGym,$piecesVie,$multimedias,$electromenagers,$generales);
+        
+        foreach($equipmentsArr as $equip){
+            if(!empty($equip->nodeValue)) {  
+                $equipments[] = trim($equip->nodeValue);
+            };
+         }
+     
+
+        //  var_dump($equipments,$bienId);exit();
+
+        return array_unique($equipments);
+    }
+
+
+
+
 
     private function getOptions() {
              $services = [];
@@ -204,13 +235,15 @@ class CimalpesClient
              $servicesBiensInclus = iterator_to_array($xpath->query("//bien_service_inclus/libelle[@lang='fr']"));
              $servicesList = array_merge($servicesPersonnel,$servicesInclus,$servicesBiensInclus);
              
+             
+
              foreach($servicesList as $service){
                 if(!empty($service->nodeValue)) {  
-                    $services[] = $service->nodeValue;
+                    $services[] = trim($service->nodeValue);
                 };
              }
           
-          return $services;
+          return array_unique($services);
 
     }
 
@@ -265,6 +298,46 @@ class CimalpesClient
         return $distances;
     }
     
+    private function getRooms($idbien){
+        $rooms = [];
+        $equipsArr = [];
+        $xpath = new DOMXPath($this->fluxDetail);
+        
+    
+        $etages = $xpath->query("//node_etage//etage");
+        $key = 0;
+
+
+            foreach($etages as $numEtage => $etage) {
+                $chambres = $etage->getElementsBytagName("chambre");
+              
+
+                // var_dump($numEtage,$idbien,$chambres);exit();
+                foreach ($chambres as $chambre) {
+
+                    $rooms[$key]["nom"] = $chambre->getElementsByTagName("libelle")->item(0)->nodeValue;
+                    $rooms[$key]["type"] = 1;  
+                    $rooms[$key]["etage"] = $numEtage;  
+
+                    $chambreEquips = $chambre->getElementsByTagName("equipement_chambre");
+
+                    foreach ($chambreEquips as $chambreEquip) {
+                        $equipsArr[] = trim($chambreEquip->getElementsByTagName('libelle')->item(0)->nodeValue);
+                    }
+
+                    $sdbEquips = $chambre->getElementsByTagName("equipement_sdb");
+
+                    foreach ($sdbEquips as $sdbEquip) {
+                        $equipsArr[] = trim($sdbEquip->getElementsByTagName('libelle')->item(0)->nodeValue);
+                    }
+
+                    $rooms[$key]["equipments"] = array_unique($equipsArr);
+                    $key++;
+                }
+            }
+
+    return $rooms;
+    }
 
 
 
