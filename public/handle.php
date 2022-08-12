@@ -10,7 +10,7 @@ $flux = new CimalpesClient();
  $biens = $flux->getBiens();
 
 
-print_r($biens);
+ print_r($biens);
 //  file_put_contents(__DIR__."/biens.json",json_encode($biens));
 
 //   $biensJson = json_decode(file_get_contents(__DIR__."/biens.json"),true);

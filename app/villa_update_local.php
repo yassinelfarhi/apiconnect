@@ -230,7 +230,7 @@ while( $rows = $res->getAssoc() ){
 }
 
 // API BEDS SIZES
-$query = 'select * from vn_api_beds_sizes where api_source_id = '.$api_source_id;
+$query = 'select * from where api_source_id = '.$api_source_id;
 $res->exec($query);
 $sizes = [];
 $api_sizes = [];

@@ -301,9 +301,8 @@ class CimalpesClient
     private function getRooms($idbien){
         $rooms = [];
         $equipsArr = [];
+        $litsArr = [];
         $xpath = new DOMXPath($this->fluxDetail);
-        
-    
         $etages = $xpath->query("//node_etage//etage");
         $key = 0;
 
@@ -315,7 +314,10 @@ class CimalpesClient
                 // var_dump($numEtage,$idbien,$chambres);exit();
                 foreach ($chambres as $chambre) {
 
+                    // $rooms[$key]["nom"] = $chambre->getElementsByTagName("libelle")->item(0)->nodeValue;
                     $rooms[$key]["nom"] = $chambre->getElementsByTagName("libelle")->item(0)->nodeValue;
+                    $rooms[$key]["id"] = $chambre->getAttribute('id');
+                 
                     $rooms[$key]["type"] = 1;  
                     $rooms[$key]["etage"] = $numEtage;  
 
@@ -330,8 +332,20 @@ class CimalpesClient
                     foreach ($sdbEquips as $sdbEquip) {
                         $equipsArr[] = trim($sdbEquip->getElementsByTagName('libelle')->item(0)->nodeValue);
                     }
+                    
+
+                    $lits = $chambre->getElementsByTagName("lit");
+
+                    foreach($lits as $num => $lit){
+                        $litsArr[$num]["quantite"] = $lit->getElementsByTagName('quantite_lit')->item(0)->nodeValue;
+                        $litsArr[$num]["largeur"] = $lit->getElementsByTagName('largeur')->item(0)->nodeValue;
+                        $types = explode("(",$lit->getElementsByTagName('libelle')->item(0)->nodeValue);
+                        $litsArr[$num]["charac_1"] = $types[0];
+                        $litsArr[$num]["charac_2"] = $types[1];;
+                    }
 
                     $rooms[$key]["equipments"] = array_unique($equipsArr);
+                    $rooms[$key]["lits"] = $litsArr;
                     $key++;
                 }
             }
@@ -340,7 +354,12 @@ class CimalpesClient
     }
 
 
+    // public function getLits(){
+        
+    //     $xpath = new DOMXPath($this->fluxDetail);
 
+    //     $lits = $xpath->query("")
+    // }
 
 	
 }
