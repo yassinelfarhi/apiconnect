@@ -153,22 +153,140 @@ class BienPersist extends \db
                 // $bien["localId"] = $this->insertBien($bien);  
             }
 
+
            if (!empty($bien["localId"])) {
                 $this->insertEquipments($bien["localId"],$bien["equipments"]);               
                 $this->insertOptions($bien["options"],$bien["localId"]);
-                $this->insertSejours($bien["sejours"],$bien["localId"]);
+                $this->insertSejours($bien["calendars"],$bien["localId"]);
                 $this->syncPhotos($bien);
                 $this->syncDistances($bien["distances"],$bien["localId"]);
                 $this->syncChambres($bien["chambres"],$bien["localId"]);
+                $this->syncPrices($bien["periods"]);
                 $this->apiToUpdate($bien["localId"]);
            }
 
    
         }
-
+        // var_dump($bien);exit();
             $this->matchAll();
     }
 
+
+    public function syncPrices($periods,$villaId){
+        $plans = [];
+        $saisons = [];
+
+      
+        $this->unlinkSaisons($villaId);
+
+        foreach($periods as $period){
+            $saisonIndex = array_search($period["saison"],$saisons);
+
+            if($saisonIndex !== false) {
+                $saisonId = $saisons[$saisonIndex]["id"];
+            } else {
+                $saisonId = $this->insertSaison($villaId,$period["saison"]);
+                $saisons[$period["saison"]] = $saisonId;
+            }
+            
+    
+
+
+            if(!empty($saisonId)) {
+                $query = 'insert into vn_villas_periodes(villa_id,saison_id,periode_deb,periode_fin,periode_minstay,periode_week)
+                values('.$villaId.','.$saisonId.','.$period['debut'].','.$period['fin']. ',' .$period['min_stay']. ',' .$period["semaine"].')';
+                $this->exec($query);
+            }
+
+            
+
+            foreach ($period["prices"] as $price) {
+                $room = $price["nb_chambre"];
+                $night = $price["nb_nuit"];
+
+                $result = array_filter($plans,function($plan,$room,$night){
+                    return ($plan['room'] == $room && $plan['night'] == $night); 
+                });
+
+                if (!empty($result)) {
+                    $plan = array_shift($result);
+                    $planId = $plan["id"];
+                } else {
+                    $planId = $this->insertPlan($villaId,$room);
+                    $plans[] = $planId;
+
+                }
+
+             
+
+
+                if( $planId > 0 ){
+
+                    $this->insertSaisonPlan($planId,$saisonId,$planPrice);
+                 
+
+                    $inserts = [];
+
+                    for( $iTime = $from ; $iTime <= $to ; $iTime += 86400 ){
+                        $inserts[] = '('.$plan_id.','.$season_id.','.toSpecialDate($iTime,'none').','.$price.')';
+                    }
+
+                    if( $inserts > 0 ){
+
+                        $inserts = array_chunk($inserts,100);
+
+                        foreach( $inserts as $insert ){
+                            $query  = 'insert into vn_rates(rate_plan_id,season_id,rate_date,rate_price) values';
+                            $query .= implode(',',$insert);
+                            $res->exec($query);
+                        }
+                    }
+
+                }
+            }
+
+            
+            
+         }
+
+         
+    }
+
+
+    public function insertSaisonPlan($planId,$saisonId,$price) {
+        $query = 'insert into vn_rates_plans_seasons(rate_plan_id,season_id,season_price) values('.$planId.','.$saisonId.','.$price.')';
+        $this->exec($query);
+    }
+
+    public function insertPlan($villaId,$room) {
+        $query = 'insert into vn_rates_plans(villa_id,created_at,room,night)
+        values('.$villaId.',"'.toSpecialDate().'",'.$room.',1)';
+        $this->exec($query);
+        $planId = $this->lastOID();
+
+        if( $planId > 0 ) $plans[$room] = ['id'=>$plan_id,'min'=>$price,'max'=>$price];
+    }
+
+
+
+    public function insertSaison($villaId,$saison) {
+        $query = 'insert into vn_villas_saisons(villa_id,saison_name) values('.$villaId.',"'.$saison.'")';
+        $this->exec($query);
+        $saisonId = $this->lastOID();
+
+        return $saisonId;
+        // if( $season_id > 0 ) $seasons[$season] = $season_id;
+    }
+
+    public function unlinkPeriods($villaId) {
+        $query = 'delete from vn_villas_saisons where villa_id = '.$villaId;
+        $this->exec($query);
+    }
+
+    public function unlinkSaisons($villaId) {
+        $query = 'delete from vn_rates_plans where villa_id = '.$villaId;
+        $this->exec($query);
+    }
 
     public function syncDistances($distances,$villaId){
         $toInsert = [];
@@ -206,7 +324,7 @@ class BienPersist extends \db
                 }
 
             } else {
-                    $this->toMatch["vn_api_areas"][] = '(2,0,"'.$distName. '",0)';
+                    $this->toMatch["vn_api_areas"][] = '(2,0,"'.$distName. '",0,0)';
                     $this->toUpdate = 1;
             }
 
@@ -222,7 +340,7 @@ class BienPersist extends \db
 
     public function syncChambres($chambres,$villaId){
         
-        
+
         foreach($chambres as $chambre){
 
              $localBeds = $this->getBeds($villaId);
@@ -241,13 +359,15 @@ class BienPersist extends \db
                 $bed_id = $this->lastOID();
             }
             
+
             if (!empty($bed_id)) {
                 $this->chambreEquips($chambre['equipments'],$bed_id);
+                
 
+                $this->chambreLits($chambre['lits'],$bed_id);
             }
             
-            $this->chambreLits($chambre['lits'],$bedId);
-
+           
 
         }
 
@@ -260,25 +380,73 @@ class BienPersist extends \db
         $toInsert = [];
         foreach($lits as $lit) {
 
-            $localLits = $this->getLits($bedId);
 
-            $index = array_search($lit["charac_1"],array_column($localLits,'bed_bca_name'));
+            $firstTypes = $this->getLitFirstTypes($bedId);
+            $secondTypes = $this->getLitSecondTypes($bedId);
+            $bedSizes = $this->getBedSizes();
 
-            if ($index !== false ) {
-                
-                $bca_id = $localLits[$index]["bed_bca_id"];
-                $isDisabled = $localLits[$index]["disabled_at"];
+            $indexB = array_search($lit["charac_2"],array_column($secondTypes,'bed_bcb_name'));
+            $indexA = array_search($lit["charac_1"],array_column($firstTypes,'bed_bca_name'));
+            $indexS = array_search($lit["largeur"],array_column($bedSizes,'api_bed_size'));
 
-                if ($isDisabled > 0) {
-                    $toInsert = '(' .$bedId. ',' .$lit['quantite']. ',' .$lit['charac_1']. ',' .$lit['charac_2']. ',' .$lit['largeur']. ')';
+            if( $indexB !== false ) { 
+
+                if ($secondTypes[$indexB]['bed_bcb_id'] > 0) {
+                    $bcb_id = $secondTypes[$indexB]['bed_bcb_id'];
                 } else {
+                    $bcb_id = 0;
                     $this->toUpdate = 1;
                 }
+               
+             } else {
+                $this->toMatch['api_beds_bcbs'][] = '(' .$this->api_source_id. ',0,"' .$lit['charac_2']. '","")';
+             }
+
+
+             if($indexS !== false) {
+                if($bedSizes[$indexS]['bed_bw_id'] > 0){
+                    $bedSize = $bedSizes[$indexS]['bed_bw_id'] ;
+                } else {
+                    $bedSize = 0;
+                    $this->toUpdate = 1;
+                }
+             } else {
+                $this->toMatch['api_beds_sizes'][] = '(' .$this->api_source_id. ', 0,"' .$lit['largeur']. '","")';
+             }
+
+
+            if ($indexA !== false ) {
+                
+                $bca_id = $firstTypes[$indexA]["bed_bca_id"];
+                $isDisabled = $firstTypes[$indexA]["disabled_at"];
+
+                if($isDisabled == false ){
+
+                    if ($bca_id > 0) {
+                        $toInsert[] = '(' .$bedId. ',' .$lit['quantite']. ',' .$bca_id. ',' .$bcb_id. ',' .$bedSize. ')';
+                    } else {
+                        $this->toUpdate = 1;
+                    }
+
+                }
+    
 
             } else {
-                $this->toMatch['bed_bca'] = '(' .$bca_id. ',' .$lit['charac_1']. ',"")';
+                $this->toMatch['api_beds_bcas'][] = '(' .$this->api_source_id. ',0,"' .$lit['charac_1']. '","")';
             }
         }
+
+        if(!empty($toInsert)) { 
+
+            $this->insertLits($toInsert); 
+        }
+
+    }
+
+
+    public function insertLits($toInsert){
+        $sqlQuery = 'INSERT INTO vn_villas_beds_bs (villa_bed_id, b_number,bed_bca_id,bed_bcb_id,bed_bw_id) values ' .implode(',',$toInsert);
+        $this->exec($sqlQuery);
     }
 
     public function chambreEquips($equips,$bedId){
@@ -305,6 +473,7 @@ class BienPersist extends \db
 
             } else {
                 $this->toMatch['bedEquips'][] = '(' .$this->api_source_id. ',0,"' .$equip. '")';
+               
                 $this->toUpdate = 1;
             }
         }
@@ -948,6 +1117,29 @@ class BienPersist extends \db
             $sqlQuery  = 'insert into vn_api_beds_equips(api_source_id,bed_equip_id,api_bed_equip_name) values'. implode(',',$bedEquips);
             $this->exec($sqlQuery);
         }
+
+        if (!empty($this->toMatch['api_beds_bcas'])){
+            $bed_bcas = array_unique($this->toMatch['api_beds_bcas']);
+          
+
+            $sqlQuery  = 'insert into vn_api_beds_bcas (api_source_id,bed_bca_id,bed_bca_name,disabled_at) values'. implode(',',$bed_bcas);
+            $this->exec($sqlQuery);
+        }
+
+        if (!empty($this->toMatch['api_beds_bcbs'])){
+            $bed_bcbs = array_unique($this->toMatch['api_beds_bcbs']);
+
+            $sqlQuery  = 'insert into api_beds_bcbs (api_source_id,bed_bcb_id,bed_bcb_name,disabled_at) values'. implode(',',$bed_bcbs);
+            $this->exec($sqlQuery);
+        }
+
+
+        if (!empty($this->toMatch['api_beds_sizes'])) {
+            $bed_sizes = array_unique($this->toMatch['api_beds_sizes']);
+            $sqlQuery = 'insert into vn_api_beds_sizes (api_source_id,bed_bw_id,api_bed_size,disabled_at) values '. implode(',',$bed_sizes);
+            // var_dump($sqlQuery);exit();
+            $this->exec($sqlQuery);
+        }
         
        
 
@@ -966,6 +1158,24 @@ class BienPersist extends \db
 
     public function getBeds($villaId){
         $sqlQuery = 'SELECT * FROM vn_villas_beds where villa_id = ' .$villaId;
+        $this->exec($sqlQuery);
+        return $this->fetchAll();
+    }
+
+    public function getLitFirstTypes($bedId){
+        $sqlQuery = 'SELECT * FROM vn_api_beds_bcas where api_source_id = ' .$this->api_source_id;
+        $this->exec($sqlQuery);
+        return $this->fetchAll();
+    }
+
+    public function getLitSecondTypes($bedId) {
+        $sqlQuery = 'SELECT * FROM api_beds_bcbs where api_source_id = ' .$this->api_source_id;
+        $this->exec($sqlQuery);
+        return $this->fetchAll();
+    }
+
+    public function getBedSizes(){
+        $sqlQuery = 'SELECT * from vn_api_beds_sizes where api_source_id = '.$this->api_source_id;
         $this->exec($sqlQuery);
         return $this->fetchAll();
     }

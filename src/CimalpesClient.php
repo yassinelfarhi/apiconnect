@@ -167,10 +167,11 @@ class CimalpesClient
 
          $bien->equipments = $this->getEquipments($bien->id);
          $bien->options = $this->getOptions();
-         $bien->sejours = $this->getSejours($bien->id);
+         $bien->sejours = $this->getSejours($bien->id,$bien->bedrooms);
          $bien->photos = $this->getPhotos($bien->id);
          $bien->distances = $this->getDistances();
          $bien->chambres = $this->getRooms($bien->id);
+         $bien->periods = $this->getSejours($bien->id,$bien->bedrooms,2);
 
             return $bien;
     
@@ -178,21 +179,42 @@ class CimalpesClient
       
     }
 
-    private function getSejours($bienId){
+    private function getSejours($bienId ,$nbChambre,$output = 1){
         $flux = new DOMDocument();
         $flux->load(self::API_DISPO .$bienId);
         $xpath = new DOMXPath($flux);
        
         $sejours = $xpath->query("//sejour");
 
-        $sejoursArray = [];
-        foreach($sejours as $key => $sejour){
-            $sejoursArray[$key]["debut"] = $sejour->getElementsByTagName("date_debut")->item(0)->nodeValue;
-            $sejoursArray[$key]["fin"] = $sejour->getElementsByTagName("date_fin")->item(0)->nodeValue;
-            $sejoursArray[$key]["status"] = $sejour->getElementsByTagName("etat_reservation")->item(0)->nodeValue;
-        }
+        $calendars = [];
+        $periods = [];
+        foreach($sejours as $sejour){
 
-       return $sejoursArray;
+            $calendar = [];
+            $calendar['debut'] = $sejour->getElementsByTagName("date_debut")->item(0)->nodeValue;
+            $calendar['fin'] = $sejour->getElementsByTagName("date_fin")->item(0)->nodeValue;
+            $calendar['status'] = $sejour->getElementsByTagName("etat_reservation")->item(0)->nodeValue;
+
+            $calendars[] = $calendar;
+
+            $period = [];
+            $period['debut'] = $sejour->getElementsByTagName("date_debut")->item(0)->nodeValue;
+            $period['fin'] = $sejour->getElementsByTagName("date_fin")->item(0)->nodeValue;
+            $period["min_stay"] = $sejour->getElementsByTagName("duree")->item(0)->nodeValue;  
+            $period["semaine"] = 0;
+            $period["prices"][] = [ "price" => ceil($sejour->getElementsByTagName("montant")->item(0)->nodeValue / $period["min_stay"]),
+                                      "nb_chambre" => $nbChambre,
+                                      "nb_nuit" => 1
+                                    ] ;
+
+                                // var_dump($period["prices"]);exit();
+            $period["saison"] = "Saison price " . max(array_column($period["prices"],"price"));
+
+            $periods[] = $period;
+
+        }
+            return ($output == 1) ?  $calendars: $periods;
+      
     }
 
 
@@ -253,11 +275,7 @@ class CimalpesClient
         $xpath = new DOMXPath($this->fluxDetail);
 
         $nodePhotos = iterator_to_array($xpath->query("//node_photo//photo"));
-        // $base = __DIR__ . "/photos/villa" . $bienId . "/" . $key . "-" .$bienId . ".jpg";
-        // var_dump($nodePhoto->nodeValue,$base);exit();
-        // $file  = file_get_contents($nodePhoto->nodeValue);
-        // file_put_contents($base,$file);
-        // mkdir(__DIR__ . "/photos/" . $bienId);
+
         foreach($nodePhotos as $key => $nodePhoto) {
            
             list($width,$height,$type) = getimagesize(trim($nodePhoto->nodeValue));
@@ -311,11 +329,11 @@ class CimalpesClient
                 $chambres = $etage->getElementsBytagName("chambre");
               
 
-                // var_dump($numEtage,$idbien,$chambres);exit();
+                
                 foreach ($chambres as $chambre) {
 
-                    // $rooms[$key]["nom"] = $chambre->getElementsByTagName("libelle")->item(0)->nodeValue;
-                    $rooms[$key]["nom"] = $chambre->getElementsByTagName("libelle")->item(0)->nodeValue;
+                   
+                    $rooms[$key]["nom"] = "";
                     $rooms[$key]["id"] = $chambre->getAttribute('id');
                  
                     $rooms[$key]["type"] = 1;  
@@ -341,7 +359,7 @@ class CimalpesClient
                         $litsArr[$num]["largeur"] = $lit->getElementsByTagName('largeur')->item(0)->nodeValue;
                         $types = explode("(",$lit->getElementsByTagName('libelle')->item(0)->nodeValue);
                         $litsArr[$num]["charac_1"] = $types[0];
-                        $litsArr[$num]["charac_2"] = $types[1];;
+                        $litsArr[$num]["charac_2"] = !empty($types[1]) ? str_replace(")","",$types[1]) : "";
                     }
 
                     $rooms[$key]["equipments"] = array_unique($equipsArr);
@@ -354,12 +372,23 @@ class CimalpesClient
     }
 
 
-    // public function getLits(){
-        
-    //     $xpath = new DOMXPath($this->fluxDetail);
+    public function getPrices() {
+        $prices = [];
+        $xpath = new DOMXPath($this->fluxDetail);
 
-    //     $lits = $xpath->query("")
-    // }
+        $pricesList = $xpath->query("//*[contains(local-name(), '_prix')]");
+
+
+        foreach ($pricesList as $price) {
+            
+            $prices[$price->nodeName] = [
+                'value' => $price->nodeValue,
+               ];
+        }
+
+
+        return $prices;
+    }
 
 	
 }

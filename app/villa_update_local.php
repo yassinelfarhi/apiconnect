@@ -1082,7 +1082,7 @@ foreach( $items as $item ){
                     $price = ceil(intval($price)/7);
 
                     $room = $attrs['bedroom'];
-
+                    
                     if( is_array($plans[$room]) ){
                         $plan_id = $plans[$room]['id'];
                         $min_price = $plans[$room]['min'];

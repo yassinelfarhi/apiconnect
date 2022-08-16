@@ -15,10 +15,11 @@ class BienDto{
     public $longitude;
     public $baths;
     public $options;
-    public $sejours;
+    public $calendars;
     public $photos;
     public $updatedAt;
     public $chambres;
+    public $periods;
     /**
      * @var array
      * */

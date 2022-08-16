@@ -10,8 +10,8 @@ $flux = new CimalpesClient();
  $biens = $flux->getBiens();
 
 
- print_r($biens);
-//  file_put_contents(__DIR__."/biens.json",json_encode($biens));
+  print_r($biens);
+  // file_put_contents(__DIR__."/biens.json",json_encode($biens));
 
 //   $biensJson = json_decode(file_get_contents(__DIR__."/biens.json"),true);
 
@@ -21,6 +21,6 @@ $flux = new CimalpesClient();
 // // // // //  var_dump($persiste->languges);
 //   $persiste->insertOrUpdate($biensJson);
 
-//  var_dump($biensJson);
+// // //   var_dump($biensJson);
 
 
