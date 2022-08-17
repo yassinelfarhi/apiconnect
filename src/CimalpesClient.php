@@ -167,7 +167,7 @@ class CimalpesClient
 
          $bien->equipments = $this->getEquipments($bien->id);
          $bien->options = $this->getOptions();
-         $bien->sejours = $this->getSejours($bien->id,$bien->bedrooms);
+         $bien->calendars = $this->getSejours($bien->id,$bien->bedrooms);
          $bien->photos = $this->getPhotos($bien->id);
          $bien->distances = $this->getDistances();
          $bien->chambres = $this->getRooms($bien->id);
@@ -184,25 +184,25 @@ class CimalpesClient
         $flux->load(self::API_DISPO .$bienId);
         $xpath = new DOMXPath($flux);
        
-        $sejours = $xpath->query("//sejour");
+        $calendarsNodes = $xpath->query("//sejour");
 
         $calendars = [];
         $periods = [];
-        foreach($sejours as $sejour){
+        foreach($calendarsNodes as $calendarNode){
 
             $calendar = [];
-            $calendar['debut'] = $sejour->getElementsByTagName("date_debut")->item(0)->nodeValue;
-            $calendar['fin'] = $sejour->getElementsByTagName("date_fin")->item(0)->nodeValue;
-            $calendar['status'] = $sejour->getElementsByTagName("etat_reservation")->item(0)->nodeValue;
+            $calendar['debut'] = $calendarNode->getElementsByTagName("date_debut")->item(0)->nodeValue;
+            $calendar['fin'] = $calendarNode->getElementsByTagName("date_fin")->item(0)->nodeValue;
+            $calendar['status'] = $calendarNode->getElementsByTagName("etat_reservation")->item(0)->nodeValue;
 
             $calendars[] = $calendar;
 
             $period = [];
-            $period['debut'] = $sejour->getElementsByTagName("date_debut")->item(0)->nodeValue;
-            $period['fin'] = $sejour->getElementsByTagName("date_fin")->item(0)->nodeValue;
-            $period["min_stay"] = $sejour->getElementsByTagName("duree")->item(0)->nodeValue;  
+            $period['debut'] = $calendarNode->getElementsByTagName("date_debut")->item(0)->nodeValue;
+            $period['fin'] = $calendarNode->getElementsByTagName("date_fin")->item(0)->nodeValue;
+            $period["min_stay"] = $calendarNode->getElementsByTagName("duree")->item(0)->nodeValue;  
             $period["semaine"] = 0;
-            $period["prices"][] = [ "price" => ceil($sejour->getElementsByTagName("montant")->item(0)->nodeValue / $period["min_stay"]),
+            $period["prices"][] = [ "price" => ceil($calendarNode->getElementsByTagName("montant")->item(0)->nodeValue / $period["min_stay"]),
                                       "nb_chambre" => $nbChambre,
                                       "nb_nuit" => 1
                                     ] ;

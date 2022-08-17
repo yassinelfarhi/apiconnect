@@ -161,11 +161,11 @@ class BienPersist extends \db
                 $this->syncPhotos($bien);
                 $this->syncDistances($bien["distances"],$bien["localId"]);
                 $this->syncChambres($bien["chambres"],$bien["localId"]);
-                $this->syncPrices($bien["periods"]);
+                $this->syncPrices($bien["periods"],$bien["localId"]);
                 $this->apiToUpdate($bien["localId"]);
            }
 
-   
+        //    break;
         }
         // var_dump($bien);exit();
             $this->matchAll();
@@ -175,15 +175,15 @@ class BienPersist extends \db
     public function syncPrices($periods,$villaId){
         $plans = [];
         $saisons = [];
-
+        $combine = [];
       
         $this->unlinkSaisons($villaId);
-
+        $this->unlinkPlans($villaId);
+            
         foreach($periods as $period){
-            $saisonIndex = array_search($period["saison"],$saisons);
-
-            if($saisonIndex !== false) {
-                $saisonId = $saisons[$saisonIndex]["id"];
+            if(array_key_exists($period["saison"],$saisons)) {
+                $saisonId = $saisons[$period["saison"]];
+                
             } else {
                 $saisonId = $this->insertSaison($villaId,$period["saison"]);
                 $saisons[$period["saison"]] = $saisonId;
@@ -194,77 +194,128 @@ class BienPersist extends \db
 
             if(!empty($saisonId)) {
                 $query = 'insert into vn_villas_periodes(villa_id,saison_id,periode_deb,periode_fin,periode_minstay,periode_week)
-                values('.$villaId.','.$saisonId.','.$period['debut'].','.$period['fin']. ',' .$period['min_stay']. ',' .$period["semaine"].')';
+                values('.$villaId.','.$saisonId.','. strtotime($period['debut'].' + 12 hours').','.strtotime($period['fin'].' + 12 hours'). ',' .$period['min_stay']. ',' .$period["semaine"].')';
                 $this->exec($query);
             }
 
-            
 
             foreach ($period["prices"] as $price) {
-                $room = $price["nb_chambre"];
-                $night = $price["nb_nuit"];
 
-                $result = array_filter($plans,function($plan,$room,$night){
-                    return ($plan['room'] == $room && $plan['night'] == $night); 
+                $nbRooms = $price["nb_chambre"];
+                $nights = $price["nb_nuit"];
+                
+
+                
+                $result = array_filter($plans,function($plan) use($nbRooms,$nights) {
+                    return ($plan['nbRooms'] == $nbRooms && $plan['nights'] == $nights); 
                 });
 
+                // var_dump($result,!empty($result)); exit();
+
                 if (!empty($result)) {
+                    
+                    $planKey = array_key_first($result);
                     $plan = array_shift($result);
                     $planId = $plan["id"];
-                } else {
-                    $planId = $this->insertPlan($villaId,$room);
-                    $plans[] = $planId;
+                    
+                    if ($price["price"] < $plan["min"] && $price["price"] > 0) { $plans[$planKey]["min"] = $price["price"];}
+                    if ($price["price"] > $plan["max"]) { $plans[$planKey]["max"] = $price["price"];}
+              
 
+                } else {
+                    $planId = $this->insertPlan($villaId,$nbRooms,$nights);
+                    $plans[] = [ "id" => $planId, "nbRooms" => $nbRooms, "nights" => $nights,"min" => $price["price"], "max" => $price["price"]];
                 }
 
              
 
 
-                if( $planId > 0 ){
+                if(!empty($planId)){
 
-                    $this->insertSaisonPlan($planId,$saisonId,$planPrice);
-                 
+                    $cbResult = array_filter($combine,function($comb) use($planId,$saisonId) {
+                        return ($comb['planId'] == $planId && $comb['saisonId'] == $saisonId); 
+                    });
+
+                    if (empty($cbResult)) {
+                        $this->insertPlanSeasons($planId,$saisonId,$price["price"]);
+                        $combine[] = [ "planId" => $planId, "saisonId" => $saisonId];
+                    } 
+                    
+                    $begin = new DateTime($period['debut']);
+                    $end = new DateTime($period['fin']);
+                    $interval = new DateInterval('P1D');
+                    $dateRange = new DatePeriod($begin,$interval,$end);
 
                     $inserts = [];
 
-                    for( $iTime = $from ; $iTime <= $to ; $iTime += 86400 ){
-                        $inserts[] = '('.$plan_id.','.$season_id.','.toSpecialDate($iTime,'none').','.$price.')';
+                    foreach ($dateRange as $date) {
+                        $inserts[] = '(' .$planId. ',' .$saisonId. ',' .$date->format("Ymd"). ',' .$price["price"]. ')';
                     }
+                  
 
-                    if( $inserts > 0 ){
-
-                        $inserts = array_chunk($inserts,100);
-
-                        foreach( $inserts as $insert ){
-                            $query  = 'insert into vn_rates(rate_plan_id,season_id,rate_date,rate_price) values';
-                            $query .= implode(',',$insert);
-                            $res->exec($query);
-                        }
-                    }
+                    if(!empty($inserts)){ $this->insertVnRates($inserts); }
 
                 }
             }
 
-            
+    
             
          }
-
+        
+            $this->insertVNRooms($plans,$villaId);
          
     }
 
+  
 
-    public function insertSaisonPlan($planId,$saisonId,$price) {
+    public function insertVNRooms($plans,$villaId){
+
+        $this->unlinkVnRooms($villaId);
+        $inserts = [];
+
+        foreach( $plans as  $plan ){
+            $inserts[] = '('.$villaId.','.$plan['nbRooms'].','.$plan['min'].','.$plan['max'].')';
+        }
+
+        if( $inserts > 0 ){
+            $query = 'insert into vn_villas_rooms(villa_id,villa_room,villa_room_from,villa_room_to) values'.implode(',',$inserts);
+            $this->exec($query);
+        }
+    }
+
+    public function unlinkVnRooms($villaId){
+        $query = 'delete from vn_villas_rooms where villa_id = '.$villaId;
+        $this->exec($query);
+    }
+
+    public function insertVnRates($inserts) {
+        $inserts = array_chunk($inserts,100);
+        foreach( $inserts as $insert ){
+            $query = 'insert into vn_rates(rate_plan_id,season_id,rate_date,rate_price) values';
+            $query .= implode(',',$insert);
+            $this->exec($query);
+        }
+    }
+
+
+    public function unlinkPlans($villaId) {
+        $sqlQuery = 'DELETE FROM vn_rates_plans where villa_id = ' .$villaId;
+        $this->exec($sqlQuery);
+    }
+
+    public function insertPlanSeasons($planId,$saisonId,$price) {
         $query = 'insert into vn_rates_plans_seasons(rate_plan_id,season_id,season_price) values('.$planId.','.$saisonId.','.$price.')';
         $this->exec($query);
     }
 
-    public function insertPlan($villaId,$room) {
+    public function insertPlan($villaId,$nbRooms,$nights) {
         $query = 'insert into vn_rates_plans(villa_id,created_at,room,night)
-        values('.$villaId.',"'.toSpecialDate().'",'.$room.',1)';
+        values('.$villaId.',"'.toSpecialDate().'",'.$nbRooms.',' .$nights.')';
         $this->exec($query);
         $planId = $this->lastOID();
 
-        if( $planId > 0 ) $plans[$room] = ['id'=>$plan_id,'min'=>$price,'max'=>$price];
+        return $planId;
+        // if( $planId > 0 ) $plans[$room] = ['id'=>$plan_id,'min'=>$price,'max'=>$price];
     }
 
 
@@ -284,8 +335,8 @@ class BienPersist extends \db
     }
 
     public function unlinkSaisons($villaId) {
-        $query = 'delete from vn_rates_plans where villa_id = '.$villaId;
-        $this->exec($query);
+            $query = 'delete from vn_villas_saisons where villa_id = '.$villaId;
+            $this->exec($query);
     }
 
     public function syncDistances($distances,$villaId){
@@ -1186,5 +1237,10 @@ class BienPersist extends \db
         return $this->fetchAll();
     }
 
+    public function sendNotifications($notifications) {
+        // $notification = new Notifications();
+        // $notification->setModel($notificationsModel);
+        // $notification->insert();
+    }
 
 }
