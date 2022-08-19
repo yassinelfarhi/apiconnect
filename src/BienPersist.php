@@ -17,6 +17,8 @@ use PDOException;
 use Villanovo\ThirdParties\Dtos\BienDto;
 use Villanovo\ThirdParties\Dtos\DetailDto;
 use photos;
+use villas;
+
 class BienPersist extends \db
 {
 
@@ -86,6 +88,11 @@ class BienPersist extends \db
     /**
      * @retrun void
      */
+
+
+
+
+     
     public function insertOrUpdate($biens)
     {
         foreach ($biens as $bien) {
@@ -155,6 +162,7 @@ class BienPersist extends \db
 
 
            if (!empty($bien["localId"])) {
+                $this->syncDescriptions($bien["descriptions"],$bien["localId"]);
                 $this->insertEquipments($bien["localId"],$bien["equipments"]);               
                 $this->insertOptions($bien["options"],$bien["localId"]);
                 $this->insertSejours($bien["calendars"],$bien["localId"]);
@@ -163,12 +171,69 @@ class BienPersist extends \db
                 $this->syncChambres($bien["chambres"],$bien["localId"]);
                 $this->syncPrices($bien["periods"],$bien["localId"]);
                 $this->apiToUpdate($bien["localId"]);
+
            }
 
         //    break;
         }
         // var_dump($bien);exit();
             $this->matchAll();
+    }
+
+
+    public function syncDescriptions($descriptions,$villaId){
+
+        $villaObj = new villas();
+        $villaObj->villa_id = $villaId;
+        $villaObj->boot_domain_id = 1;
+        $isNewDescUpdate = false;
+
+            
+        foreach($descriptions as $description) {
+
+            $desc = $description['description'] != '' ? strip_tags($description['description']) : '';
+
+            $villaObj->lng_id = $description["lang_id"];
+            $villaObj->getDomainTrad(false);
+
+            $localDesc = clearString($villaObj->villa_description);
+            $localApiDescOld = clearString($villaObj->villa_description_api_old);
+            $localApiDescNew = clearString($villaObj->villa_description_api_new);
+
+            $villaObj->villa_description_api_new_updated = '';
+
+            $diff1 = strcmp($localDesc,$localApiDescOld);
+          
+            // var_dump($localDesc,$localApiDescOld);exit();
+            if( empty($localDesc) || ( !empty($localDesc) && $diff1 === 0 ) ){
+                $villaObj->villa_description = $desc;
+                $villaObj->villa_description_api_old = $desc;
+
+            } else {
+                $new_desc = clearString($desc);
+                $diff_desc = strcmp($new_desc,$localApiDescOld);
+
+
+                if( $diff_desc !== 0 ){
+                    // // NOTIFICATION
+                    // $isNewDescNotification = true;
+                    $isNewDescUpdate = true;
+                    $villaObj->villa_description_api_new_updated = toSpecialDate();
+                }
+            }
+
+            $villaObj->villa_description_api_new = $desc;
+            $villaObj->villa_resume = $description['resume'];
+
+            $villaObj->updateDomainTrad(1,$description["lang_id"]);
+            
+        }
+
+        if( $isNewDescUpdate ){
+            $query = 'update vn_villas set villa_is_api_desc = 1 where villa_id = '.$villaId;
+            $this->exec($query);
+        }
+
     }
 
 
@@ -203,31 +268,43 @@ class BienPersist extends \db
 
                 $nbRooms = $price["nb_chambre"];
                 $nights = $price["nb_nuit"];
-                
+                $planId = 0;
 
                 
-                $result = array_filter($plans,function($plan) use($nbRooms,$nights) {
-                    return ($plan['nbRooms'] == $nbRooms && $plan['nights'] == $nights); 
-                });
+                // $result = array_filter($plans,function($plan) use($nbRooms,$nights) {
+                //     return ($plan['nbRooms'] == $nbRooms && $plan['nights'] == $nights); 
+                // });
 
                 // var_dump($result,!empty($result)); exit();
+                if(array_key_exists($nbRooms,$plans)) {
+                    if ($price["price"] < $plans[$nbRooms]["min"] && $price["price"] > 0) { 
+                            $plans[$nbRooms]["min"] = $price["price"];
+                        }
+                    if ($price["price"] > $plans[$nbRooms]["max"]) { 
+                            $plans[$nbRooms]["max"] = $price["price"];
+                    }
 
-                if (!empty($result)) {
-                    
-                    $planKey = array_key_first($result);
-                    $plan = array_shift($result);
-                    $planId = $plan["id"];
-                    
-                    if ($price["price"] < $plan["min"] && $price["price"] > 0) { $plans[$planKey]["min"] = $price["price"];}
-                    if ($price["price"] > $plan["max"]) { $plans[$planKey]["max"] = $price["price"];}
-              
+                    $planIndex = array_search($nights,array_column( $plans[$nbRooms]["plan"],'nights'));
 
+                    if ( $planIndex !== false ) {
+                       $planId = $plans[$nbRooms]["plan"][$planIndex]["id"];
+
+                    } else {
+                        $planId = $this->insertPlan($villaId,$nbRooms,$nights);
+                        $plan = ["id" => $planId, "nights" => $nights];
+                        $plans[$nbRooms]["plan"][] = $plan; 
+
+                    }
                 } else {
                     $planId = $this->insertPlan($villaId,$nbRooms,$nights);
-                    $plans[] = [ "id" => $planId, "nbRooms" => $nbRooms, "nights" => $nights,"min" => $price["price"], "max" => $price["price"]];
+                    $plan = ["id" => $planId, "nights" => $nights];
+                    $plans[$nbRooms]["plan"][] = $plan; 
+                    $plans[$nbRooms]["min"] = $price["price"];
+                    $plans[$nbRooms]["max"] = $price["price"];
                 }
+                
+                
 
-             
 
 
                 if(!empty($planId)){
@@ -261,7 +338,7 @@ class BienPersist extends \db
     
             
          }
-        
+            // var_dump($plans);exit();
             $this->insertVNRooms($plans,$villaId);
          
     }
@@ -273,8 +350,8 @@ class BienPersist extends \db
         $this->unlinkVnRooms($villaId);
         $inserts = [];
 
-        foreach( $plans as  $plan ){
-            $inserts[] = '('.$villaId.','.$plan['nbRooms'].','.$plan['min'].','.$plan['max'].')';
+        foreach( $plans as  $rooms => $plan ){
+            $inserts[] = '('.$villaId.','.$rooms.','.$plan['min'].','.$plan['max'].')';
         }
 
         if( $inserts > 0 ){

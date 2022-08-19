@@ -38,12 +38,12 @@ class CimalpesClient
         
 		$tableBiens = [];
 		// foreach ($biens as $bien) {
-		for($i=0; $i<2;$i++){
+		for($i=0; $i<3;$i++){
 			$nodeBien = $biens[$i];
 			$dtobien = $this->fromNodeListing($nodeBien);
 			$dtobien = $this->getDetail($dtobien);
 			array_push($tableBiens,$dtobien);
-            
+             break;
 		}
 		// }
 		return $tableBiens;
@@ -76,6 +76,7 @@ class CimalpesClient
         $bien->nom = $node->getElementsByTagName('nom_bien')->item(0)->nodeValue; 
         $bien->station = $node->getElementsByTagName('nom_station')->item(0)->nodeValue;
         $bien->quartier = $node->getElementsByTagName('nom_quartier')->item(0)->nodeValue;
+        $bien->url = "https://cimalpes.ski/fr/" . $node->getElementsByTagName('url_rewriting')->item(0)->nodeValue;
  
 
         return $bien;
@@ -90,81 +91,104 @@ class CimalpesClient
         // $multimedias = $node->getElementsByTagName('equipement_multimedia');
         // $electromenagers = $node->getElementsByTagName('equipement_electromenager');
         // $generales = $node->getElementsByTagName('equipement_general');
+
+        $xpath = new DOMXPath($this->fluxDetail);
         $bien->baths = 0;
+        $resumeEN = $xpath->query("//descriptif_bref_en");
+        $descriptionEN = $xpath->query("//descriptif_court_en");
+        $resumeFR = $xpath->query("//descriptif_bref");
+        $descriptionFR = $xpath->query("//descriptif_court");
+        $typeBien = $xpath->query("//type_bien");
+        $nbChambre = $xpath->query("//nombre_chambres");
+        $latitude = $xpath->query("//latitude");
+        $longitude = $xpath->query("//longitude");
+        $nbAdultes = $xpath->query("//nb_adultes");
+        $nbEnfants = $xpath->query("//nb_enfants");
+        $occupancy = intval($nbAdultes->item(0)->nodeValue) + intval($nbEnfants->item(0)->nodeValue);
 
-        if ($node->getElementsByTagName('descriptif_bref')->item(0) !== null) {
-            $bien->descriptionBref['fr'] = $node->getElementsByTagName('descriptif_bref')->item(0)->nodeValue;
-        } else {
-            $bien->descriptionBref['fr'] = "";
-        }
+
+        // var_dump($resumeEN->item(0)->nodeValue);exit();
+
+        $bien->descriptions = [ 
+                                     [
+                                    'lang_id' => 1,
+                                    "resume" => $resumeFR->item(0)->nodeValue,
+                                    "description" => $descriptionFR->item(0)->nodeValue,
+                                    ],
+                                     [
+                                    'lang_id' => 2,
+                                    "resume" => $resumeEN->item(0)->nodeValue,
+                                    "description" => $descriptionEN->item(0)->nodeValue,
+                                    ] 
+                                 ];
         
-        if ($node->getElementsByTagName('descriptif_court')->item(0) !== null) {
-            $bien->descriptionCourt['fr'] = $node->getElementsByTagName('descriptif_court')->item(0)->nodeValue;
-        } else {
-            $bien->descriptionCourt['fr'] = "";
-        }
+        $bien->type = $typeBien->item(0)->nodeValue;
+        $bien->bedrooms = $nbChambre->item(0)->nodeValue;
+        $bien->latitude = $latitude->item(0)->nodeValue;
+        $bien->longitude = $longitude->item(0)->nodeValue;
+        $bien->occupancy = $occupancy;
 
-        if ($node->getElementsByTagName('descriptif_bref_en')->item(0) !== null) {
-            $bien->descriptionBref['en'] = $node->getElementsByTagName('descriptif_bref_en')->item(0)->nodeValue;
-        } else {
-            $bien->descriptionBref['en'] = "" ;
-        }
 
-        if ( $node->getElementsByTagName('descriptif_court_en')->item(0) !== null ) {
-            $bien->descriptionCourt['en'] = $node->getElementsByTagName('descriptif_court_en')->item(0)->nodeValue;
-        } else {
-            $bien->descriptionCourt['en'] = "";
-        }
 
-        if ( $node->getElementsByTagName('type_bien')->item(0) !== null ) {
-            $bien->type = $node->getElementsByTagName('type_bien')->item(0)->nodeValue;
-        } else {
-            $bien->type = "";
-        }
+        // if ($node->getElementsByTagName('descriptif_bref')->item(0) !== null) {
+        //     $bien->descriptions['fr'] = $node->getElementsByTagName('descriptif_bref')->item(0)->nodeValue;
+        // } else {
+        //     $bien->descriptionBref['fr'] = "";
+        // }
+        
+        // if ($node->getElementsByTagName('descriptif_court')->item(0) !== null) {
+        //     $bien->descriptionCourt['fr'] = $node->getElementsByTagName('descriptif_court')->item(0)->nodeValue;
+        // } else {
+        //     $bien->descriptionCourt['fr'] = "";
+        // }
 
-        if ( $node->getElementsByTagName('nombre_chambres')->item(0) !== null ) {
-            $bien->bedrooms = $node->getElementsByTagName('nombre_chambres')->item(0)->nodeValue;
-        } else {
-            $bien->bedrooms = "";
-        }
+        // if ($node->getElementsByTagName('descriptif_bref_en')->item(0) !== null) {
+        //     $bien->descriptionBref['en'] = $node->getElementsByTagName('descriptif_bref_en')->item(0)->nodeValue;
+        // } else {
+        //     $bien->descriptionBref['en'] = "" ;
+        // }
 
-        if ( $node->getElementsByTagName('latitude')->item(0) !== null ) {
-            $bien->latitude = $node->getElementsByTagName('latitude')->item(0)->nodeValue;
-        } else {
-            $bien->latitude = "";
-        }
+        // if ( $node->getElementsByTagName('descriptif_court_en')->item(0) !== null ) {
+        //     $bien->descriptionCourt['en'] = $node->getElementsByTagName('descriptif_court_en')->item(0)->nodeValue;
+        // } else {
+        //     $bien->descriptionCourt['en'] = "";
+        // }
 
-        if ( $node->getElementsByTagName('longitude')->item(0) !== null ) {
-            $bien->longitude = $node->getElementsByTagName('longitude')->item(0)->nodeValue;
-        } else {
-            $bien->longitude = "";
-        }
+        // if ( $node->getElementsByTagName('type_bien')->item(0) !== null ) {
+        //     $bien->type = $node->getElementsByTagName('type_bien')->item(0)->nodeValue;
+        // } else {
+        //     $bien->type = "";
+        // }
 
-        if ( $node->getElementsByTagName('longitude')->item(0) !== null ) {
-            $bien->longitude = $node->getElementsByTagName('longitude')->item(0)->nodeValue;
-        } else {
-            $bien->longitude = "";
-        }
+        // if ( $node->getElementsByTagName('nombre_chambres')->item(0) !== null ) {
+        //     $bien->bedrooms = $node->getElementsByTagName('nombre_chambres')->item(0)->nodeValue;
+        // } else {
+        //     $bien->bedrooms = "";
+        // }
 
-        if( $node->getElementsByTagName('nb_adultes')->item(0) !== null ) {
-            $bien->occupancy = $node->getElementsByTagName('nb_adultes')->item(0)->nodeValue; //occupancy max rest a saisir
-          }
+        // if ( $node->getElementsByTagName('latitude')->item(0) !== null ) {
+        //     $bien->latitude = $node->getElementsByTagName('latitude')->item(0)->nodeValue;
+        // } else {
+        //     $bien->latitude = "";
+        // }
+
+        // if ( $node->getElementsByTagName('longitude')->item(0) !== null ) {
+        //     $bien->longitude = $node->getElementsByTagName('longitude')->item(0)->nodeValue;
+        // } else {
+        //     $bien->longitude = "";
+        // }
+
+        // if ( $node->getElementsByTagName('longitude')->item(0) !== null ) {
+        //     $bien->longitude = $node->getElementsByTagName('longitude')->item(0)->nodeValue;
+        // } else {
+        //     $bien->longitude = "";
+        // }
+
+        // if( $node->getElementsByTagName('nb_adultes')->item(0) !== null ) {
+        //     $bien->occupancy = $node->getElementsByTagName('nb_adultes')->item(0)->nodeValue; //occupancy max rest a saisir
+        //   }
             
             
-    //     // parsing des equipements
-    //    $equipments_arr = [];
-    //     foreach($multimedias as $multimedia){
-    //         array_push($equipments_arr, $multimedia->getElementsByTagName('libelle')->item(0)->nodeValue);
-    //       }
-  
-    //       foreach($electromenagers as $electromenager){
-    //           array_push($equipments_arr ,$electromenager->getElementsByTagName('libelle')->item(0)->nodeValue);
-    //         }
-  
-    //         foreach($generales as $generale){
-    //           array_push($equipments_arr ,$generale->getElementsByTagName('libelle')->item(0)->nodeValue);
-    //         }
-
          $bien->equipments = $this->getEquipments($bien->id);
          $bien->options = $this->getOptions();
          $bien->calendars = $this->getSejours($bien->id,$bien->bedrooms);
@@ -202,7 +226,7 @@ class CimalpesClient
             $period['fin'] = $calendarNode->getElementsByTagName("date_fin")->item(0)->nodeValue;
             $period["min_stay"] = $calendarNode->getElementsByTagName("duree")->item(0)->nodeValue;  
             $period["semaine"] = 0;
-            $period["prices"][] = [ "price" => ceil($calendarNode->getElementsByTagName("montant")->item(0)->nodeValue / $period["min_stay"]),
+            $period["prices"][] = [ "price" => ceil(intval($calendarNode->getElementsByTagName("montant")->item(0)->nodeValue) / intval($period["min_stay"])),
                                       "nb_chambre" => $nbChambre,
                                       "nb_nuit" => 1
                                     ] ;

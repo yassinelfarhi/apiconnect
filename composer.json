@@ -6,7 +6,7 @@
         "psr-4": {
             "Villanovo\\ThirdParties\\": "src/"
         },
-        "files": ["app/db.php","app/photos.php","app/includes/tools.php"]
+        "files": ["app/db.php","app/photos.php","app/includes/tools.php","app/villas.php"]
     },
     "authors": [
         {

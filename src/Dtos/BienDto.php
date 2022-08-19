@@ -25,12 +25,5 @@ class BienDto{
      * */
     public $equipments;
 
-    /**
-     * @var array
-     */
-    public $descriptionBref;
-      /**
-     * @var array
-     */
-    public $descriptionCourt;
+    public $descriptions;
 }
