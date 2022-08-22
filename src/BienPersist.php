@@ -54,7 +54,7 @@ class BienPersist extends \db
     public $api_source_id = 2;
     public $zone_default_id = 0;
     public $toUpdate = 0;
-
+    public $villaId;
     public function __construct()
     {
         try {
@@ -101,7 +101,7 @@ class BienPersist extends \db
             
                 if( ( !empty($bien->updatedAt) and ($bien->updatedAt > $villaInfo["api_updated_at"] or $villaInfo["api_to_update"] == 1) ) or empty($bien->updatedAt) ) {
                     
-                    $bien["localId"] =$villaInfo["villa_id"];
+                    $this->villaId =$villaInfo["villa_id"];
                     $bien["villaSlug"] = $villaInfo["villa_slug"];                
                     $bien["zoneSlug"] = $villaInfo["zone_slug"];
                     $bien["zoneId"] = $villaInfo["zone_id"];
@@ -115,7 +115,7 @@ class BienPersist extends \db
                     if( $this->affectedRows() > 0 ){
 
                         if( $villaInfo["villa_slug"] != $bien["apiSlug"]){
-                            $this->insertSlug($bien["localId"],$bien["apiSlug"]);
+                            $this->insertSlug($bien["apiSlug"]);
 
                         }
                     }
@@ -150,41 +150,41 @@ class BienPersist extends \db
                     $bien["countryId"] = $this->zones[$zoneIndex]["country_id"];
                     $bien["calendarCode"] = generateCalendarCode(12); 
 
-                    $bien["localId"] = $this->insertBien($bien);   
+                    $this->villaId = $this->insertBien($bien);   
                   
                 } elseif ($villaTypeId < 0 ) {
                     $this->toMatch["villaTypes"][] = '(' .$this->api_source_id. ',0,"'.$bien["type"]. '")';
                 } elseif ($zoneIndex < 0 ) {
                     $this->toMatch["zones"][] = '(' .$this->api_source_id. ',0,"' .$bien["station"]. '")';
                 }
-                // $bien["localId"] = $this->insertBien($bien);  
             }
 
 
-           if (!empty($bien["localId"])) {
-                $this->syncDescriptions($bien["descriptions"],$bien["localId"]);
-                $this->insertEquipments($bien["localId"],$bien["equipments"]);               
-                $this->insertOptions($bien["options"],$bien["localId"]);
-                $this->insertSejours($bien["calendars"],$bien["localId"]);
+           if (!empty($this->villaId)) {
+                
+                $this->syncDescriptions($bien["descriptions"]);
+                $this->insertEquipments($bien["equipments"]);               
+                $this->insertOptions($bien["options"]);
+                $this->insertSejours($bien["calendars"]);
                 $this->syncPhotos($bien);
-                $this->syncDistances($bien["distances"],$bien["localId"]);
-                $this->syncChambres($bien["chambres"],$bien["localId"]);
-                $this->syncPrices($bien["periods"],$bien["localId"]);
-                $this->apiToUpdate($bien["localId"]);
+                $this->syncDistances($bien["distances"]);
+                $this->syncChambres($bien["chambres"]);
+                $this->syncPrices($bien["periods"]);
+                $this->apiToUpdate();
 
            }
 
         //    break;
         }
-        // var_dump($bien);exit();
+
             $this->matchAll();
     }
 
 
-    public function syncDescriptions($descriptions,$villaId){
+    public function syncDescriptions($descriptions){
 
         $villaObj = new villas();
-        $villaObj->villa_id = $villaId;
+        $villaObj->villa_id = $this->villaId;
         $villaObj->boot_domain_id = 1;
         $isNewDescUpdate = false;
 
@@ -230,27 +230,27 @@ class BienPersist extends \db
         }
 
         if( $isNewDescUpdate ){
-            $query = 'update vn_villas set villa_is_api_desc = 1 where villa_id = '.$villaId;
+            $query = 'update vn_villas set villa_is_api_desc = 1 where villa_id = '.$this->villaId;
             $this->exec($query);
         }
 
     }
 
 
-    public function syncPrices($periods,$villaId){
+    public function syncPrices($periods){
         $plans = [];
         $saisons = [];
         $combine = [];
       
-        $this->unlinkSaisons($villaId);
-        $this->unlinkPlans($villaId);
+        $this->unlinkSaisons();
+        $this->unlinkPlans();
             
         foreach($periods as $period){
             if(array_key_exists($period["saison"],$saisons)) {
                 $saisonId = $saisons[$period["saison"]];
                 
             } else {
-                $saisonId = $this->insertSaison($villaId,$period["saison"]);
+                $saisonId = $this->insertSaison($period["saison"]);
                 $saisons[$period["saison"]] = $saisonId;
             }
             
@@ -259,7 +259,7 @@ class BienPersist extends \db
 
             if(!empty($saisonId)) {
                 $query = 'insert into vn_villas_periodes(villa_id,saison_id,periode_deb,periode_fin,periode_minstay,periode_week)
-                values('.$villaId.','.$saisonId.','. strtotime($period['debut'].' + 12 hours').','.strtotime($period['fin'].' + 12 hours'). ',' .$period['min_stay']. ',' .$period["semaine"].')';
+                values('.$this->villaId.','.$saisonId.','. strtotime($period['debut'].' + 12 hours').','.strtotime($period['fin'].' + 12 hours'). ',' .$period['min_stay']. ',' .$period["semaine"].')';
                 $this->exec($query);
             }
 
@@ -290,13 +290,13 @@ class BienPersist extends \db
                        $planId = $plans[$nbRooms]["plan"][$planIndex]["id"];
 
                     } else {
-                        $planId = $this->insertPlan($villaId,$nbRooms,$nights);
+                        $planId = $this->insertPlan($nbRooms,$nights);
                         $plan = ["id" => $planId, "nights" => $nights];
                         $plans[$nbRooms]["plan"][] = $plan; 
 
                     }
                 } else {
-                    $planId = $this->insertPlan($villaId,$nbRooms,$nights);
+                    $planId = $this->insertPlan($nbRooms,$nights);
                     $plan = ["id" => $planId, "nights" => $nights];
                     $plans[$nbRooms]["plan"][] = $plan; 
                     $plans[$nbRooms]["min"] = $price["price"];
@@ -339,19 +339,19 @@ class BienPersist extends \db
             
          }
             // var_dump($plans);exit();
-            $this->insertVNRooms($plans,$villaId);
+            $this->insertVNRooms($plans);
          
     }
 
   
 
-    public function insertVNRooms($plans,$villaId){
+    public function insertVNRooms($plans){
 
-        $this->unlinkVnRooms($villaId);
+        $this->unlinkVnRooms();
         $inserts = [];
 
         foreach( $plans as  $rooms => $plan ){
-            $inserts[] = '('.$villaId.','.$rooms.','.$plan['min'].','.$plan['max'].')';
+            $inserts[] = '('.$this->villaId.','.$rooms.','.$plan['min'].','.$plan['max'].')';
         }
 
         if( $inserts > 0 ){
@@ -360,8 +360,8 @@ class BienPersist extends \db
         }
     }
 
-    public function unlinkVnRooms($villaId){
-        $query = 'delete from vn_villas_rooms where villa_id = '.$villaId;
+    public function unlinkVnRooms(){
+        $query = 'delete from vn_villas_rooms where villa_id = '.$this->villaId;
         $this->exec($query);
     }
 
@@ -375,8 +375,8 @@ class BienPersist extends \db
     }
 
 
-    public function unlinkPlans($villaId) {
-        $sqlQuery = 'DELETE FROM vn_rates_plans where villa_id = ' .$villaId;
+    public function unlinkPlans() {
+        $sqlQuery = 'DELETE FROM vn_rates_plans where villa_id = ' .$this->villaId;
         $this->exec($sqlQuery);
     }
 
@@ -385,9 +385,9 @@ class BienPersist extends \db
         $this->exec($query);
     }
 
-    public function insertPlan($villaId,$nbRooms,$nights) {
+    public function insertPlan($nbRooms,$nights) {
         $query = 'insert into vn_rates_plans(villa_id,created_at,room,night)
-        values('.$villaId.',"'.toSpecialDate().'",'.$nbRooms.',' .$nights.')';
+        values('.$this->villaId.',"'.toSpecialDate().'",'.$nbRooms.',' .$nights.')';
         $this->exec($query);
         $planId = $this->lastOID();
 
@@ -397,8 +397,8 @@ class BienPersist extends \db
 
 
 
-    public function insertSaison($villaId,$saison) {
-        $query = 'insert into vn_villas_saisons(villa_id,saison_name) values('.$villaId.',"'.$saison.'")';
+    public function insertSaison($saison) {
+        $query = 'insert into vn_villas_saisons(villa_id,saison_name) values('.$this->villaId.',"'.$saison.'")';
         $this->exec($query);
         $saisonId = $this->lastOID();
 
@@ -406,20 +406,20 @@ class BienPersist extends \db
         // if( $season_id > 0 ) $seasons[$season] = $season_id;
     }
 
-    public function unlinkPeriods($villaId) {
-        $query = 'delete from vn_villas_saisons where villa_id = '.$villaId;
+    public function unlinkPeriods() {
+        $query = 'delete from vn_villas_saisons where villa_id = '.$this->villaId;
         $this->exec($query);
     }
 
-    public function unlinkSaisons($villaId) {
-            $query = 'delete from vn_villas_saisons where villa_id = '.$villaId;
+    public function unlinkSaisons() {
+            $query = 'delete from vn_villas_saisons where villa_id = '.$this->villaId;
             $this->exec($query);
     }
 
-    public function syncDistances($distances,$villaId){
+    public function syncDistances($distances){
         $toInsert = [];
 
-        $this->unlinkDistances($villaId);   
+        $this->unlinkDistances();   
         
         foreach ($distances as $distName => $distance) {
             
@@ -442,7 +442,7 @@ class BienPersist extends \db
                             $time_per = in_array($distance["time_per"],[1,2,3,4,5]) ? $distance["time_per"]: 0;
 
                             if( ($distance > 0 && $unit > 0) || ($time > 0 && $time_unit > 0 && $time_per > 0 ) ) {
-                                $toInsert["distances_ids"][] = '('.$villaId. ',' .$distanceId. ',"",' .$distanceValue. ','.$unit. ',' .$time. ',' .$time_unit. ',' .$time_per. ')';
+                                $toInsert["distances_ids"][] = '('.$this->villaId. ',' .$distanceId. ',"",' .$distanceValue. ','.$unit. ',' .$time. ',' .$time_unit. ',' .$time_per. ')';
                             }
                         
                         
@@ -466,12 +466,12 @@ class BienPersist extends \db
    
     }
 
-    public function syncChambres($chambres,$villaId){
+    public function syncChambres($chambres){
         
 
         foreach($chambres as $chambre){
 
-             $localBeds = $this->getBeds($villaId);
+             $localBeds = $this->getBeds();
              $bed_id = 0;
             $index = array_search($chambre["id"],array_column($localBeds,'bed_api_id'));
 
@@ -481,7 +481,7 @@ class BienPersist extends \db
                                                     ,bed_floor_id = ' .$chambre["etage"]. ' where bed_api_id = '.$chambre["id"];
                 $this->exec($query);                                            
             } else {
-                $query = 'insert into vn_villas_beds(villa_id,created_at,bed_name,bed_type_id,bed_floor_id,bed_api_id) values('.$villaId.',"'.toSpecialDate().'","'.$chambre["nom"].'",' .$chambre["type"]. ','
+                $query = 'insert into vn_villas_beds(villa_id,created_at,bed_name,bed_type_id,bed_floor_id,bed_api_id) values('.$this->villaId.',"'.toSpecialDate().'","'.$chambre["nom"].'",' .$chambre["type"]. ','
                                                                                                        .$chambre['etage']. ',' .$chambre['id']. ')';
                 $this->exec($query);
                 $bed_id = $this->lastOID();
@@ -628,12 +628,11 @@ class BienPersist extends \db
         $sqlQuery = 'INSERT INTO vn_villas_distances_ids (villa_id,area_distance_id,villa_distance_desc,villa_distance,villa_distance_unite,
                      villa_distance_time,villa_distance_time_unite,villa_distance_time_per) values ' .implode(',',$toInsert["distances_ids"]);
 
-                    //  var_dump($sqlQuery); exit();
         $this->exec($sqlQuery);
     }
 
-    public function unlinkDistances($villaId) {
-        $sqlQuery = 'DELETE FROM vn_villas_distances_ids WHERE villa_id =' .$villaId;
+    public function unlinkDistances() {
+        $sqlQuery = 'DELETE FROM vn_villas_distances_ids WHERE villa_id =' .$this->villaId;
         $this->exec($sqlQuery);
     }
 
@@ -643,7 +642,7 @@ class BienPersist extends \db
 
     public function syncPhotos($bien) {
 
-        $localPhotos = $this->getPhotos($bien["localId"]);
+        $localPhotos = $this->getPhotos();
 
         $hasPhotos = count($localPhotos) > 0;
         $isUploadedPhoto = false;
@@ -673,7 +672,7 @@ class BienPersist extends \db
         foreach( $uploadedPhotos as $uploadedPhoto ){
 
             $photo_obj = new photos();
-            $photo_obj->setVillaId($bien["localId"]);
+            $photo_obj->setVillaId();
             $photo_obj->setName($uploadedPhoto['name']);
             $photo_obj->setExt($uploadedPhoto['ext']);
             $photo_obj->setSourceId($uploadedPhoto['source_id']);
@@ -717,7 +716,7 @@ class BienPersist extends \db
     }
 
 
-   public function insertSejours($sejours,$localId) {
+   public function insertSejours($sejours) {
         $toInsert = [];
         $thisDay = new \DateTime("GMT");
         $thisDay->setTime(12,0,0,0);
@@ -730,7 +729,7 @@ class BienPersist extends \db
 
 
 
-       $this->unlinkSejours($localId); 
+       $this->unlinkSejours(); 
 
        foreach($sejours as $sejour){
 
@@ -752,7 +751,7 @@ class BienPersist extends \db
                     
                     foreach($daterange as $date){
                            if ($date > $thisDay and $date <= $dateMax) {
-                            $toInsert[] = '(' .$localId.',' .$date->getTimestamp(). ',' .$status['is_dispo']. ',"",' .time().',' .$status['is_option'].',0,0,0)';
+                            $toInsert[] = '(' .$this->villaId.',' .$date->getTimestamp(). ',' .$status['is_dispo']. ',"",' .time().',' .$status['is_option'].',0,0,0)';
                            }
                     }
                 }
@@ -785,9 +784,9 @@ class BienPersist extends \db
 
     
 
-    public function unlinkSejours($localId){
+    public function unlinkSejours(){
         $thisDay = mktime(12,0,0,date("m"),date("d"),date("y"));
-        $sqlQuery = 'DELETE FROM `vn_villas_dispos` WHERE resa_id = 0 and villa_id = '.$localId.' and villa_dispo_time >= '.$thisDay;
+        $sqlQuery = 'DELETE FROM `vn_villas_dispos` WHERE resa_id = 0 and villa_id = '.$this->villaId.' and villa_dispo_time >= '.$thisDay;
         $this->exec($sqlQuery);
 
     }
@@ -801,9 +800,9 @@ class BienPersist extends \db
 
 
 
-    public function insertEquipments($villaId,$equipments) {
+    public function insertEquipments($equipments) {
         $toInsert = [] ;
-        $this->unlinkEquipments($villaId);
+        $this->unlinkEquipments();
 
 
 
@@ -818,7 +817,7 @@ class BienPersist extends \db
                 if ($equipDisabled == false) {
 
                     if ($equipmentId > 0 ) {
-                        $toInsert[] = '('.$villaId.','.$equipmentId.')';
+                        $toInsert[] = '('.$this->villaId.','.$equipmentId.')';
                     } else {
                         $this->toUpdate = 1;
                     }
@@ -840,11 +839,11 @@ class BienPersist extends \db
     }
 
 
-    public function insertOptions($options,$villaId) {
+    public function insertOptions($options) {
       $toInsert = [];
 
       
-      $this->unlinkOptions($villaId);
+      $this->unlinkOptions();
 
       foreach($options as $option){
           $optionIndex = $this->checkOption($option);
@@ -857,7 +856,7 @@ class BienPersist extends \db
                 if($optionDisable == false){
 
                     if ($optionId > 0) {
-                        $toInsert[] = '(' .$villaId.',' .$optionId. ',1,0,0,0,0,0,0,0,0,0,0,0)';
+                        $toInsert[] = '(' .$this->villaId.',' .$optionId. ',1,0,0,0,0,0,0,0,0,0,0,0)';
                      } else {
                        $this->toUpdate = 1;
                      }
@@ -870,7 +869,7 @@ class BienPersist extends \db
       }
 
       foreach($this->defaultOptions as $defaultOption) {
-        $toInsert[] = '(' .$villaId.',' .$defaultOption["villa_option_id"]. 
+        $toInsert[] = '(' .$this->villaId.',' .$defaultOption["villa_option_id"]. 
                                     ',' .$defaultOption["api_option_type"]. 
                                     ',' .$defaultOption["api_option_for"].
                                     ',' .$defaultOption["api_option_provider_id"].
@@ -898,7 +897,7 @@ class BienPersist extends \db
     {
         $sqlQuery = 'UPDATE vn_villas SET villa_private_name = "'.$bien["nom"].'", villa_public_name = "'.$bien["nom"].'", villa_slug = "'.$bien["apiSlug"].'",
                       villa_occupancy = '.$bien["occupancy"].', villa_occupancy_max = '.$bien["occupancy"].', villa_bedrooms = '.$bien["bedrooms"].', villa_baths = '.$bien["baths"].'
-                      , villa_latitude = '.$bien["latitude"].', villa_longitude = '.$bien["longitude"].',api_updated_at ="' .$bien["updated_at"].'" WHERE villa_id = '.$bien["localId"];
+                      , villa_latitude = '.$bien["latitude"].', villa_longitude = '.$bien["longitude"].',api_updated_at ="' .$bien["updated_at"].'" WHERE villa_id = '.$this->villaId;
         $this->exec($sqlQuery);
     }
 
@@ -911,11 +910,17 @@ class BienPersist extends \db
      
     public function insertVilla($bien)
     {
+        $query = 'SELECT villa_public_name FROM vn_villas where villa_public_name like "' .$bien["nom"]. '"';
+        $this->exec($query);
+        $publicName =  $this->numRows() > 0 ? $bien["nom"] ." - ". $bien["station"] : $bien["nom"];
+        
+
+
 
         $sqlQuery = 'INSERT INTO vn_villas (villa_time,api_source_id,api_villa_id,manager_id,villa_private_name,villa_public_name,villa_slug,villa_type_id,villa_state_id,currency_id,villa_occupancy,
                        villa_occupancy_max,villa_bedrooms,villa_baths,zone_id,country_id,city_id,villa_zip,villa_address,villa_latitude,villa_longitude,villa_calendar_code,
                        villa_contract,villa_tva,villa_commission,villa_commission_tva,villa_acompte1_rate,villa_acompte2_rate,villa_acompte2_days,villa_acompte3_rate,villa_acompte3_days)
-                        values ('.$bien["time"].','.$this->api_source_id.','.$bien["id"].','.$this->bienParams['manager_id'].',"'.$bien["nom"].'","'.$bien["nom"].'","'.$bien["apiSlug"].'",'.$bien["typeId"].
+                        values ('.$bien["time"].','.$this->api_source_id.','.$bien["id"].','.$this->bienParams['manager_id'].',"'.$bien["nom"].'","'.$publicName.'","'.$bien["apiSlug"].'",'.$bien["typeId"].
                         ','.$this->bienParams['villa_state_id'].','.$this->bienParams['currency_id'].','.$bien["occupancy"].','.$bien["occupancy"].','.$bien["bedrooms"].','.$bien["baths"].','.$bien["zoneId"].
                         ','.$this->bienParams['country_id'].','.$bien["cityId"].','.$this->bienParams['villa_zip'].',"'.$bien["station"].'",
                         '.$bien["latitude"].','.$bien["longitude"].',"'.$bien["calendarCode"].'",'.$this->bienParams['villa_contract'].','.$this->bienParams['villa_tva'].','.$this->bienParams['villa_commission'].
@@ -930,8 +935,9 @@ class BienPersist extends \db
 
 
     public function insertBien($bien)
-    {
-        try {
+    {       
+       if ($bien["baths"] > 0 && $bien["occupancy"] > 0 && $bien["bedrooms"] > 0 && !empty($bien["nom"]) ) {
+            try {
             $localId = $this->insertVilla($bien);
             $this->insertSlug($localId,$bien["apiSlug"]);
             $this->showInDomain($localId,1);
@@ -941,6 +947,10 @@ class BienPersist extends \db
             echo "Stoped with exception ".$ex->getMessage()."\n";
             echo $ex->getTraceAsString()."\n";
         }
+       }
+
+
+   
  
      return $localId;
     }
@@ -952,13 +962,13 @@ class BienPersist extends \db
         return $this->lastOID();
     }
 
-    public function insertSlug($villaId,$slug) {
-        $query = 'insert into vn_villas_slugs(villa_id,villa_slug,villa_slug_time) values('.$villaId.',"'.$slug.'","'.time().'")';
+    public function insertSlug($slug) {
+        $query = 'insert into vn_villas_slugs(villa_id,villa_slug,villa_slug_time) values('.$this->villaId.',"'.$slug.'","'.time().'")';
         $this->exec($query);
     }
 
-    public function showInDomain($villaId,$domainId) {
-        $sqlQuery = 'INSERT INTO `vn_villas_domains` (villa_id,domain_id) values ('.$villaId.','.$domainId.')';
+    public function showInDomain($domainId) {
+        $sqlQuery = 'INSERT INTO `vn_villas_domains` (villa_id,domain_id) values ('.$this->villaId.','.$domainId.')';
         $this->exec($sqlQuery);
         }
 
@@ -967,7 +977,7 @@ class BienPersist extends \db
 
         foreach( $this->languges as $language):
             
-            $desc = $this->checkDescription($bien["localId"], $language['lng_id']);
+            $desc = $this->checkDescription($language['lng_id']);
              // utiliser isset
             if ( $desc !== false) {
               
@@ -989,7 +999,7 @@ class BienPersist extends \db
                 $descriptif_bref = array_key_exists($language['lng_code'],$bien["descriptionBerf"])?$bien["descriptionBerf"][$language['lng_code']]:'';
                 $descriptif_court = array_key_exists($language['lng_code'],$bien['descriptifCourt'])?$bien['descriptifCourt'][$language['lng_code']]:'';
 
-                $insertQuery = 'INSERT INTO `description` (id_villa, description_bref, description_court, id_langue) values ('.$bien["localId"].', '.$descriptif_bref.', '.$descriptif_court.', '.$language['lng_id'].')';
+                $insertQuery = 'INSERT INTO `description` (id_villa, description_bref, description_court, id_langue) values ('.$this->villaId.', '.$descriptif_bref.', '.$descriptif_court.', '.$language['lng_id'].')';
 
                 $this->exec($insertQuery);
 
@@ -1006,8 +1016,8 @@ class BienPersist extends \db
 
     
 
-    public function unlinkOptions($villaId) {
-        $sqlQuery = 'DELETE FROM `vn_villas_options_ids` WHERE villa_id = '.$villaId;
+    public function unlinkOptions() {
+        $sqlQuery = 'DELETE FROM `vn_villas_options_ids` WHERE villa_id = '.$this->villaId;
         $this->exec($sqlQuery);
 
     }
@@ -1022,8 +1032,8 @@ class BienPersist extends \db
 
 
 
-    public function unlinkEquipments($villaId){
-        $sqlQuery = 'DELETE FROM `vn_villas_equipments_ids` WHERE villa_id = '.$villaId;
+    public function unlinkEquipments(){
+        $sqlQuery = 'DELETE FROM `vn_villas_equipments_ids` WHERE villa_id = '.$this->villaId;
         $this->exec($sqlQuery);
     
     }
@@ -1058,9 +1068,9 @@ class BienPersist extends \db
    
 
 
-    public function checkDescription($localId, $idLangue) {
-        $id_villa = intval($localId);
-        $sqlQuery = 'SELECT * FROM `description` WHERE id_villa = '.$id_villa.' and id_langue = '.$idLangue.'';
+    public function checkDescription($idLangue) {
+       
+        $sqlQuery = 'SELECT * FROM `description` WHERE id_villa = '.intval($this->villaId).' and id_langue = '.$idLangue.'';
         $this->exec($sqlQuery);
         $row = $this->getAssoc();
         return $row !== false ? $row["id_desc"] : false ;
@@ -1185,8 +1195,8 @@ class BienPersist extends \db
         return $this->fetchAll(); 
     }
 
-    public function getPhotos($villaId) {
-        $sqlQuery = 'SELECT villa_photo_id, photo_source_id,photo_name FROM `vn_villas_photos` WHERE villa_id = '.$villaId.' and photo_source_id is not null';
+    public function getPhotos() {
+        $sqlQuery = 'SELECT villa_photo_id, photo_source_id,photo_name FROM `vn_villas_photos` WHERE villa_id = '.$this->villaId.' and photo_source_id is not null';
         $this->exec($sqlQuery);
   
         return $this->fetchAll();
@@ -1277,15 +1287,15 @@ class BienPersist extends \db
 
      //mise à jour du champs apitoUpdate
 
-    public function apiToUpdate($villaId) {
+    public function apiToUpdate() {
     
-            $sqlQuery = 'UPDATE vn_villas set  api_to_update =' .$this->toUpdate. ' WHERE villa_id = ' .$villaId;
+            $sqlQuery = 'UPDATE vn_villas set  api_to_update =' .$this->toUpdate. ' WHERE villa_id = ' .$this->villaId;
             $this->exec($sqlQuery);
         
     }
 
-    public function getBeds($villaId){
-        $sqlQuery = 'SELECT * FROM vn_villas_beds where villa_id = ' .$villaId;
+    public function getBeds(){
+        $sqlQuery = 'SELECT * FROM vn_villas_beds where villa_id = ' .$this->villaId;
         $this->exec($sqlQuery);
         return $this->fetchAll();
     }

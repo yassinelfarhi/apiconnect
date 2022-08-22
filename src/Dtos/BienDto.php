@@ -5,11 +5,9 @@ namespace Villanovo\ThirdParties\Dtos;
 class BienDto{
     public $id;
     public $nom;
-    public $slug;
     public $type;
     public $occupancy;
     public $bedrooms;
-    public $quartier;
     public $station;
     public $latitude;
     public $longitude;
